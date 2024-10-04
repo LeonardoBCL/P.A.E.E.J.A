@@ -345,37 +345,42 @@ algo aqui, irá alterar a cor do texto, ou fonte, etc desses 3 citados*/
 
 /* Ajuste de largura para garantir que a linha fique igual à da seção anterior */
 .titulos-nossos-cursos h3::before {
-    left: -75%; /* Linha à esquerda do texto */
-    width: 75%; /* Largura da linha antes do texto ajustada para manter proporção */
+    left: -150%; /* Linha à esquerda do texto */
+    width: 140%; /* Largura da linha antes do texto ajustada para manter proporção */
 }
 
 .titulos-nossos-cursos h3::after {
-    right: -75%; /* Linha à direita do texto */
-    width: 75%; /* Largura da linha depois do texto ajustada para manter proporção */
+    right: -150%; /* Linha à direita do texto */
+    width: 140%; /* Largura da linha depois do texto ajustada para manter proporção */
 }
 /* Parte dos CARDS SESSÃO 3 --------------------------- */
 
 /* Parte dos CARDS SESSÃO 3 --------------------------- */
 
 .container {
-    display: flex; /* Usa flexbox para organizar os cards em linha */
-    justify-content: space-around; /* Espaço entre os cards */
-    flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha em telas menores */
-    margin: 20px; /* Margem externa do contêiner */
+    display: flex;
+    justify-content: center; /* Alinha os cards à esquerda */
+    flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha */
+    margin: 60px; /* Margem externa do contêiner */
+    gap: 20px;
+    
 }
 
 .card {
-    background-color: rgba(110, 173, 255, 0.2); /* Cor de fundo do card com 20% de opacidade */
+    background-color: rgba(110, 173, 255, 0.2); /* Cor de fundo do card */
     border: 1px solid #ccc; /* Borda do card */
     border-radius: 8px; /* Cantos arredondados */
-    width: 406.13px; /* Largura do card */
-    height: 534.19px; /* Altura do card */
-    margin: 10px; /* Margem entre os cards */
+    
+    /* Ajustado: Reduzindo a largura do card para permitir mais espaço horizontal */
+    width: 390px; /* Largura do card ajustada para 390px */
+    border-radius: 30px;
+    
+    margin: 5px; /* Margem entre os cards reduzida para 5px */
     padding: 15px; /* Espaço interno do card */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra do card */
-    transition: transform 0.3s; /* Animação suave ao passar o mouse */
     display: flex; /* Permite uma organização flexível */
     flex-direction: column; /* Organiza os elementos em coluna */
+    box-shadow: 0 0 40px rgba(76, 76, 76, 0.3); 
 }
 
 .card img {
@@ -391,7 +396,6 @@ algo aqui, irá alterar a cor do texto, ou fonte, etc desses 3 citados*/
 .card ul {
     padding-left: 20px; /* Mantém os pontos visíveis com um recuo */
     margin: 15px 0; /* Margem acima e abaixo da lista */
-    flex-grow: 1; /* Faz a lista crescer para ocupar o espaço restante */
 }
 
 .card ul li {
@@ -399,20 +403,25 @@ algo aqui, irá alterar a cor do texto, ou fonte, etc desses 3 citados*/
 }
 
 .saber-mais {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: inline-block; /* Permite o uso de margens e padding */
     margin-top: 15px; /* Espaço acima do botão */
-    padding: 10px 15px; /* Padding interno do botão */
-    background-color: #007bff; /* Cor de fundo do botão */
+    width: 136.07px; /* Largura do botão */
+    height: 25.43px; /* Altura do botão */
+    background-color: #06377E; /* Cor de fundo do botão */
     color: white; /* Cor do texto do botão */
     text-decoration: none; /* Remove sublinhado do link */
-    border-radius: 5px; /* Cantos arredondados do botão */
+    border-radius: 30px; /* Cantos arredondados do botão */
     text-align: center; /* Centraliza o texto do botão */
+    line-height: 25.43px; /* Centraliza verticalmente o texto */
+    
+    margin: 15px auto 0; /* Margens verticais: 15px em cima, auto nas laterais para centralizar */
+    font-size: 13.78px; /* Ajustado: unidade 'px' adicionada */
 }
 
 .saber-mais:hover {
     background-color: #0056b3; /* Cor de fundo ao passar o mouse */
 }
-
 
 
 /* Consultas de mídia para dispositivos menores */
