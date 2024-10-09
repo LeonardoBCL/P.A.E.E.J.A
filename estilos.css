@@ -345,13 +345,13 @@ algo aqui, irá alterar a cor do texto, ou fonte, etc desses 3 citados*/
 
 /* Ajuste de largura para garantir que a linha fique igual à da seção anterior */
 .titulos-nossos-cursos h3::before {
-    left: -150%; /* Linha à esquerda do texto */
-    width: 140%; /* Largura da linha antes do texto ajustada para manter proporção */
+    left: -130%; /* Linha à esquerda do texto */
+    width: 130%; /* Largura da linha antes do texto ajustada para manter proporção */
 }
 
 .titulos-nossos-cursos h3::after {
-    right: -150%; /* Linha à direita do texto */
-    width: 140%; /* Largura da linha depois do texto ajustada para manter proporção */
+    right: -130%; /* Linha à direita do texto */
+    width: 130%; /* Largura da linha depois do texto ajustada para manter proporção */
 }
 /* Parte dos CARDS SESSÃO 3 --------------------------- */
 
