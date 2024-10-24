@@ -157,66 +157,93 @@ O elemento first-child pega primeira tag referenciada dentro de uma div. */
 }
 
 /* --------------------------- Styles Section 1 --------------------------- */
-section#hero {
-  padding-top: 140px;
-}
 
-.imagem-conteiner {
-  width: 90vw;
-  height: 700px;
-  margin: 59px auto 0;
-  display: flex;
-  overflow: hidden;
-  background-color: #bad8ff;
-  box-sizing: border-box;
-  border-radius: 12px;
-}
-
-.borda-esquerda {
-  width: 350px;
-  height: 100%;
-  background-color: #bad8ff;
-  padding: 20px 0; /* Remove padding lateral e centraliza o texto dentro da borda */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; /* Alinha todos os elementos à esquerda */
-  text-align: left; /* Alinhado à esquerda */
-}
-
-.texto-na-borda {
-  color: #031836;
-  font-size: 16px;
-  font-family: "MontSerrat", sans-serif;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 120px;
-}
-
-.texto-na-borda h1 {
-  font-size: 3.2rem;
-  text-align: left;
-  margin: 0;
-  letter-spacing: -1px;
-}
-
-.texto-na-borda p {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  line-height: 1.5;
+section.slider {
+  margin: 0 auto;
+  width: 100%;
+  height: 90vh;
   padding: 0;
-  text-align: left;
+  overflow: hidden;
+  padding-top: 160px;
 }
 
-.imagem-conteiner img {
+.slider-content {
+  width: 500%;
+  height: 100%;
+  display: flex;
+}
+
+.slider-content input {
+  display: none;
+}
+
+.slide-box {
+  width: 20%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  transition: margin-left 0.7s ease;
+}
+
+.slide-box .img-desktop {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
-  margin-left: 150px;
+}
+
+/* Controles manuais e automáticos */
+.nav-manual,
+.nav-auto {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-manual .manual-btn,
+.nav-auto div {
+  border: 1px solid #638bc3;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito hover para mudar a cor dos botões */
+.nav-manual .manual-btn:hover,
+.nav-auto div:hover {
+  background-color: #1f62c6;
+}
+
+/* Mudança de cor para os inputs checados */
+#radio1:checked ~ .nav-manual .manual-btn:nth-child(1),
+#radio2:checked ~ .nav-manual .manual-btn:nth-child(2),
+#radio3:checked ~ .nav-manual .manual-btn:nth-child(3),
+#radio4:checked ~ .nav-manual .manual-btn:nth-child(4),
+#radio5:checked ~ .nav-manual .manual-btn:nth-child(5) {
+  background-color: #1f62c6;
+}
+
+/* Navegação dos slides */
+#radio1:checked ~ .primeiro {
+  margin-left: 0%;
+}
+#radio2:checked ~ .primeiro {
+  margin-left: -20%;
+}
+#radio3:checked ~ .primeiro {
+  margin-left: -40%;
+}
+#radio4:checked ~ .primeiro {
+  margin-left: -60%;
+}
+#radio5:checked ~ .primeiro {
+  margin-left: -80%;
 }
 
 /* --------------------------------ESTILIZAÇÃO DA SECTION - 2 ( INÍCIO ) -------------------------- */
@@ -484,100 +511,6 @@ section#hero {
   background-color: #042552; /* Cor de fundo ao passar o mouse */
 }
 
-/* Consultas de mídia para dispositivos menores */
-@media (max-width: 768px) {
-  .card {
-    width: 80%; /* Aumenta a largura do card em telas menores */
-  }
-}
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 10px; /* Ajusta o padding para se ajustar ao tamanho fixo */
-  }
-
-  .nav-menu ul {
-    flex-direction: row; /* Mantém os itens da lista horizontalmente */
-    white-space: nowrap; /* Impede a quebra de linha automática */
-    overflow-x: auto; /* Permite rolagem horizontal se necessário */
-  }
-
-  .entrada-links {
-    margin-top: 10px; /* Adiciona espaço acima dos links */
-  }
-
-  .entrada-links a {
-    margin-left: 15px; /* Ajusta a margem esquerda para se ajustar melhor */
-    padding: 5px 10px; /* Ajusta o padding dos links */
-  }
-}
-
-/* Consultas de mídia para tablets em orientação vertical e dispositivos menores */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 10px; /* Mantém o padding fixo */
-  }
-
-  .nav-menu ul {
-    flex-direction: column; /* Empilha a lista verticalmente */
-    overflow: hidden; /* Oculta qualquer conteúdo que exceda o contêiner */
-    display: none; /* Oculta a lista por padrão */
-  }
-
-  .nav-menu.show {
-    display: flex; /* Mostra a lista quando ativada */
-  }
-
-  .nav-menu li {
-    margin: 10px 0; /* Adiciona espaço vertical entre os itens */
-  }
-
-  .entrada-links {
-    flex-direction: column; /* Empilha os links verticalmente */
-    align-items: center; /* Centraliza os itens */
-    margin-top: 10px;
-  }
-
-  .entrada-links a {
-    margin-left: 0; /* Remove a margem esquerda */
-    margin-bottom: 10px; /* Adiciona espaço entre os links */
-  }
-}
-
-/* Consultas de mídia para dispositivos muito pequenos, como telefones */
-@media (max-width: 480px) {
-  .navbar {
-    padding: 5px; /* Reduz o padding */
-  }
-
-  .logo img {
-    max-height: 40px; /* Reduz a altura da logo */
-  }
-
-  .nav-menu ul {
-    flex-direction: column; /* Empilha a lista verticalmente */
-    display: none; /* Oculta a lista por padrão */
-  }
-
-  .nav-menu.show {
-    display: flex; /* Mostra a lista quando ativada */
-  }
-
-  .nav-menu li {
-    margin: 5px 0; /* Reduz o espaço entre os itens */
-  }
-
-  .entrada-links {
-    flex-direction: column; /* Empilha os links verticalmente */
-    align-items: center; /* Centraliza os itens */
-    margin-top: 5px;
-  }
-
-  .entrada-links a {
-    margin-left: 0; /* Remove a margem esquerda */
-    margin-bottom: 5px; /* Reduz o espaço entre os links */
-  }
-}
-
 /*Section 4 Estilização */
 /* Estilo para a seção "Nosso Time" */
 
@@ -717,18 +650,6 @@ section#hero {
     -10px
   ); /* Move o card 10px para cima ao passar o mouse */
   cursor: pointer; /* Mostra que o card é clicável */
-}
-
-/* Ajustes para telas menores */
-@media (max-width: 1240px) {
-  .team {
-    width: 100%; /* Largura total */
-    height: auto; /* Ajusta a altura */
-    padding: 90px 2%; /* Espaçamento interno */
-  }
-  .center h1 {
-    font-size: 3.2rem; /* Ajusta o tamanho do título para telas menores */
-  }
 }
 
 /* Alinhamento do título centralizado e espaçamento */

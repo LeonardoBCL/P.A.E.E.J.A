@@ -45,37 +45,127 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    
+    <script src="../js/slide.js" defer></script>
   </head>
 
   <body>
     <header>
-      <div id = "navbar"> </div>
+      <div class="navbar">
+        <!-- DIV da logo e a navegação das barras (nav) -->
+        <div class="logo">
+          <a href="#section-home">
+            <img src="../images_paeeja/logo-paeeja.png" alt="Logo imagem" />
+          </a>
+        </div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="#sectionCursos">Cursos</a></li>
+            <li><a href="#nossoTime">Sobre nós</a></li>
+            <li><a href="#faleConosco">Fale Conosco</a></li>
+          </ul>
+        </nav>
+
+        <!-- Div da entrada de login -->
+        <div class="entrada-links">
+          <a href="../pages/login.html" id="botaoEntrarNav"> Entrar</a>
+          <a
+            href="../pages/register.html"
+            class="registrar-link"
+            id="botaoCadastrarNav"
+          >
+            Cadastrar</a
+          >
+          <p hidden id="nomeUsuario" class="nome-usuario-logado"></p>
+          <img
+            hidden
+            src="../icons-svg/icon2-userprofile.svg"
+            alt="icone do usuario"
+            id="iconUsuario"
+            class="icon-usuario"
+          />
+          <a
+            href="section-login.html"
+            id="botaoSair"
+            class="registrar-link"
+            onclick="sairLogin(event)"
+            style="display: none"
+            >Sair</a
+          >
+        </div>
+      </div>
     </header>
 
     <main>
-      <!-- 1 Section -->
+      <!-- Section 1: Início da section -->
 
       <!-- Parágrafo para redirecionar a logo -->
       <p id="section-home"></p>
       <!-- POR FAVOR, NAO APAGUE!!!!!!!!!!! -->
 
-      <section id="hero">
-        <figure class="imagem-conteiner">
-          <div class="borda-esquerda">
-            <div class="texto-na-borda">
-              <h1>Tenha o seu<br />ensino<br />Na palma da<br />sua mão</h1>
-              <p>
-                Fique por dentro de tudo, <br />
-                mesmo fora da escola
-              </p>
-            </div>
+      <section class="slider">
+        <div class="slider-content">
+          <input type="radio" name="banner-radio" id="radio1" checked />
+          <input type="radio" name="banner-radio" id="radio2" />
+          <input type="radio" name="banner-radio" id="radio3" />
+          <input type="radio" name="banner-radio" id="radio4" />
+          <input type="radio" name="banner-radio" id="radio5" />
+
+          <div class="slide-box primeiro">
+            <img
+              class="img-desktop"
+              src="../banners-section1/Banner-Gameficação.png"
+              alt="Imagem sobre acessibilidade"
+            />
           </div>
-          <img
-            src="../images_paeeja/image-section-home.png"
-            alt="Imagem da primeira sessão"
-          />
-        </figure>
+
+          <div class="slide-box">
+            <img
+              class="img-desktop"
+              src="../banners-section1/Banner-Acessível.png"
+              alt="Imagem sobre Fácil Acesso"
+            />
+          </div>
+
+          <div class="slide-box">
+            <img
+              class="img-desktop"
+              src="../banners-section1/Banner-MEC.png"
+              alt="Imagem sobre Gameficação"
+            />
+          </div>
+
+          <div class="slide-box">
+            <img
+              class="img-desktop"
+              src="../banners-section1/Banner-FácilAcesso.png"
+              alt="Nova Imagem 1"
+            />
+          </div>
+
+          <div class="slide-box">
+            <img
+              class="img-desktop"
+              src="../banners-section1/Banner-Suporte.png"
+              alt="Nova Imagem 2"
+            />
+          </div>
+
+          <div class="nav-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+            <div class="auto-btn5"></div>
+          </div>
+
+          <div class="nav-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+            <label for="radio5" class="manual-btn"></label>
+          </div>
+        </div>
       </section>
 
       <!--Section 2 Início.-->
@@ -412,8 +502,6 @@
     <script src="../js/scroll.js"></script>
     <script src="../js/swiper-bundle.min.js" defer></script>
     <script src="../js/script.js" defer></script>
-    <script src = "../js/script-login-cadastro.js"> </script>
-    
-    
+    <script src="../js/script-login-cadastro.js" defer></script>
   </body>
 </html>
