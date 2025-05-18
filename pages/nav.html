@@ -1,0 +1,46 @@
+<div class="navbar">
+    <!-- DIV da logo e a navegação das barras (nav) -->
+  
+    <div class="logo">
+        <img onclick="navegacaoLogo()" src="../imgs/images_paeeja/logo-paeeja-sombreado.png" alt="Logo imagem" />
+      
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li onclick="navegacaoCursos()" class="cursos">Cursos</li>
+        <li onclick="navegacaoSobre()" class="sobrenos">Sobre nós</li>
+        <li onclick="navegacaoFale()" class="falecos">Fale Conosco</li>
+      </ul>
+    </nav>
+
+    <!-- Div da entrada de login -->
+    <div class="entrada-links">
+      <a href="../pages/login.html" id="botaoEntrarNav"> Entrar</a>
+      <a
+        href="../pages/register.html"
+        class="registrar-link"
+        id="botaoCadastrarNav"
+      >
+        Cadastrar</a
+      >
+      <p hidden id="nomeUsuario" class="nome-usuario-logado"></p>
+      <img
+        hidden
+        src="../icons-svg/icon2-userprofile.svg"
+        alt="icone do usuario"
+        id="iconUsuario"
+        class="icon-usuario"
+      />
+      <a
+        href="section-login.html"
+        id="botaoSair"
+        class="registrar-link"
+        onclick="sairLogin(event)"
+        style="display: none"
+        >Sair</a
+      >
+    </div>
+  </div>
+
+
+
