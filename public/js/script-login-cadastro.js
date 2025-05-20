@@ -25,65 +25,79 @@ function loadNavbar() {
       });
 }
 
-//Function para a logo redirecionar o usuario para um local
+// Redireciona para o topo da página inicial
 function navegacaoLogo() {
-    //Pegando a tela atual do usuario
-    if (window.location.pathname === "/pages/home.html") {
-        window.location = '#section-home'
-    }else if (window.location.pathname === "/pages/cursos.html") {
-        window.location = '/pages/home.html#section-home'
-    }
+  const path = window.location.pathname;
+
+  if (path === "/") {
+    window.location = '#section-home';
+  } else if (path === "/cursos") {
+    window.location = '/#section-home';
+  }
 }
-//Function para a logo redirecionar o usuario para um local
-function navegacaoCursos(){
-    
-    if (window.location.pathname === "/pages/home.html" && localStorage.getItem("verificarLogin") === "true") {
-        window.location = '/pages/cursos.html'
-    }else if (window.location.pathname === "/pages/cursos.html") {
-        window.location = '#inicioCursos'
-    }else if (window.location.pathname === "/pages/home.html" && localStorage.getItem("verificarLogin") == null) {
-        window.location = '#sectionCursos'
-    }
+
+// Redireciona para cursos com base no login
+function navegacaoCursos() {
+  const path = window.location.pathname;
+  const logado = localStorage.getItem("usuarioLogado") === "true";
+
+  if (path === "/" && logado) {
+    window.location = '/cursos';
+  } else if (path === "/cursos") {
+    window.location = '#inicioCursos';
+  } else if (path === "/" && !logado) {
+    window.location = '#sectionCursos';
+  }
 }
-//Function para a logo redirecionar o usuario para um local
+
+// Redireciona para a seção "Nosso Time"
 function navegacaoSobre() {
-     //Pegando a tela atual do usuario
-    if (window.location.pathname === "/pages/home.html") {
-        window.location = '#nossoTime'
-    }else if (window.location.pathname === "/pages/cursos.html") {
-        window.location = '/pages/home.html#nossoTime'
-    }
+  const path = window.location.pathname;
+
+  if (path === "/") {
+    window.location = '#nossoTime';
+  } else if (path === "/cursos") {
+    window.location = '/#nossoTime';
+  }
 }
-//Function para a logo redirecionar o usuario para um local
+
+// Redireciona para a seção "Fale Conosco"
 function navegacaoFale() {
-     //Pegando a tela atual do usuario
-    if (window.location.pathname === "/pages/home.html") {
-        window.location = '#faleConosco'
-    }else if (window.location.pathname === "/pages/cursos.html") {
-        window.location = '/pages/home.html#nossoTime'
-    }
+  const path = window.location.pathname;
+
+  if (path === "/") {
+    window.location = '#faleConosco';
+  } else if (path === "/cursos") {
+    window.location = '/#faleConosco'; // Corrigido
+  }
 }
 
 
 // Função para verificar o estado de login
-function verificarLogin() {
-  if(localStorage.getItem("nomeCadastrado") != null){
-      document.getElementById("nomeUsuario").textContent = localStorage.getItem("nomeCadastrado");
-  }
+async function verificarLogin() {
+  try {
+    const resposta = await fetch("/sessao");
+    const dados = await resposta.json();
+    const logado = localStorage.getItem("usuarioLogado") === "true";
 
-  if (localStorage.getItem("verificarLogin") === "true") {
+    if (dados.logado || logado) {
+      document.getElementById("nomeUsuario").textContent = dados.usuario.nome;
       document.getElementById("botaoEntrarNav").style.display = "none";
       document.getElementById("botaoCadastrarNav").style.display = "none";
-      
-      document.getElementById("botaoSair").style.display = "inline"; // Deixa o botão de Logout visível
-      nomeUsuario.hidden = false; // Deixa nome do usuário visível
-      iconUsuario.hidden = false; // Deixa ícone do usuário visível
-  } else {
-      document.getElementById("botaoSair").style.display = "none"; 
-      nomeUsuario.hidden = true; 
+
+      document.getElementById("botaoSair").style.display = "inline";
+      nomeUsuario.hidden = false;
+      iconUsuario.hidden = false;
+    } else {
+      document.getElementById("botaoSair").style.display = "none";
+      nomeUsuario.hidden = true;
       iconUsuario.hidden = true;
+    }
+  } catch (erro) {
+    console.error("Erro ao verificar login:", erro);
   }
 }
+
 
 // Função relacionada à tela de Cadastro
 function cadastrarUsuario(event) {
@@ -93,11 +107,15 @@ function cadastrarUsuario(event) {
   const senha = document.getElementById("senha").value;
   const confirmarSenha = document.getElementById('confirmarSenha').value;
 
-  localStorage.setItem("nomeCadastrado", nome);
-  localStorage.setItem("emailCadastrado", email);
   if (senha === confirmarSenha) {
-      localStorage.setItem("senhaCadastrado", senha);
-      window.location = "../pages/login.html";
+    fetch('/cadastro', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ nome, email, senha})
+    });
+    window.location.href = "/login";
   } else {
       document.getElementById('errormsg2').hidden = false;
       const limpa = document.getElementById("confirmarSenha");
@@ -107,33 +125,44 @@ function cadastrarUsuario(event) {
   }
 }
 
-// Função relacionada à tela de Login
-function loginUsuario(event) {
-  event.preventDefault();
+async function loginUsuario(event) {
+  event.preventDefault()
+
   const email = document.getElementById("email-login").value;
   const senha = document.getElementById("senha-login").value;
 
-  const storedEmail = localStorage.getItem("emailCadastrado");
-  const storedSenha = localStorage.getItem("senhaCadastrado");
-
   const errormsg = document.getElementById("errormsg");
 
-  if (email === storedEmail && senha === storedSenha) {
-      localStorage.setItem("verificarLogin", "true");
-      window.location = "../pages/home.html";
-  } else {
+  try {
+    const response = await fetch("/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, senha })
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.sucesso) {
+      localStorage.setItem("usuarioLogado", "true");
+      window.location.href = result.redirecionar;
+    } else {
+      // Mostra mensagem de erro se login falhar (ex: 401)
       errormsg.hidden = false;
       const limpa = document.getElementById('senha-login');
       limpa.value = '';
       limpa.focus();
+    }
+  } catch (error) {
+    console.log(`ERRO: ${error}`);
   }
 }
+
 
 // Função para o botão de Sair (Logout)
 function sairLogin(event) {
   event.preventDefault();
-  localStorage.removeItem("verificarLogin");
-  window.location.reload(); // Recarrega a página
+  localStorage.removeItem("usuarioLogado");
+  window.location.href = '/logout'
 }
 
 // Função responsável pelo funcionamento do botão de revelar a senha do Login

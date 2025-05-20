@@ -1,6 +1,6 @@
 const path = require('path');
 
-//const controller = require('../controllers/controller');
+const controller = require('../controllers/controllers');
 
 module.exports = (app) => {
   app.get('/', (req, res) => {
@@ -27,6 +27,14 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'register.html'));
   });
 
+  app.get("/sessao", controller.verificarSessao);
 
+  app.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/');
+  });
+
+  app.post('/cadastro', controller.criarUsuario);
+  app.post('/login', controller.login);
 
 };
