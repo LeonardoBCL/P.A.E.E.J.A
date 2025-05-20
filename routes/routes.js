@@ -6,4 +6,27 @@ module.exports = (app) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'home.html'));
   });
+
+  app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'home.html'));
+  });
+  
+  app.get('/cursos', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'cursos.html'));
+  });
+
+  app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'login.html'));
+  });
+
+  app.get('/PaginaPerfil', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'PaginaPerfil.html'));
+  });
+
+  app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'register.html'));
+  });
+
+
+
 };
