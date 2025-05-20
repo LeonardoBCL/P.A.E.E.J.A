@@ -1,0 +1,311 @@
+/* Reset básico para margens, paddings e box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos globais do body: fonte, fundo e cor do texto */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  overflow-x: hidden; /* impede rolagem lateral */
+  overflow-y: auto;   /* rola só quando necessário */
+  height: auto;       /* deixa o body crescer conforme o conteúdo */
+  min-height: 100vh;  /* garante que cubra pelo menos a altura da tela */
+}
+
+
+
+
+/* Espaço reservado para navbar externa */
+#navbar-placeholder {
+  height: 70px;
+}
+
+/* Seção info-curso: título, texto e desempenho em verde */
+.info-curso h1,
+.info-curso p,
+.desempenho strong {
+  color: #319F43;
+}
+
+/* Container principal: grid com 2 colunas e múltiplas linhas para layout */
+.curso-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 25vh auto auto 10vh;
+  grid-template-areas:
+    "voltar voltar"
+    "info preview"
+    "conteudo preview"
+    "descricao preview"
+    "footer footer";
+  gap: 2rem;
+  padding: 2rem 4rem;
+  align-items: start;
+}
+
+/* Botão voltar: tamanho e cor da seta */
+.voltar {
+  grid-area: voltar;
+  display: flex;
+  align-items: center;
+}
+.seta-voltar {
+  font-size: 2rem;
+  color: #219653;
+  text-decoration: none;
+}
+
+/* Seção de informações do curso: organização e espaçamento */
+.info-curso {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Título principal: fonte, tamanho e largura máxima */
+.info-curso h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+  max-width: 235px;
+  height: 68px;
+}
+
+/* Texto com tempo e módulos */
+.info-curso p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
+/* Texto do desempenho no curso */
+.desempenho strong {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 21.59px;
+}
+
+/* Tooltip de ajuda com texto oculto que aparece ao passar mouse */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+.tooltip-text {
+  visibility: hidden;
+  background-color: #444;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px;
+  position: absolute;
+  top: -5px;
+  left: 110%;
+  width: 160px;
+  z-index: 1;
+}
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
+/* Ícone "?" verde para ajuda */
+.icone-ajuda {
+  width: 26px;
+  height: 26px;
+  font-size: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #219653;
+  color: white;
+}
+
+/* Barra de progresso: fundo cinza com barra verde preenchida */
+.barra {
+  background-color: #eee;
+  width: 259px; /* altera a largura da barra */
+  height: 22px; /* altera a altura da barra */
+  border-radius: 43.6px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Parte verde que cresce conforme o progresso (width inline) */
+.barra span {
+  display: block;
+  height: 100%;
+  background-color: #319F43;
+  border-radius: 43.6px 0 0 43.6px;
+  position: relative;
+  color: white;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Área do vídeo e botão iniciar, alinhamento e espaçamento */
+.preview-curso {
+  grid-area: preview;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Caixa do vídeo com proporção e fundo estilizado */
+.video-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(to right, #1b1f3b, #0f1424);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.btn-iniciar {
+  width: 100%;            /* largura total do container pai, igual ao vídeo */
+  max-width: 900px;       /* opcional: limitar largura máxima se quiser */
+  height: 42px;
+  border-radius: 10px;
+  background-color: #319F43;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 42px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+  margin-top: 0.5rem;     /* um espaçamento pequeno acima */
+}
+
+.btn-iniciar:hover {
+  background-color: #287c36;
+}
+
+/* Conteúdo dos módulos do curso com fundo verde e espaçamento */
+.modulo {
+  background-color: #219653;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modulo-info {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.icone {
+  font-size: 1.2rem;
+}
+.aulas {
+  font-size: 0.95rem;
+}
+
+/* Descrição do curso */
+/* Título "Conteúdo do curso" */
+.conteudo-curso h2 {
+  color: #219653;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 24.76px;
+  line-height: 1; /* 100% */
+  letter-spacing: 0;
+  width: 241px;  /* conforme layout */
+  height: 37px;  /* conforme layout */
+  margin-top: 40px; /* ajuste para aproximar do topo (opcional) */
+  margin-left: 0;  /* deixa alinhado à esquerda no grid */
+}
+
+/* Bloco do módulo "Português" */
+.modulo {
+  background-color: #219653;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 498px;   /* conforme layout */
+  height: 52px;   /* conforme layout */
+  margin-top: 20px;  /* ajusta a distância do título */
+  margin-left: 0;    /* deixa alinhado à esquerda no grid */
+}
+
+
+
+.descricao {
+  width: 100%;
+  max-width: 900px;
+  margin: 1rem auto 0 auto;  /* centraliza e adiciona espaçamento superior */
+  grid-area: descricao;      /* se ainda estiver em grid */
+}
+/* Título "O que você aprenderá" */
+.descricao h2 {
+  width: 273px;
+  height: 36px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: #319F43;
+  margin-bottom: 1rem; /* espaçamento padrão */
+}
+/* Parágrafo da descrição */
+.descricao p {
+  width: 450px;
+  
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #319F43;
+}
+
+/* Rodapé com imagem da onda */
+.footer-onda {
+  grid-area: footer;
+  background: url('/imgs/onda-footer.svg') no-repeat center bottom;
+  background-size: cover;
+  height: 100px;
+  margin-top: 2rem;
+}
+
+
+
+/* Responsividade para telas pequenas: grid vira coluna única */
+@media (max-width: 768px) {
+  .curso-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "voltar"
+      "info"
+      "preview"
+      "conteudo"
+      "descricao"
+      "footer";
+    padding: 1.5rem;
+  }
+  .video-box {
+    width: 100%;
+  }
+}
+
