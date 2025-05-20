@@ -22,7 +22,6 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: #BAD8FF;
 }
 
 header {
@@ -39,7 +38,7 @@ header {
   align-items: center;
   background-color: #333;
   padding: 15px 20px;
-  background-color: #ffffff;
+  background-color: #6CC87A;
   border-radius: 15px 15px;
   position: fixed;
   top: 0;
@@ -149,6 +148,11 @@ O elemento first-child pega primeira tag referenciada dentro de uma div. */
 }
 
 /* --------------------------- Styles Section 1 --------------------------- */
+/* Mudança das cores do Home */
+.cor-sec-1{
+  background:#BAD8FF;
+}
+
 
 section.slider {
   margin: 0 auto;
@@ -263,7 +267,7 @@ section.slider {
   position: absolute;
   top: 50%;
   height: 2px; /* Altura da linha contínua */
-  background-color: rgb(255, 255, 255); /* Cor da linha contínua */
+  background-color: #63B231; /* Cor da linha contínua */
   transform: translateY(
     -50%
   ); /* Centraliza verticalmente em relação ao texto */
@@ -280,6 +284,11 @@ section.slider {
 }
 
 /* Parte dos ( NÚMEROS - PASSO A PASSO ) da SECTION2*/
+
+/* Mudança das cores do Home */
+.cor-sec-2{
+  background: #ffffff
+}
 
 /* Estilo para o contêiner redondo que envolve cada número */
 .numero-redondo {
@@ -387,6 +396,12 @@ section.slider {
 }
 
 /*Section 3 Estilização */
+
+/* Mudança Cor do Home */
+.cor-sec-3{
+  background:  #BFAFFF;
+}
+
 /* Estilo para a seção "Nossos cursos" */
 .titulos-nossos-cursos {
   text-align: center; /* Alinha o conteúdo ao centro */
@@ -518,6 +533,11 @@ section.slider {
 
 /*Section 4 Estilização */
 /* Estilo para a seção "Nosso Time" */
+/* Mudança das cores do Home */
+.cor-sec-4{
+  background: #FFF4E2;
+}
+
 
 /* Alinhamento do título centralizado e espaçamento */
 .titulos-nosso-time {
@@ -695,6 +715,10 @@ section.slider {
 /* FIM DA SESSÃO 4 */
 
 /* INICIO SECTION 5 - DEPOIMENTOS */
+/* Mudança das cores do Home */
+.cor-sec-5{
+  background: #FFFFFF;
+}
 
 .depoimentos {
   width: 100%;
@@ -720,7 +744,7 @@ section.slider {
 
 .depoimentos i {
   font-size: 90px;
-  color: #ccc;
+  color: #031836;
   position: relative;
   right: 300px;
 }
@@ -729,7 +753,7 @@ section.slider {
   font-weight: 300;
   margin-bottom: 40px;
   text-align: center;
-  color: #fff;
+  color: #031836;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -739,7 +763,7 @@ section.slider {
   align-items: center;
   gap: 20px;
   text-align: center;
-  color: #fff;
+  color: #031836;
 }
 
 .slide .person img {
@@ -769,7 +793,7 @@ footer {
 }
 
 #location {
-  background-color: #fff;
+  background-color: #D8CEFF;
   width: 30vw;
   min-height: 100%;
   padding: 100px 46px 40px;
@@ -779,7 +803,7 @@ footer {
 }
 
 #location h2 {
-  color: #134793;
+  color: #ffffff;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4%;
@@ -818,10 +842,10 @@ footer {
 }
 
 #contact {
-  background-color: #bad8ff;
+  background-color: #BFAFFF;
   width: 70vw;
   text-align: center;
-  color: #031836;
+  color: #ffffff;
   text-transform: uppercase;
   font-size: 3rem;
   letter-spacing: 4%;
@@ -880,7 +904,7 @@ form textarea::placeholder {
 form button {
   color: #fff;
   border: none;
-  color: #031836;
+  color: #8579B5;
   text-transform: uppercase;
   padding: 16px 100px;
   width: 350px;
@@ -904,7 +928,7 @@ ESTILOS DA TELA DE CURSOS
 */
 
 .todos-cursos-digitais {
-  color: white;
+  color: #319F43;
   padding: 20px 40px;
   margin-top: 200px;
   font-family: monospace;
@@ -916,7 +940,7 @@ ESTILOS DA TELA DE CURSOS
   width: 42;
   height: 30.55;
   margin-left: 42px;
-  color: white;
+  color: #319F43;
   text-decoration: none;
 }
 
@@ -957,12 +981,12 @@ ESTILOS DA TELA DE CURSOS
 }
 
 .titulo-curso {
-  color: white;
+  color: #319F43;
   padding: 20px 40px;
   font-family: "Montserrat", sans-serif;
 }
 .titulo-curso-geografia{
-  color: white;
+  color: #319F43;
   padding: 20px 40px;
   font-family: "Montserrat", sans-serif;
   margin-top: -100px;
@@ -984,7 +1008,7 @@ ESTILOS DA TELA DE CURSOS
 
 /* Cards */
 .cartao-curso {
-  background-color: #09244B; /* Fundo do card */
+  background-color: #319F43; /* Fundo do card */
   padding: 20px 40px;
   border-radius: 10px;
   width: 340px;
@@ -1001,7 +1025,7 @@ ESTILOS DA TELA DE CURSOS
 }
 
 .icone {
-  background-color: #112e57; /* Cor de fundo do ícone */
+  background-color: #76C2FF; /* Cor de fundo do ícone */
   width: 110px; /* Largura do quadrado */
   height: 90px; /* Altura do quadrado */
   display: flex;
@@ -1025,7 +1049,7 @@ ESTILOS DA TELA DE CURSOS
   font-size: 15px;
   font-family: monospace;
   margin-bottom: 5px;
-  color: #A3B9CC; /* Cor do texto do título */
+  color: #E9E7E3; /* Cor do texto do título */
 }
 
 .cartao-subtitulo {
@@ -1038,5 +1062,5 @@ ESTILOS DA TELA DE CURSOS
 .cartao-modulo {
   font-family: monospace;
   font-size: 13px;
-  color: #0558a1; /* Cor do texto do módulo */
+  color: #F9D00F; /* Cor do texto do módulo */
 }
