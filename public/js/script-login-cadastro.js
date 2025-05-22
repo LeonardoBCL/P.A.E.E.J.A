@@ -53,11 +53,11 @@ function navegacaoCursos() {
 // Redireciona para a Loja
 function navegacaoLoja() {
   const path = window.location.pathname;
-
-  if (!localStorage.getItem("usuarioLogado")) {
-    window.location = '/login';
-  } else if (path === "/cursos") {
+  const logado = localStorage.getItem("usuarioLogado") === "true";
+  if (logado) {
     window.location = '/loja';
+  } else{
+    window.location = '/login';
   }
 }
 
