@@ -50,14 +50,14 @@ function navegacaoCursos() {
   }
 }
 
-// Redireciona para a seção "Nosso Time"
-function navegacaoSobre() {
+// Redireciona para a Loja
+function navegacaoLoja() {
   const path = window.location.pathname;
 
-  if (path === "/") {
-    window.location = '#nossoTime';
+  if (!localStorage.getItem("usuarioLogado")) {
+    window.location = '/login';
   } else if (path === "/cursos") {
-    window.location = '/#nossoTime';
+    window.location = '/loja';
   }
 }
 

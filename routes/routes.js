@@ -22,6 +22,10 @@ module.exports = (app) => {
   app.get('/PaginaPerfil', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'PaginaPerfil.html'));
   });
+  
+  app.get('/loja', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'loja.html'));
+  });
 
   app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'register.html'));
