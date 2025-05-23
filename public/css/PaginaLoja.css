@@ -12,34 +12,14 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'Arial', sans-serif;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   overflow: hidden;
-}
-
-/* Espaço reservado para NAV (opcional, se não usar .navbar fixa) */
-.navbar-placeholder {
-  height: 60px;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-}
-
-/* Navbar fixa */
-.navbar, #navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background-color: #007bff;
-  color: #fff;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
 }
 
 /* Menu superior */
 .top-menu {
-  margin-top: 90px; /* empurrado mais para baixo */
+  position: relative;  /* essa linha aqui */
+  margin-top: 130px; /* empurrado mais para baixo */
   height: 48px;
   display: flex;
   justify-content: center;
@@ -55,6 +35,7 @@ html, body {
   color: #48A14D;
   font-weight: bold;
   position: relative;
+  font-size: 27px;
 }
 
 .top-menu a.active::after {
@@ -77,24 +58,77 @@ html, body {
 /* Sidebar lateral */
 .sidebar {
   width: 280px;
+  padding-top: 80px;
   background-color: #d9d9d9;
   padding: 30px;
   box-sizing: border-box;
   min-height: calc(100vh - 138px); /* altura fluida */
 }
 
-.sidebar input {
+.sidebar input[type="text"] {
   width: 100%;
   padding: 10px;
   font-size: 14px;
   margin-bottom: 20px;
 }
 
+/* Título da sidebar */
+.sidebar-titulo,
 .sidebar h3 {
-  margin: 0;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
+  margin: 22px 0 20px 0;
 }
+
+/* Estilo das opções de filtro */
+.filtro-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filtro-opcoes label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18.59px;
+  color: #319F43;
+
+}
+
+.filtro-opcoes input[type="checkbox"] {
+    appearance: none; /* Remove estilo padrão */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  width:20px;
+  height:20px;
+  margin: 0;
+  border:none;
+  background-color: white; /* opcional para garantir fundo branco */
+  position: relative;
+}
+
+/* Quando marcado, fundo continua branco, mas aparece o checkmark verde */
+.filtro-opcoes input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #319F43;  /* checkmark verde */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  border-width: 0 3px 3px 0; /* aqui você regula a espessura */
+
+}
+
+
+
+
+
+
 
 /* Conteúdo principal */
 .content {
@@ -102,7 +136,6 @@ html, body {
   padding: 30px 20px;
   box-sizing: border-box;
   width: 80%;
-  
   margin-left: 50px;
   min-height: calc(100vh - 138px); /* altura fluida */
 }
@@ -128,4 +161,30 @@ h2 {
   width: 100px;
   height: 100px;
   background-color: #0A2349;
+}
+
+.voltar-fixo {
+  position:relative;
+  left: 20px;
+  margin-top: -130px; /* mesmo nível do menu */
+  font-size: 24px;
+  font-weight: 700;
+  color: #48A14D;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.seta-img {
+  width: 27px;
+  height: auto;
+}
+
+.voltar-fixo span {
+  font-size: 30px;   /* tamanho da fonte que quiser */
+  font-weight: 700;  /* negrito */
+  color: #48A14D;    /* mesma cor que você está usando */
+  line-height: 1;    /* evita espaçamento estranho */
 }
