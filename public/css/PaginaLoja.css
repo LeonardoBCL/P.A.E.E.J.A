@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Garantir que a altura ocupe 100% da tela */
@@ -11,7 +11,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: rgb(255, 255, 255);
   overflow: hidden;
 }
@@ -19,15 +19,22 @@ html, body {
 /* Menu superior */
 .top-menu {
   position: relative;  /* essa linha aqui */
-  margin-top: 130px; /* empurrado mais para baixo */
+  margin-top: 150px; /* empurrado mais para baixo */
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid #48A14D;
   background-color: white;
   gap: 30px;
 }
+
+.top-menu .active {
+  color: #48A14D;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+
 
 .top-menu a {
   margin: 0 15px;
@@ -38,15 +45,7 @@ html, body {
   font-size: 27px;
 }
 
-.top-menu a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #48A14D;
-}
+
 
 /* Layout principal */
 .page-wrapper {
@@ -57,9 +56,10 @@ html, body {
 
 /* Sidebar lateral */
 .sidebar {
+  margin-top: 30px;
   width: 280px;
   padding-top: 80px;
-  background-color: #d9d9d9;
+  background-color: #E4FFE8;
   padding: 30px;
   box-sizing: border-box;
   min-height: calc(100vh - 138px); /* altura fluida */
@@ -78,6 +78,9 @@ html, body {
   font-size: 20px;
   font-weight: bold;
   margin: 22px 0 20px 0;
+  padding-bottom: 5px; /* espaço entre texto e linha */
+  border-bottom: 2px solid #319F43; /* linha verde */
+  
 }
 
 /* Estilo das opções de filtro */
@@ -124,15 +127,10 @@ html, body {
 
 }
 
-
-
-
-
-
-
 /* Conteúdo principal */
 .content {
-  background-color: #d9d9d9;
+  margin-top: 30px;
+  background-color: #E4FFE8;
   padding: 30px 20px;
   box-sizing: border-box;
   width: 80%;
@@ -145,7 +143,10 @@ html, body {
 h2 {
   font-size: 20px;
   font-weight: bold;
+  color: #319F43;
   margin: 20px 0 10px 0;
+  padding-bottom: 5px; /* espaço entre texto e linha */
+  border-bottom: 2px solid #319F43; /* linha verde */
 }
 
 /* Grade de itens */
