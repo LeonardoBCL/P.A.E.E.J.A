@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo de Língua Portuguesa - PAEEJA</title>
+  <link rel="stylesheet" href="conteudo-curso.css"> <!-- Link do seu CSS -->
+  <link rel="stylesheet" href="/css/navbar.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo" id="logo-paeeja">PAEEJA</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#sobre">Sobre nós</a></li>
+        <li><a href="#contato">Fale Conosco</a></li>
+      </ul>
+    </nav>
+    <div class="user-area">
+      <img src="perfil.jpg" alt="Foto de perfil do usuário" class="user-photo">
+      <button class="btn-sair" id="btn-sair">Sair</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <aside class="sidebar">
+      <a href="#" class="btn-voltar">← Voltar</a>
+
+      <section class="modulo-info">
+        <h2 class="modulo-titulo">Módulos</h2>
+        <div class="progresso-modulo">
+          <label for="progresso">Desempenho no Módulo: <span class="tooltip" title="Seu progresso no conteúdo">❔</span></label>
+          <progress id="progresso" value="50" max="100">50%</progress>
+        </div>
+
+        <nav class="modulo-navegacao">
+          <details open class="modulo-item">
+            <summary>Vogais e Consoantes</summary>
+            <ul class="modulo-subitens">
+              <li class="subitem ativo">25 Minutos - Vogais e Consoantes</li>
+              <li class="subitem">Exercícios - Exercício 1</li>
+            </ul>
+          </details>
+        </nav>
+      </section>
+    </aside>
+
+    <section class="conteudo-principal">
+      <header class="cabecalho-modulo">
+        <h1 class="disciplina">Língua Portuguesa</h1>
+        <h2 class="titulo-modulo">Título do Módulo</h2>
+      </header>
+
+      <div class="video-container">
+        <iframe 
+          class="video-player"
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" 
+          title="Vídeo do módulo"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="navegacao-paginas">
+        <button class="btn-navegacao" id="btn-anterior">Anterior</button>
+        <button class="btn-navegacao" id="btn-proximo">Próximo</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2025 PAEEJA - Todos os direitos reservados.</p>
+  </footer>
+  <script src="/js/script-login-cadastro.js"></script>
+</body>
+</html>
