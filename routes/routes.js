@@ -45,4 +45,7 @@ module.exports = (app) => {
   app.post('/cadastro', controller.criarUsuario);
   app.post('/login', controller.login);
 
+  app.get('/itens', controller.getItensLoja);
+  app.post('/loja/comprar', controller.comprarItem);
+
 };
