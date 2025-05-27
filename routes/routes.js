@@ -35,6 +35,15 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'materiaModulo.html'));
   });
 
+   app.get('/conteudocurso', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'conteudo-curso.html'));
+  });
+
+
+     app.get('/faq', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'faq.html'));
+  });
+
   app.get("/sessao", controller.verificarSessao);
 
   app.get('/logout', (req, res) => {
@@ -44,5 +53,8 @@ module.exports = (app) => {
 
   app.post('/cadastro', controller.criarUsuario);
   app.post('/login', controller.login);
+
+  app.get('/itens', controller.getItensLoja);
+  app.post('/loja/comprar', controller.comprarItem);
 
 };

@@ -1,0 +1,210 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Garantir que a altura ocupe 100% da tela */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+/* Menu superior */
+.top-menu {
+  position: relative;  /* essa linha aqui */
+  margin-top: 150px; /* empurrado mais para baixo */
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  gap: 30px;
+}
+
+.top-menu .active {
+  color: #48A14D;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+
+
+.top-menu a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #48A14D;
+  font-weight: bold;
+  position: relative;
+  font-size: 27px;
+}
+
+
+
+/* Layout principal */
+.page-wrapper {
+  display: flex;
+  background-color: #fff;
+  min-height: calc(100vh - 138px); /* altura dinâmica total */
+}
+
+/* Sidebar lateral */
+.sidebar {
+  margin-top: 30px;
+  width: 280px;
+  padding-top: 80px;
+  background-color: #E4FFE8;
+  padding: 30px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 138px); /* altura fluida */
+}
+
+.sidebar input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Título da sidebar */
+.sidebar-titulo,
+.sidebar h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 22px 0 20px 0;
+  padding-bottom: 5px; /* espaço entre texto e linha */
+  border-bottom: 2px solid #319F43; /* linha verde */
+  
+}
+
+/* Estilo das opções de filtro */
+.filtro-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filtro-opcoes label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18.59px;
+  color: #319F43;
+
+}
+
+.filtro-opcoes input[type="checkbox"] {
+    appearance: none; /* Remove estilo padrão */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  width:20px;
+  height:20px;
+  margin: 0;
+  border:none;
+  background-color: white; /* opcional para garantir fundo branco */
+  position: relative;
+}
+
+/* Quando marcado, fundo continua branco, mas aparece o checkmark verde */
+.filtro-opcoes input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #319F43;  /* checkmark verde */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  border-width: 0 3px 3px 0; /* aqui você regula a espessura */
+
+}
+
+/* Conteúdo principal */
+.content {
+  margin-top: 30px;
+  background-color: #E4FFE8;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  width: 80%;
+  margin-left: 50px;
+  min-height: calc(100vh - 138px); /* altura fluida */
+}
+
+/* Títulos de seção */
+.section-title,
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #319F43;
+  margin: 20px 0 10px 0;
+  padding-bottom: 5px; /* espaço entre texto e linha */
+  border-bottom: 2px solid #319F43; /* linha verde */
+}
+
+/* Grade de itens */
+.grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* Item da grade */
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: #0A2349;
+}
+
+.voltar-fixo {
+  position:relative;
+  left: 20px;
+  margin-top: -130px; /* mesmo nível do menu */
+  font-size: 24px;
+  font-weight: 700;
+  color: #48A14D;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.seta-img {
+  width: 27px;
+  height: auto;
+}
+
+.voltar-fixo span {
+  font-size: 30px;   /* tamanho da fonte que quiser */
+  font-weight: 700;  /* negrito */
+  color: #48A14D;    /* mesma cor que você está usando */
+  line-height: 1;    /* evita espaçamento estranho */
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+.modal-content button {
+  margin: 0 10px;
+}

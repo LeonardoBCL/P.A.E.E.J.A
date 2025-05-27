@@ -1,0 +1,30 @@
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .faq {
+      max-width: 800px;
+      margin: 50px auto;
+      padding-top: 120px;
+    }
+
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-question {
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .faq-answer {
+      margin-left: 15px;
+    }
