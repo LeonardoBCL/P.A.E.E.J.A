@@ -16,7 +16,6 @@ sudo chmod 777 /var/run/mysqld
 
 # Inicia o MySQL
 sudo service mysql start
-
 # Altera o usuário root para usar mysql_native_password
 sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';"
 sudo mysql -u root -e "FLUSH PRIVILEGES;"
