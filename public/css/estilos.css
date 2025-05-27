@@ -28,6 +28,7 @@ header {
   position: relative;
 }
 
+<<<<<<< HEAD
 /* Styles da barra de navegação. */
 .navbar {
   margin-top: 30px;
@@ -148,6 +149,8 @@ O elemento first-child pega primeira tag referenciada dentro de uma div. */
   width: 35px; /* Define o tamanho final da imagem na página */
   height: auto; /* Mantém a proporção */
 }
+=======
+>>>>>>> origin/frontend-igor
 
 /* --------------------------- Styles Section 1 --------------------------- */
 /* Mudança das cores do Home */

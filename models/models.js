@@ -1,30 +1,75 @@
 const db = require('../database');
 
-function criarUsuario(nome, email, senha, callback) {
-  const query = 'INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)';
-  db.query(query, [nome, email, senha], callback);
+async function criarUsuario(nome, email, senha) {
+  const [result] = await db.query('INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)', [nome, email, senha]);
+  return result.insertId;
 }
 
-function buscarPorEmailSenha(email, senha, callback) {
-  const sql = 'SELECT * FROM usuarios WHERE email = ? AND senha = ?';
-  db.query(sql, [email, senha], (err, results) => {
-    if (err) return callback(err, null);
-    if (results.length === 0) return callback(null, null);
-    callback(null, results[0]); 
-  });
+async function buscarPorEmailSenha(email, senha) {
+  const [results] = await db.query('SELECT * FROM usuarios WHERE email = ? AND senha = ?', [email, senha]);
+  if (results.length === 0) return null;
+  return results[0];
 }
 
-function buscarNomeUsuario(email, callback) {
-  const sql = 'SELECT nome FROM usuarios WHERE email = ?';
-  db.query(sql, [email], (err, results) => {
-    if (err) return callback(err, null);
-    if (results.length === 0) return callback(null, null);
-    callback(null, results[0].nome); // Retorna só o nome
-  });
+async function buscarNomeUsuario(email) {
+  const [results] = await db.query('SELECT nome FROM usuarios WHERE email = ?', [email]);
+  if (results.length === 0) return null;
+  return results[0].nome;
+}
+
+async function buscarCapas() {
+  const [capas] = await db.query("SELECT id, nome, preco FROM capas");
+  return capas;
+}
+
+async function buscarTemas() {
+  const [temas] = await db.query("SELECT id, nome, preco FROM temas");
+  return temas;
+}
+
+async function buscarPrecoItem(tipo, itemId) {
+  const [rows] = await db.query(
+    tipo === 'capa'
+      ? "SELECT preco FROM capas WHERE id = ?"
+      : "SELECT preco FROM temas WHERE id = ?",
+    [itemId]
+  );
+  return rows[0];
+}
+
+async function buscarMoedas(usuarioId) {
+  const [[usuario]] = await db.query("SELECT moedas FROM usuarios WHERE id = ?", [usuarioId]);
+  return usuario;
+}
+
+async function jaComprou(usuarioId, tipo, itemId) {
+  const [rows] = await db.query(
+    "SELECT * FROM personalizacoes_compradas WHERE usuario_id = ? AND tipo = ? AND item_id = ?",
+    [usuarioId, tipo, itemId]
+  );
+  return rows.length > 0;
+}
+
+async function descontarMoedas(usuarioId, valor) {
+  await db.query("UPDATE usuarios SET moedas = moedas - ? WHERE id = ?", [valor, usuarioId]);
+}
+
+async function registrarCompra(usuarioId, tipo, itemId) {
+  await db.query(
+    "INSERT INTO personalizacoes_compradas (usuario_id, tipo, item_id) VALUES (?, ?, ?)",
+    [usuarioId, tipo, itemId]
+  );
 }
 
 module.exports = {
-    criarUsuario,
-    buscarPorEmailSenha,
-    buscarNomeUsuario
+  criarUsuario,
+  buscarPorEmailSenha,
+  buscarNomeUsuario,
+  buscarCapas,
+  buscarTemas,
+  buscarPrecoItem,
+  buscarMoedas,
+  jaComprou,
+  descontarMoedas,
+  registrarCompra
 };
