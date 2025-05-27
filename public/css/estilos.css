@@ -28,7 +28,7 @@ header {
   position: relative;
 }
 
-<<<<<<< HEAD
+HEAD
 /* Styles da barra de navegação. */
 .navbar {
   margin-top: 30px;
@@ -103,6 +103,7 @@ O elemento first-child pega primeira tag referenciada dentro de uma div. */
   font-weight: bold;
   
   
+  
 }
 
 /* Styles button - (Cadastrar)*/
@@ -149,8 +150,7 @@ O elemento first-child pega primeira tag referenciada dentro de uma div. */
   width: 35px; /* Define o tamanho final da imagem na página */
   height: auto; /* Mantém a proporção */
 }
-=======
->>>>>>> origin/frontend-igor
+
 
 /* --------------------------- Styles Section 1 --------------------------- */
 /* Mudança das cores do Home */
@@ -291,8 +291,8 @@ section.slider {
   width: 75%; /* Largura da linha depois do texto */
 }
 
-.onda-branca {
-  height: 230px; /* Reduza a altura */
+.onda-azul {
+  height: 360px; /* Reduza a altura */
   margin-bottom: -1px; /* Compensa espaçamento */
 }
 
@@ -407,14 +407,16 @@ section.slider {
 .section2-botao-aluno:hover {
   background-color: #BFAFFF; /* Cor de fundo ao passar o mouse */
 }
-
+.onda-roxa{
+height: 350px; /* Reduza a altura */
+margin-bottom: -1px; /* Compensa espaçamento */
+}
 /*Section 3 Estilização */
 
 /* Mudança Cor do Home */
 .cor-sec-3{
   background:  #BFAFFF;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+
 }
 
 /* Estilo para a seção "Nossos cursos" */
