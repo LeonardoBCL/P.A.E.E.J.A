@@ -28,130 +28,6 @@ header {
   position: relative;
 }
 
-HEAD
-/* Styles da barra de navegação. */
-.navbar {
-  margin-top: 30px;
-  margin-left: 160px;
-  margin-right: 160px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 15px 20px;
-  background-color: #6CC87A;
-  border-radius: 15px 15px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  font-family: "Montserrat", sans-serif;
-}
-
-/* Posicionamento - (Cursos, suporte, etc ). */
-.nav-menu ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  justify-content: center;
-  margin-left: 37px;
-}
-/* Styles ( Contatos, FaleConosco, Cursos ). */
-.nav-menu li {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 1.06rem;
-  text-decoration: none;
-  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* Hover ( Contatos, FaleConosco, Cursos ). */
-.nav-menu li:hover {
-  color: #0a861c;
-  transform: scale(1.025);
-   transition: background-color 0.4s ease;
-}
-.nav-menu li {
-  list-style-type: none;
-}
-
-/* Posicionamento (Login, Cadastro) */
-.entrada-links {
-  display: flex;
-  margin-right: 23.55px;
-  align-items: center;
-}
-
-/* Espaçamento nos links de entrada e registro */
-.entrada-links a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 45px;
-  font-weight: 600;
-  font-family: "MontSerrat", sans-serif;
-  padding: 8px 10px;
-}
-
-/* Styles do link (Entrar) - 
-O elemento first-child pega primeira tag referenciada dentro de uma div. */
-.entrada-links a:first-child {
-  color: #fcfcfc;
-  font-weight: bold;
-  
-  
-  
-}
-
-/* Styles button - (Cadastrar)*/
-.registrar-link {
-  border: 15px;
-  border-radius: 15px;
-  background-color: #5186CD;
-  border-width: 5px 0;
-}
-
-/* Hover button - (Cadastrar) */
-.registrar-link:hover {
-  background-color: #0a861c;
-   transition: background-color 0.4s ease;
-}
-
-/* Ajusta o posicionamento do contêiner dos links de entrada e registro 
-.navbar .entrada-links {
-  /*margin-left: 0;  Remove o espaço extra à esquerda do contêiner 
-}
-*/
-
-/* Styles logo */
-.logo img {
-  max-height: 50px;
-  cursor: pointer;
-}
-
-/* Style navegação principal */
-.nav-menu li {
-  margin: 0 20px; /* Espaçamento horizontal entre os itens */
-}
-
-/* Style - username */
-.nome-usuario-logado {
-  color: #5186CD;
-  margin-right: 20px;
-  font-weight: 700;
-}
-
-/* Style - userprofile */
-.icon-usuario {
-  margin-right: 0px;
-  width: 35px; /* Define o tamanho final da imagem na página */
-  height: auto; /* Mantém a proporção */
-}
-
-
 /* --------------------------- Styles Section 1 --------------------------- */
 /* Mudança das cores do Home */
 .cor-sec-1{
@@ -294,6 +170,8 @@ section.slider {
 .onda-azul {
   height: 360px; /* Reduza a altura */
   margin-bottom: -1px; /* Compensa espaçamento */
+  transform: scaleY(-1);
+  
 }
 
 /* Parte dos ( NÚMEROS - PASSO A PASSO ) da SECTION2*/
@@ -548,6 +426,13 @@ margin-bottom: -1px; /* Compensa espaçamento */
 
 .saber-mais:hover {
   background-color: #042552; /* Cor de fundo ao passar o mouse */
+}
+
+
+.onda-roxa2{
+  transform: scaleY(-1);
+  height: 425px; /* Reduza a altura */
+  margin-bottom: -1px; /* Compensa espaçamento */
 }
 
 /*Section 4 Estilização */
