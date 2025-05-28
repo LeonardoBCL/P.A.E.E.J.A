@@ -65,7 +65,7 @@ async function comprarItem(req, res) {
   const { tipo, itemId } = req.body;
 
   if (!req.session.usuario || !req.session.usuario.id) {
-    return res.status(401).json({ message: "Usuário não autenticado." });
+    return res.json({ sucesso: false, message: "Usuário não autenticado." });
   }
 
   const usuarioId = req.session.usuario.id;
@@ -73,26 +73,26 @@ async function comprarItem(req, res) {
   try {
     const item = await usuarioModel.buscarPrecoItem(tipo, itemId);
     if (!item) {
-      return res.status(401).json({ message: "Item não encontrado." });
+      return res.json({ sucesso: false, message: "Item não encontrado." });
     }
 
     const usuario = await usuarioModel.buscarMoedas(usuarioId);
     if (!usuario || usuario.moedas < item.preco) {
-      return res.status(401).json({ message: "Moedas insuficientes." });
+      return res.json({ sucesso: false, message: "Moedas insuficientes." });
     }
 
     const comprado = await usuarioModel.jaComprou(usuarioId, tipo, itemId);
     if (comprado) {
-      return res.status(401).json({ message: "Item já comprado." });
+      return res.json({ sucesso: false, message: "Item já comprado." });
     }
 
     await usuarioModel.descontarMoedas(usuarioId, item.preco);
     await usuarioModel.registrarCompra(usuarioId, tipo, itemId);
 
-    return res.send("Compra realizada com sucesso.");
+    return res.json({ sucesso: true, message: "Compra realizada com sucesso!" });
   } catch (err) {
     console.error("Erro ao realizar compra:", err);
-    return res.status(401).json({ message: "Erro ao realizar compra." });
+    return res.json({ sucesso: false, message: "Erro ao realizar compra." });
   }
 }
 
