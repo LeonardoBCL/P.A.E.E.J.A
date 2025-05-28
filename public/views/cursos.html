@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/estilos.css">
     <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/tutorial-popup.css">
     <link
     rel="shortcut icon"
     href="/imgs/images_paeeja/ico-paeeja.ico"
@@ -36,7 +37,21 @@
         </button>
       </div>
  -->
-      
+    
+    <button id="helpButton">?</button>
+
+    <div id="popup" class="hidden">
+    <div class="popup-content">
+        <button id="skipButton">Pular</button>
+        <img id="popupImage" src="" alt="Imagem do tutorial">
+        <p id="popupText"></p>
+        <div class="popup-nav">
+        <button id="prevButton">&#8592;</button>
+        <button id="nextButton">&#8594;</button>
+        </div>
+        <button id="closeButton" class="hidden">X</button>
+    </div>
+    </div>
 
       <div class="cursos-container">
         <div class="secao-curso-portugues">
@@ -112,22 +127,13 @@
         </div>
     </div>
     
-    
-    
-      
-
     </section>
   </main>
 
-
 </section>
-
-
-
-
-
 
 <script src="/js/script-login-cadastro.js"></script>
 <script src="/js/navbar.js"></script>
+<script src="/js/tutorial-popup.js"></script>
 </body>
 </html>
