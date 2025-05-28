@@ -71,5 +71,5 @@ module.exports = {
   buscarMoedas,
   jaComprou,
   descontarMoedas,
-  registrarCompra
+  registrarCompra,
 };

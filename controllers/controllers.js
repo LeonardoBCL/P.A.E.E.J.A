@@ -96,10 +96,30 @@ async function comprarItem(req, res) {
   }
 }
 
+async function verificarComprado(req, res) {
+  const { tipo, itemId } = req.body;
+
+  if (!req.session.usuario || !req.session.usuario.id) {
+    return res.json({ sucesso: false, comprado: false, message: "Usuário não autenticado." });
+  }
+
+  const usuarioId = req.session.usuario.id;
+
+  try {
+    const comprado = await usuarioModel.jaComprou(usuarioId, tipo, itemId);
+    res.json({ sucesso: true, comprado });
+  } catch (err) {
+    console.error("Erro ao verificar compra:", err);
+    res.json({ sucesso: false, comprado: false, message: "Erro ao verificar compra." });
+  }
+}
+
+
 module.exports = {
   criarUsuario,
   login,
   verificarSessao,
   getItensLoja,
-  comprarItem
+  comprarItem,
+  verificarComprado
 };

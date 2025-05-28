@@ -71,15 +71,16 @@ function navegacaoFale() {
 }
 
 
-// Função para verificar o estado de login
 async function verificarLogin() {
   try {
     const resposta = await fetch("/sessao");
     const dados = await resposta.json();
     const logado = localStorage.getItem("usuarioLogado") === "true";
 
-    if (dados.logado || logado) {
+    if (dados.logado && logado) {
       document.getElementById("nomeUsuario").textContent = dados.usuario.nome;
+      document.getElementById("paeeja-moeda-valor").textContent = dados.usuario.moedas; // ✅ Aqui foi corrigido
+
       document.getElementById("botaoEntrarNav").style.display = "none";
       document.getElementById("botaoCadastrarNav").style.display = "none";
 

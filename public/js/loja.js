@@ -7,9 +7,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnClose = document.getElementById("close-modal");
 
   document.querySelectorAll(".item-img").forEach(img => {
-    img.addEventListener("click", () => {
-      selectedItemId = img.dataset.id;
-      selectedTipo = img.dataset.tipo;
+  img.addEventListener("click", async () => {
+    selectedItemId = img.dataset.id;
+    selectedTipo = img.dataset.tipo;
+
+    try {
+      const resposta = await fetch("/loja/verificar-compra", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ itemId: selectedItemId, tipo: selectedTipo }),
+        credentials: "same-origin"
+      });
+
+      const resultado = await resposta.json();
+
+      if (!resultado.sucesso) {
+        alert("Erro ao verificar item.");
+        return;
+      }
+
+      if (resultado.comprado) {
+        btnYes.style.display = "none";
+        btnNo.style.display = "none";
+        modalText.style.display = "none";
+        modalMessage.textContent = "Você já comprou esse item";
+        modalMessage.style.color = "red";
+        btnClose.style.display = "inline-block";
+        modal.style.display = "flex";
+        return;
+      }
 
       // Resetando o modal para o estado inicial
       modalText.style.display = "flex";
@@ -20,8 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
       btnClose.style.display = "none";
 
       modal.style.display = "flex";
-    });
+
+    } catch (error) {
+      console.error("Erro ao verificar compra:", error);
+      alert("Erro ao verificar compra.");
+    }
   });
+});
 
   btnYes.addEventListener("click", async () => {
     try {
