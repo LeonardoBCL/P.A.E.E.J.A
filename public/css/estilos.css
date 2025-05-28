@@ -22,15 +22,18 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: #BAD8FF;
 }
 
 header {
   position: relative;
 }
 
-
 /* --------------------------- Styles Section 1 --------------------------- */
+/* Mudança das cores do Home */
+.cor-sec-1{
+  background:#BAD8FF;
+}
+
 
 section.slider {
   margin: 0 auto;
@@ -39,6 +42,7 @@ section.slider {
   padding: 0;
   overflow: hidden;
   padding-top: 160px;
+  
 }
 
 .slider-content {
@@ -124,8 +128,10 @@ section.slider {
 
 .o-que-aprender-sec-2 {
   text-align: center; /* Alinha o conteúdo ao centro */
-  margin: 20px auto; /* Espaçamento acima e abaixo da seção, centraliza horizontalmente */
-  margin-top: 150px;
+  margin: 0 !important; /* Remove todas as margens */
+  padding: 0 !important;
+  height: auto !important; /* Altura mínima necessária */
+  overflow: hidden; /* Evita vazamentos */
 }
 
 .o-que-aprender-sec-2 h3 {
@@ -145,7 +151,7 @@ section.slider {
   position: absolute;
   top: 50%;
   height: 2px; /* Altura da linha contínua */
-  background-color: rgb(255, 255, 255); /* Cor da linha contínua */
+  background-color: #63B231; /* Cor da linha contínua */
   transform: translateY(
     -50%
   ); /* Centraliza verticalmente em relação ao texto */
@@ -161,7 +167,19 @@ section.slider {
   width: 75%; /* Largura da linha depois do texto */
 }
 
+.onda-azul {
+  height: 360px; /* Reduza a altura */
+  margin-bottom: -1px; /* Compensa espaçamento */
+  transform: scaleY(-1);
+  
+}
+
 /* Parte dos ( NÚMEROS - PASSO A PASSO ) da SECTION2*/
+
+/* Mudança das cores do Home */
+.cor-sec-2{
+  background: #ffffff
+}
 
 /* Estilo para o contêiner redondo que envolve cada número */
 .numero-redondo {
@@ -248,7 +266,7 @@ section.slider {
   font-family: "Montserrat", sans-serif;
   font-weight: 700; /* Negrito */
   color: #ffffff; /* Cor do texto */
-  background-color: #D8CEFF; /* Cor de fundo do botão */
+  background-color: #7c72a7; /* Cor de fundo do botão */
   text-decoration: none; /* Remove o sublinhado */
   border-radius: 16px; /* Bordas arredondadas */
   box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4); /* Aumenta a sombra para torná-la mais aparente */
@@ -267,13 +285,25 @@ section.slider {
 .section2-botao-aluno:hover {
   background-color: #BFAFFF; /* Cor de fundo ao passar o mouse */
 }
-
+.onda-roxa{
+height: 350px; /* Reduza a altura */
+margin-bottom: -1px; /* Compensa espaçamento */
+}
 /*Section 3 Estilização */
+
+/* Mudança Cor do Home */
+.cor-sec-3{
+  background:  #BFAFFF;
+
+}
+
 /* Estilo para a seção "Nossos cursos" */
 .titulos-nossos-cursos {
   text-align: center; /* Alinha o conteúdo ao centro */
-  margin: 20px auto; /* Espaçamento acima e abaixo da seção, centraliza horizontalmente */
-  margin-top: 150px; /* Espaço superior específico */
+  margin: 0 !important; /* Remove todas as margens */
+  padding: 0 !important;
+  height: auto !important; /* Altura mínima necessária */
+  overflow: hidden; /* Evita vazamentos */
 }
 
 .titulos-nossos-cursos h3 {
@@ -317,7 +347,7 @@ section.slider {
   display: flex;
   justify-content: center; /* Alinha os cards à esquerda */
   flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha */
-  margin: 60px; /* Margem externa do contêiner */
+  margin: auto; /* Margem externa do contêiner */
   gap: 20px;
 }
 
@@ -340,15 +370,15 @@ section.slider {
 
 /* Cores específicas dos Cards */
 .cor-mat {
-  background-color: #FFF9B5; /* Matematica */
+  background-color: #DE6550; /* Matematica */
 }
 
 .cor-port {
-  background-color: #BAD8FF; /* Portugues */
+  background-color: #99BDEB; /* Portugues */
 }
 
 .cor-cien {
-  background-color: #D3F1D8; /* Ciencias */
+  background-color: #8EBC95; /* Ciencias */
 }
 
 .card img {
@@ -359,14 +389,14 @@ section.slider {
 .card h2 {
   font-size: 1.5em; /* Tamanho da fonte do título */
   margin: 10px 0; /* Margem acima e abaixo do título */
-  color: #031836;
+  color: #ffffff;
   font-family: "Montserrat", sans-serif;
 }
 
 .card ul {
   padding-left: 20px; /* Mantém os pontos visíveis com um recuo */
   margin: 15px 0; /* Margem acima e abaixo da lista */
-  color: #031836;
+  color: #fefeff;
   font-weight: 400;
 }
 
@@ -394,29 +424,69 @@ section.slider {
   font-size: 13.78px; /* Ajustado: unidade 'px' adicionada */
 }
 
-.saber-mais:hover {
-  background-color: #042552; /* Cor de fundo ao passar o mouse */
+
+/* Cor de fundo do botão */
+.cor-botao-mat{
+  background-color: #A44341;
+}
+
+.cor-botao-port{
+  background-color: #5186CD;
+}
+
+.cor-botao-cie{
+  background-color: #3D894A;
+}
+
+
+/* Cor de fundo ao passar o mouse */
+.cor-botao-mat:hover {
+  background-color: #5f2726; 
+}
+
+.cor-botao-port:hover {
+  background-color: #2e4a70; 
+}
+
+.cor-botao-cie:hover {
+  background-color: #234d2a;
+}
+
+
+.onda-roxa2{
+  transform: scaleY(-1);
+  height: 425px; /* Reduza a altura */
+  margin-bottom: -1px; /* Compensa espaçamento */
 }
 
 /*Section 4 Estilização */
 /* Estilo para a seção "Nosso Time" */
+/* Mudança das cores do Home */
+.cor-sec-4{
+  background: #FFF4E2;
+}
+
 
 /* Alinhamento do título centralizado e espaçamento */
 .titulos-nosso-time {
   text-align: center; /* Alinha o conteúdo ao centro */
-  margin: 20px auto; /* Espaçamento acima e abaixo da seção, centraliza horizontalmente */
-  margin-top: 100px; /* Espaço superior específico */
+  margin: 0 !important; /* Remove todas as margens */
+  padding: 0 !important;
+  height: auto !important; /* Altura mínima necessária */
+  overflow: hidden; /* Evita vazamentos */
 }
 
 /* Estilo do título */
 .titulos-nosso-time h3 {
   font-family: monospace; /* Define a fonte como monospace */
   font-size: 25px; /* Define o tamanho da fonte */
-  margin: 20px 0; /* Espaçamento acima e abaixo do título */
   color: #E69924; /* Define a cor do texto */
   position: relative; /* Necessário para posicionar os pseudo-elementos (::before e ::after) */
   display: inline-block; /* Faz com que o título se comporte como um bloco em linha */
   padding: 0 20px; /* Espaço interno ao redor do texto */
+  margin: 10 !important;
+  padding: 50px 0 !important; /* Espaçamento interno apenas */
+  
 }
 
 /* Pseudo-elementos para criar as linhas antes e depois do título */
@@ -577,6 +647,10 @@ section.slider {
 /* FIM DA SESSÃO 4 */
 
 /* INICIO SECTION 5 - DEPOIMENTOS */
+/* Mudança das cores do Home */
+.cor-sec-5{
+  background: #FFFFFF;
+}
 
 .depoimentos {
   width: 100%;
@@ -602,7 +676,7 @@ section.slider {
 
 .depoimentos i {
   font-size: 90px;
-  color: #ccc;
+  color: #031836;
   position: relative;
   right: 300px;
 }
@@ -611,7 +685,7 @@ section.slider {
   font-weight: 300;
   margin-bottom: 40px;
   text-align: center;
-  color: #fff;
+  color: #031836;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -621,7 +695,7 @@ section.slider {
   align-items: center;
   gap: 20px;
   text-align: center;
-  color: #fff;
+  color: #031836;
 }
 
 .slide .person img {
@@ -651,7 +725,7 @@ footer {
 }
 
 #location {
-  background-color: #fff;
+  background-color: #D8CEFF;
   width: 30vw;
   min-height: 100%;
   padding: 100px 46px 40px;
@@ -661,7 +735,7 @@ footer {
 }
 
 #location h2 {
-  color: #134793;
+  color: #ffffff;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4%;
@@ -700,10 +774,10 @@ footer {
 }
 
 #contact {
-  background-color: #bad8ff;
+  background-color: #BFAFFF;
   width: 70vw;
   text-align: center;
-  color: #031836;
+  color: #ffffff;
   text-transform: uppercase;
   font-size: 3rem;
   letter-spacing: 4%;
@@ -762,7 +836,7 @@ form textarea::placeholder {
 form button {
   color: #fff;
   border: none;
-  color: #031836;
+  color: #8579B5;
   text-transform: uppercase;
   padding: 16px 100px;
   width: 350px;
@@ -786,7 +860,7 @@ ESTILOS DA TELA DE CURSOS
 */
 
 .todos-cursos-digitais {
-  color: white;
+  color: #319F43;
   padding: 20px 40px;
   margin-top: 200px;
   font-family: monospace;
@@ -798,7 +872,7 @@ ESTILOS DA TELA DE CURSOS
   width: 42;
   height: 30.55;
   margin-left: 42px;
-  color: white;
+  color: #319F43;
   text-decoration: none;
 }
 
@@ -839,12 +913,12 @@ ESTILOS DA TELA DE CURSOS
 }
 
 .titulo-curso {
-  color: white;
+  color: #319F43;
   padding: 20px 40px;
   font-family: "Montserrat", sans-serif;
 }
 .titulo-curso-geografia{
-  color: white;
+  color: #319F43;
   padding: 20px 40px;
   font-family: "Montserrat", sans-serif;
   margin-top: -100px;
@@ -866,7 +940,7 @@ ESTILOS DA TELA DE CURSOS
 
 /* Cards */
 .cartao-curso {
-  background-color: #09244B; /* Fundo do card */
+  background-color: #319F43; /* Fundo do card */
   padding: 20px 40px;
   border-radius: 10px;
   width: 340px;
@@ -883,7 +957,7 @@ ESTILOS DA TELA DE CURSOS
 }
 
 .icone {
-  background-color: #112e57; /* Cor de fundo do ícone */
+  background-color: #76C2FF; /* Cor de fundo do ícone */
   width: 110px; /* Largura do quadrado */
   height: 90px; /* Altura do quadrado */
   display: flex;
@@ -907,7 +981,7 @@ ESTILOS DA TELA DE CURSOS
   font-size: 15px;
   font-family: monospace;
   margin-bottom: 5px;
-  color: #A3B9CC; /* Cor do texto do título */
+  color: #E9E7E3; /* Cor do texto do título */
 }
 
 .cartao-subtitulo {
@@ -920,5 +994,5 @@ ESTILOS DA TELA DE CURSOS
 .cartao-modulo {
   font-family: monospace;
   font-size: 13px;
-  color: #0558a1; /* Cor do texto do módulo */
+  color: #F9D00F; /* Cor do texto do módulo */
 }
