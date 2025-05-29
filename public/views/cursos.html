@@ -6,8 +6,13 @@
     <title> Cursos </title>
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/estilos.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/pagina-cursos.css">
+=======
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/tutorial-popup.css">
+>>>>>>> origin/production
     <link
     rel="shortcut icon"
     href="/imgs/images_paeeja/ico-paeeja.ico"
@@ -30,14 +35,21 @@
       </div>
       <a href="/" class="voltar-home">←</a>
 
-    <!--   <div class="barra-pesquisa">
-        <input type="text" placeholder="Pesquisar curso..." />
-        <button type="submit">
-          <img src="/imgs/imagens_tela_cursos/BtnSearch.png" alt="Pesquisar" />
-        </button>
-      </div>
- -->
-      
+    
+    <button id="helpButton">?</button>
+
+    <div id="popup" class="hidden">
+    <div class="popup-content">
+        <button id="skipButton">Pular</button>
+        <img id="popupImage" src="" alt="Imagem do tutorial">
+        <p id="popupText"></p>
+        <div class="popup-nav">
+        <button id="prevButton">&#8592;</button>
+        <button id="nextButton">&#8594;</button>
+        </div>
+        <button id="closeButton" class="hidden">X</button>
+    </div>
+    </div>
 
       <div class="cursos-container">
         <div class="secao-curso-portugues">
@@ -113,22 +125,13 @@
         </div>
     </div>
     
-    
-    
-      
-
     </section>
   </main>
 
-
 </section>
-
-
-
-
-
 
 <script src="/js/script-login-cadastro.js"></script>
 <script src="/js/navbar.js"></script>
+<script src="/js/tutorial-popup.js"></script>
 </body>
 </html>

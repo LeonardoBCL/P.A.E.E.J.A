@@ -2,13 +2,13 @@
   margin: 0; /* Remove margens padrão de todos os elementos */
   padding: 0; /* Remove espaçamentos internos padrão de todos os elementos */
   box-sizing: border-box; /* Garante que padding e bordas sejam incluídos na largura e altura */
-  font-family: "JetBrains Mono", monospace; /* Define uma fonte padrão para todos os elementos */
+  font-family: "Poppins", monospace; /* Define uma fonte padrão para todos os elementos */
 }
 
 /* Estilização global do body */
 body {
   background-color: #0d1b2a; /* Define a cor de fundo para o body */
-  color: #000000; /* Define a cor do texto para branco */
+  color: #ffffff; /* Define a cor do texto para branco */
 }
 
 /* Contêiner principal da página de cadastro */
@@ -23,7 +23,7 @@ body {
   width: 40%; /* Ocupa 40% da largura da tela */
   height: 100%; /* Ocupa toda a altura da tela */
   padding: 40px; /* Adiciona espaço interno ao redor do conteúdo */
-  background-color: #BAD8FF; /* Define a cor de fundo da seção do formulário */
+  background-color: #97BFE4; /* Define a cor de fundo da seção do formulário */
   display: flex; /* Usa flexbox para organizar os elementos dentro da seção */
   flex-direction: column; /* Organiza os elementos na vertical */
   justify-content: center; /* Centraliza os elementos verticalmente */
@@ -83,7 +83,7 @@ body {
   border-radius: 5px; /* Bordas arredondadas */
   border: 1px solid #7b8ca6; /* Borda fina ao redor dos campos */
   background-color: #ffffff; /* Cor de fundo dos campos */
-  color: #000000; /* Cor do texto dentro dos campos */
+  color: #353535; /* Cor do texto dentro dos campos */
   font-size: 16px; /* Tamanho da fonte dentro dos campos */
 }
 
@@ -96,7 +96,7 @@ body {
 .form-submit-btn-cadastro {
   width: 368px; /* Largura do botão */
   height: 40px; /* Altura do botão */
-  background-color: #000000; /* Cor de fundo do botão */
+  background-color: #5186CD; /* Cor de fundo do botão */
   border: none; /* Remove bordas ao redor do botão */
   color: white; /* Cor do texto do botão */
   cursor: pointer; /* Mostra um ponteiro de "mãozinha" ao passar sobre o botão */
@@ -118,7 +118,7 @@ body {
 /* Texto de login social */
 .social-login-text-cadastro {
   text-align: center; /* Centraliza o texto de login social */
-  color: #000000; /* Cor do texto */
+  color: #fff; /* Cor do texto */
   margin-bottom: 10px; /* Espaçamento abaixo do texto */
 }
 
@@ -144,13 +144,14 @@ body {
 
 /* Texto de "não tem uma conta?" no rodapé */
 .signup-text-cadastro {
-  color: #000000; /* Cor do texto no rodapé */
+  color: #FFF; /* Cor do texto no rodapé */
 }
 
 /* Link de cadastro */
 .signup-link-cadastro {
-  color: #09c4ff; /* Cor do link de cadastro */
+  color: #FED41E; /* Cor do link de cadastro */
   text-decoration: none; /* Remove o sublinhado do link */
+  
 }
 
 /* Efeito hover no link de cadastro */
@@ -179,7 +180,7 @@ body {
   width: 40%;
   height: 100%;
   padding: 40px;
-  background-color: #BAD8FF;
+  background-color: #97BFE4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -242,7 +243,7 @@ div i{
   border-radius: 5px;
   border: 1px solid #7b8ca6;
   background-color: #ffffff;
-  color: #000000;
+  color: #353535;
   font-size: 16px;
 }
 
@@ -253,7 +254,7 @@ div i{
 .form-submit-btn-login {
   width: 368px;
   height: 40px;
-  background-color: #000000;
+  background-color: #5186CD;
   border: none;
   color: white;
   cursor: pointer;
@@ -288,11 +289,11 @@ div i{
 }
 
 .signup-text-login {
-  color: #000000;
+  color: #fff;
 }
 
 .signup-link-login {
-  color: #09c4ff;
+  color: #FED41E;
   text-decoration: none;
 }
 
