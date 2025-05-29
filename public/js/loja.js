@@ -6,6 +6,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalMessage = document.getElementById("modal-message");
   const btnClose = document.getElementById("close-modal");
 
+  async function verificarItensComprados() {
+    const imagens = document.querySelectorAll(".item-img");
+    
+    for (const img of imagens) {
+      const itemId = img.dataset.id;
+      const tipo = img.dataset.tipo;
+
+      // Se não tiver ID e tipo, pula (ex: imagem faltando dataset)
+      if (!itemId || !tipo) continue;
+
+      try {
+        const resposta = await fetch("/loja/verificar-compra", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ itemId, tipo }),
+          credentials: "same-origin"
+        });
+
+        const resultado = await resposta.json();
+
+        if (resultado.sucesso && resultado.comprado) {
+          img.src = img.src.replace(".png", "-desblock.png");
+          const parent = img.closest(".item");
+          if (parent) {
+            const price = parent.querySelector("p");
+            if (price) price.remove();
+          }
+        }
+      } catch (error) {
+        console.error("Erro ao verificar item comprado:", error);
+      }
+    }
+  }
+
+  verificarItensComprados();
+
   document.querySelectorAll(".item-img").forEach(img => {
   img.addEventListener("click", async () => {
     selectedItemId = img.dataset.id;
@@ -72,6 +108,18 @@ document.addEventListener("DOMContentLoaded", () => {
       modalMessage.textContent = resultado.message;
       modalMessage.style.color = resultado.sucesso ? "green" : "red";
       btnClose.style.display = "inline-block";
+      if (resultado.sucesso) {
+        const img = document.querySelector(`.item-img[data-id="${selectedItemId}"][data-tipo="${selectedTipo}"]`);
+        if (img) {
+          img.src = img.src.replace(".png", "-desblock.png");
+          const parent = img.closest(".item");
+          if (parent) {
+            const price = parent.querySelector("p");
+            if (price) price.remove();
+          }
+        }
+      }
+
     } catch (error) {
       btnYes.style.display = "none";
       btnNo.style.display = "none";
@@ -87,7 +135,10 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "none";
   });
 
-  btnClose.addEventListener("click", () => {
+  btnClose.addEventListener("click", async () => {
     modal.style.display = "none";
+    const respostaDadosUsuario = await fetch("/sessao");
+    const dadosUsuario = await respostaDadosUsuario.json();
+    document.getElementById("paeeja-moeda-valor").textContent = dadosUsuario.usuario.moedas;
   });
 });

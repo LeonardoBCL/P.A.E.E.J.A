@@ -52,9 +52,9 @@ async function verificarSessao(req, res) {
 
 async function getItensLoja(req, res) {
   try {
-    const capas = await usuarioModel.buscarCapas();
+    const avatar = await usuarioModel.buscarCapas();
     const temas = await usuarioModel.buscarTemas();
-    res.json({ capas, temas });
+    res.json({ avatar, temas });
   } catch (err) {
     console.error(err);
     return res.status(401).json({ message: "Erro ao buscar itens da loja." });
@@ -88,6 +88,9 @@ async function comprarItem(req, res) {
 
     await usuarioModel.descontarMoedas(usuarioId, item.preco);
     await usuarioModel.registrarCompra(usuarioId, tipo, itemId);
+
+    const novoSaldo = await usuarioModel.buscarMoedas(usuarioId);
+    req.session.usuario.moedas = novoSaldo.moedas;
 
     return res.json({ sucesso: true, message: "Compra realizada com sucesso!" });
   } catch (err) {
