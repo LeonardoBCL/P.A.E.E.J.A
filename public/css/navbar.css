@@ -103,7 +103,19 @@ O elemento first-child pega primeira tag referenciada dentro de uma div. */
 
 /* Botão de Sair */
 .sair-link{
-background: red;
+border: 15px;
+border-radius: 25px;
+border-width: 5px 0;
+font-family: 'Montserrat';
+font-weight: 700;
+font-size: 18.73px;
+line-height: 100%;
+letter-spacing: 0%;
+width: 97px;
+height: 36px;
+vertical-align: middle;
+text-align: center;
+background-color: #DE6550;
 }
 
 
@@ -148,10 +160,17 @@ background: red;
 /* Style - userprofile */
 .icon-usuario {
   margin-right: 0px;
-  width: 35px; /* Define o tamanho final da imagem na página */
+  width: 68px; /* Define o tamanho final da imagem na página */
   height: auto; /* Mantém a proporção */
+  border: 1.2px solid #ffffff;
+  border-radius: 51.52px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
 }
 
+.icon-usuario:hover{
+  background: #48A14D;
+}
 
 
 .voltar-fixo {

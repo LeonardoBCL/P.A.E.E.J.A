@@ -79,7 +79,7 @@ async function verificarLogin() {
     const logado = localStorage.getItem("usuarioLogado") === "true";
 
     if (dados.logado || logado) {
-      document.getElementById("nomeUsuario").textContent = dados.usuario.nome;
+     /*  document.getElementById("nomeUsuario").textContent = dados.usuario.nome; */
       document.getElementById("botaoEntrarNav").style.display = "none";
       document.getElementById("botaoCadastrarNav").style.display = "none";
 
