@@ -18,13 +18,56 @@ ESTILOS DA TELA DE CURSOS
   font-size: 30px;
 }
 
-.voltar-home{
-  font-size: 30px;
-  width: 42;
-  height: 30.55;
-  margin-left: 42px;
-  color: #319F43;
+.top-menu {
+  position: relative;  /* essa linha aqui */
+  margin-top: 30px; /* empurrado mais para baixo */
+  height: 48px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: white;
+  gap: 30px;
+}
+
+.top-menu .active {
+  color: #48A14D;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.top-menu a {
+  margin: 0 15px;
   text-decoration: none;
+  color: #48A14D;
+  font-weight: bold;
+  position: relative;
+  font-size: 27px;
+}
+
+.voltar-fixo {
+  position:relative;
+  left: 20px;
+  margin-top: -130px; 
+  font-size: 24px;
+  font-weight: 700;
+  color: #48A14D;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.seta-img {
+  width: 27px;
+  height: auto;
+}
+
+.voltar-fixo span {
+  font-size: 30px;   /* tamanho da fonte que quiser */
+  font-weight: 700;  /* negrito */
+  color: #48A14D;    /* mesma cor que você está usando */
+  line-height: 1;    /* evita espaçamento estranho */
 }
 
 .barra-pesquisa {
@@ -161,3 +204,5 @@ ESTILOS DA TELA DE CURSOS
   font-size: 13px;
   color: #F9D00F; /* Cor do texto do módulo */
 }
+
+
