@@ -51,12 +51,25 @@ body {
 .voltar {
   grid-area: voltar;
   display: flex;
-  align-items: center;
+  margin: 0 15px;
+  outline: none;
+  color: #48A14D;
+  font-weight: bold;
+  position: relative;
+  font-size: 27px;
 }
-.seta-voltar {
-  font-size: 2rem;
-  color: #219653;
+
+.voltar a {
   text-decoration: none;
+  font-size: 30px;
+  font-weight: 700;
+  color: #48A14D;
+  line-height: 1;
+}
+
+.seta-img{
+  width: 27px;
+  height: auto;
 }
 
 /* Seção de informações do curso: organização e espaçamento */

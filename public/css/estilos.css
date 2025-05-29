@@ -169,12 +169,7 @@ header {
   width: 75%; /* Largura da linha depois do texto */
 }
 
-.onda-azul {
-  height: 360px; /* Reduza a altura */
-  margin-bottom: -1px; /* Compensa espaçamento */
-  transform: scaleY(-1);
-  
-}
+
 
 /* Parte dos ( NÚMEROS - PASSO A PASSO ) da SECTION2*/
 
@@ -294,7 +289,6 @@ header {
 .section2-botao-aluno:hover {
   background-color: #BFAFFF; /* Cor de fundo ao passar o mouse */
 }
-
 /*Section 3 Estilização */
 
 /* Mudança Cor do Home */
@@ -756,4 +750,9 @@ form button {
 
 form button:hover {
   background-color: #ffffffc9;
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> css-ph
