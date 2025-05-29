@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap');
+
 /* Reset básico */
 * {
   margin: 0;
@@ -79,7 +81,8 @@ html, body {
 /* Sidebar lateral */
 .sidebar {
   margin-top: 30px;
-  width: 280px;
+  margin-left: 40px;
+  width: 335px;
   padding-top: 80px;
   background-color: #a5dfae;
   padding: 30px;
@@ -153,6 +156,7 @@ html, body {
 /* Conteúdo principal */
 .content {
   margin-top: 30px;
+  margin-right: 30px;
   background-color: #a5dfae;
   padding: 30px 20px;
   box-sizing: border-box;
@@ -212,13 +216,64 @@ h2 {
   z-index: 1000;
 }
 
+
+/* Estilização do Popup */
 .modal-content {
   background: white;
-  padding: 20px;
+  width: 420px;
+  height: 200px;
+  border: 5px solid #6CC87A;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
   border-radius: 8px;
   text-align: center;
 }
 
+
+/* Muda a cor e centraliza o texto de confirmação de compra */
+.confirm-text{
+  margin-top: 50px; 
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #319F43;
+  justify-content: center;
+}
+
+/* Deixa o texto centralizado no botão e deixa uma fonte padrão */
 .modal-content button {
   margin: 0 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+/* Botão de sim */
+#confirm-yes{
+  border: 12px solid #319F43;
+  border-radius: 100px;
+  width: 80px;
+  background: #319F43;
+}
+
+/* Botão de não */
+#confirm-no{
+  border: 12px solid #DE6550;
+  border-radius: 100px;
+  width: 80px;
+  background: #DE6550;
+}
+
+/* Muda a cor e centraliza o texto de falha na de compra */
+#modal-message{
+  margin-top: 50px; 
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #DE6550;
+  justify-content: center;
+}
+
+/* Botão de fechar */
+#close-modal{
+  border: 12px solid #DE6550;
+  border-radius: 100px;
+  width: 80px;
+  background: #DE6550;
 }
