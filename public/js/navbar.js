@@ -1,35 +1,22 @@
-function initNavFunctionality() {
-  const navLinks = document.querySelectorAll('.nav-menu a');
-  
-  navLinks.forEach(link => {
-      link.addEventListener('click', function(event) {
-          event.preventDefault();
-          const targetSection = document.querySelector(this.getAttribute('href'));
-          if (targetSection) {
-              targetSection.scrollIntoView({ behavior: 'smooth' });
-          }
-      });
-  });
-}
-
 // Função para carregar a barra de navegação
 function loadNavbar() {
-  fetch('/views/nav.html') // Carrega o conteúdo de navbar.html
-      .then(response => response.text())
-      .then(data => {
-          document.getElementById('navbar').innerHTML = data;
-          initNavFunctionality(); // Inicializa as funcionalidades após carregar a nav
-          verificarLogin(); // Verifica o estado de login após a navbar ser carregada
-      });
+  fetch('/views/nav.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+      verificarLogin(); // Verifica o estado de login após carregar a navbar
+    })
+    .catch(err => {
+      console.error("Erro ao carregar navbar:", err);
+    });
 }
 
 // Redireciona para o topo da página inicial
 function navegacaoLogo() {
   const path = window.location.pathname;
-
   if (path === "/") {
     window.location = '#section-home';
-  } else{
+  } else {
     window.location = '/#section-home';
   }
 }
@@ -45,8 +32,8 @@ async function navegacaoCursos() {
     window.location = '/cursos';
   } else if (path === "/" && !logado) {
     window.location = '#sectionCursos';
-  } else{
-    window.location = '#inicioCursos';
+  } else {
+    window.location = '/#sectionCursos';
   }
 }
 
@@ -54,11 +41,11 @@ async function navegacaoCursos() {
 async function navegacaoLoja() {
   const resposta = await fetch("/sessao");
   const dados = await resposta.json();
-  const path = window.location.pathname;
   const logado = localStorage.getItem("usuarioLogado") === "true";
+
   if (dados.logado && logado) {
     window.location = '/loja';
-  } else{
+  } else {
     window.location = '/login';
   }
 }
@@ -66,24 +53,19 @@ async function navegacaoLoja() {
 // Redireciona para a seção "Fale Conosco"
 function navegacaoFale() {
   const path = window.location.pathname;
-
   if (path === "/") {
     window.location = '#faleConosco';
-  } else{
-    window.location = '/#faleConosco'; // Corrigido
+  } else {
+    window.location = '/#faleConosco';
   }
 }
 
+// Redireciona para a página de perfil
 function navegacaoPerfil() {
-  const path = window.location.pathname;
-
-  if (path === "/") {
-    window.location = '/PaginaPerfil'
-  }else{
-
-  }
+  window.location = '/PaginaPerfil';
 }
 
+// Verifica se o usuário está logado e ajusta a navbar
 async function verificarLogin() {
   try {
     const resposta = await fetch("/sessao");
@@ -92,19 +74,22 @@ async function verificarLogin() {
 
     if (dados.logado && logado) {
       document.getElementById("nomeUsuario").textContent = dados.usuario.nome;
-      document.getElementById("nome-usuario").innerHTML = `${dados.usuario.nome} <span id="usuario-handle">(@${dados.usuario.nome.toLowerCase()})</span>`;
+      const nomeFormatado = `${dados.usuario.nome} <span id="usuario-handle">(@${dados.usuario.nome.toLowerCase()})</span>`;
+      const nomeUsuarioDiv = document.getElementById("nome-usuario");
+      if (nomeUsuarioDiv) nomeUsuarioDiv.innerHTML = nomeFormatado;
+
       document.getElementById("paeeja-moeda-valor").textContent = dados.usuario.moedas;
 
       document.getElementById("botaoEntrarNav").style.display = "none";
       document.getElementById("botaoCadastrarNav").style.display = "none";
 
       document.getElementById("botaoSair").style.display = "inline";
-      nomeUsuario.hidden = false;
-      iconUsuario.hidden = false;
+      document.getElementById("nomeUsuario").hidden = false;
+      document.getElementById("iconUsuario").hidden = false;
     } else {
       document.getElementById("botaoSair").style.display = "none";
-      nomeUsuario.hidden = true;
-      iconUsuario.hidden = true;
+      document.getElementById("nomeUsuario").hidden = true;
+      document.getElementById("iconUsuario").hidden = true;
     }
   } catch (erro) {
     console.error("Erro ao verificar login:", erro);
@@ -115,7 +100,7 @@ async function verificarLogin() {
 function sairLogin(event) {
   event.preventDefault();
   localStorage.removeItem("usuarioLogado");
-  window.location.href = '/logout'
+  window.location.href = '/logout';
 }
 
 // Executa a carga da navbar quando o DOM está completamente carregado
