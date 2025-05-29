@@ -167,12 +167,7 @@ section.slider {
   width: 75%; /* Largura da linha depois do texto */
 }
 
-.onda-azul {
-  height: 360px; /* Reduza a altura */
-  margin-bottom: -1px; /* Compensa espaçamento */
-  transform: scaleY(-1);
-  
-}
+
 
 /* Parte dos ( NÚMEROS - PASSO A PASSO ) da SECTION2*/
 
@@ -284,10 +279,6 @@ section.slider {
 /* Efeito de hover para o botão de ser aluno */
 .section2-botao-aluno:hover {
   background-color: #BFAFFF; /* Cor de fundo ao passar o mouse */
-}
-.onda-roxa{
-height: 350px; /* Reduza a altura */
-margin-bottom: -1px; /* Compensa espaçamento */
 }
 /*Section 3 Estilização */
 
@@ -450,13 +441,6 @@ margin-bottom: -1px; /* Compensa espaçamento */
 
 .cor-botao-cie:hover {
   background-color: #234d2a;
-}
-
-
-.onda-roxa2{
-  transform: scaleY(-1);
-  height: 425px; /* Reduza a altura */
-  margin-bottom: -1px; /* Compensa espaçamento */
 }
 
 /*Section 4 Estilização */
