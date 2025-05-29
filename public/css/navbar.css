@@ -161,7 +161,7 @@ background-color: #DE6550;
 .icon-usuario {
   margin-right: 0px;
   width: 68px; /* Define o tamanho final da imagem na página */
-  height: auto; /* Mantém a proporção */
+  height: 62px; /* Mantém a proporção */
   border: 1.2px solid #ffffff;
   border-radius: 51.52px;
   box-shadow: 0px 4px 4px 0px #00000040;
