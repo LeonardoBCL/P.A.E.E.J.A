@@ -35,11 +35,13 @@ function navegacaoLogo() {
 }
 
 // Redireciona para cursos com base no login
-function navegacaoCursos() {
+async function navegacaoCursos() {
   const path = window.location.pathname;
   const logado = localStorage.getItem("usuarioLogado") === "true";
+  const resposta = await fetch("/sessao");
+  const dados = await resposta.json();
 
-  if (path !== "/cursos" && logado) {
+  if (dados.logado && path !== "/cursos" && logado) {
     window.location = '/cursos';
   } else if (path === "/" && !logado) {
     window.location = '#sectionCursos';
@@ -49,10 +51,12 @@ function navegacaoCursos() {
 }
 
 // Redireciona para a Loja
-function navegacaoLoja() {
+async function navegacaoLoja() {
+  const resposta = await fetch("/sessao");
+  const dados = await resposta.json();
   const path = window.location.pathname;
   const logado = localStorage.getItem("usuarioLogado") === "true";
-  if (logado) {
+  if (dados.logado && logado) {
     window.location = '/loja';
   } else{
     window.location = '/login';
@@ -70,6 +74,15 @@ function navegacaoFale() {
   }
 }
 
+function navegacaoPerfil() {
+  const path = window.location.pathname;
+
+  if (path === "/") {
+    window.location = '/PaginaPerfil'
+  }else{
+
+  }
+}
 
 async function verificarLogin() {
   try {
@@ -79,7 +92,8 @@ async function verificarLogin() {
 
     if (dados.logado && logado) {
       document.getElementById("nomeUsuario").textContent = dados.usuario.nome;
-      document.getElementById("paeeja-moeda-valor").textContent = dados.usuario.moedas; // ✅ Aqui foi corrigido
+      document.getElementById("nome-usuario").innerHTML = `${dados.usuario.nome} <span id="usuario-handle">(@${dados.usuario.nome.toLowerCase()})</span>`;
+      document.getElementById("paeeja-moeda-valor").textContent = dados.usuario.moedas;
 
       document.getElementById("botaoEntrarNav").style.display = "none";
       document.getElementById("botaoCadastrarNav").style.display = "none";

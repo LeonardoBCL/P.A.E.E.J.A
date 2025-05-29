@@ -13,7 +13,7 @@ html, body {
   height: 100%;
   font-family: 'Poppins', sans-serif;
   background-color: rgb(255, 255, 255);
-  overflow: hidden;
+  /*   */
 }
 
 /* Menu superior */
@@ -34,8 +34,6 @@ html, body {
   font-size: 35px;
 }
 
-
-
 .top-menu a {
   margin: 0 15px;
   text-decoration: none;
@@ -45,7 +43,31 @@ html, body {
   font-size: 27px;
 }
 
+.voltar-fixo {
+  position:relative;
+  left: 20px;
+  margin-top: -130px; /* mesmo nível do menu */
+  font-size: 24px;
+  font-weight: 700;
+  color: #48A14D;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
+.seta-img {
+  width: 27px;
+  height: auto;
+}
+
+.voltar-fixo span {
+  font-size: 30px;   /* tamanho da fonte que quiser */
+  font-weight: 700;  /* negrito */
+  color: #48A14D;    /* mesma cor que você está usando */
+  line-height: 1;    /* evita espaçamento estranho */
+}
 
 /* Layout principal */
 .page-wrapper {
@@ -59,10 +81,11 @@ html, body {
   margin-top: 30px;
   width: 280px;
   padding-top: 80px;
-  background-color: #E4FFE8;
+  background-color: #a5dfae;
   padding: 30px;
   box-sizing: border-box;
   min-height: calc(100vh - 138px); /* altura fluida */
+  border-radius: 15px;
 }
 
 .sidebar input[type="text"] {
@@ -80,7 +103,7 @@ html, body {
   margin: 22px 0 20px 0;
   padding-bottom: 5px; /* espaço entre texto e linha */
   border-bottom: 2px solid #319F43; /* linha verde */
-  
+  color: #319F43;
 }
 
 /* Estilo das opções de filtro */
@@ -130,12 +153,14 @@ html, body {
 /* Conteúdo principal */
 .content {
   margin-top: 30px;
-  background-color: #E4FFE8;
+  background-color: #a5dfae;
   padding: 30px 20px;
   box-sizing: border-box;
   width: 80%;
   margin-left: 50px;
   min-height: calc(100vh - 138px); /* altura fluida */
+  border-radius: 15px;
+
 }
 
 /* Títulos de seção */
@@ -161,33 +186,20 @@ h2 {
 .item {
   width: 100px;
   height: 100px;
-  background-color: #0A2349;
+  /* background-color: #0A2349; */
 }
 
-.voltar-fixo {
-  position:relative;
-  left: 20px;
-  margin-top: -130px; /* mesmo nível do menu */
-  font-size: 24px;
-  font-weight: 700;
-  color: #48A14D;
+.item-img {
+  width: 100px;
+  height: 100px;
+}
+
+.item p {
+  text-align: center;      /* centraliza o texto dentro do <p> */
   font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.seta-img {
-  width: 27px;
-  height: auto;
-}
-
-.voltar-fixo span {
-  font-size: 30px;   /* tamanho da fonte que quiser */
-  font-weight: 700;  /* negrito */
-  color: #48A14D;    /* mesma cor que você está usando */
-  line-height: 1;    /* evita espaçamento estranho */
+  color: #FED41E;
+  font-size: 1.7rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .modal {

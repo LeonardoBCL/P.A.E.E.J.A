@@ -20,9 +20,6 @@
       </ul>
     </nav>
 
-
-
-
     <!-- Div da entrada de login -->
     <div class="entrada-links">
       <a href="/login" id="botaoEntrarNav"> Entrar</a>
@@ -33,16 +30,20 @@
       >
         Cadastrar</a
       >
-      <p hidden id="nomeUsuario" class="nome-usuario-logado"></p>
+
+      <p hidden id="nomeUsuario" class="nome-usuario-logado" onclick="navegacaoPerfil()"></p>
+
       <img
         hidden
-        src="/icons-svg/icon2-userprofile.svg"
+        src="/imgs/images_perfil/user-padrão.png"
         alt="icone do usuario"
         id="iconUsuario"
         class="icon-usuario"
+        onclick="navegacaoPerfil()"
       />
+      
       <a
-        href="section-login.html"
+        href="/"
         id="botaoSair"
         class="sair-link"
         onclick="sairLogin(event)"
