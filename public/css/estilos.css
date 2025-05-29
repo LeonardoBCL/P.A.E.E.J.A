@@ -627,7 +627,7 @@ footer {
 }
 
 #location {
-  background-color: #f0eded;
+  background-color: #BFAFFF;
   width: 30vw;
   min-height: 100%;
   padding: 100px 46px 40px;
@@ -637,21 +637,21 @@ footer {
 }
 
 #location h2 {
-  color: #031836;
+  color: #ffffff;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4%;
 }
 
 .p-local {
-  color: #031836;
-  font-size: 1.25rem;
-  margin-top: 24px;
+  color: #7C7AFF;
+  font-size: 19px;
+  margin-top: 8px;
   margin-bottom: 200px;
 }
 
 .p-copy {
-  color: #031836;
+  color: #7C7AFF;
   font-size: 1.25rem;
   margin-top: 24px;
   margin-bottom: 0;
@@ -661,7 +661,7 @@ footer {
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: #031836;
+  background-color: #7C7AFF;
   color: white;
   border-radius: 50%;
   text-align: center;
@@ -691,7 +691,7 @@ footer {
 }
 
 #contact h2 {
-  font-size: 3rem;
+  font-size: 43.05px;
   margin-top: 40px;
   margin-bottom: 30px;
 }

@@ -34,7 +34,7 @@ body {
 .btn-voltar {
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 24px;
   color: #219653;
   font-weight: 700;
   cursor: pointer;

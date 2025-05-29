@@ -64,7 +64,7 @@ ESTILOS DA TELA DE CURSOS
 }
 
 .voltar-fixo span {
-  font-size: 30px;   /* tamanho da fonte que quiser */
+  font-size: 24px;   /* tamanho da fonte que quiser */
   font-weight: 700;  /* negrito */
   color: #48A14D;    /* mesma cor que você está usando */
   line-height: 1;    /* evita espaçamento estranho */
