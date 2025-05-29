@@ -30,24 +30,21 @@ header {
 
 /* --------------------------- Styles Section 1 --------------------------- */
 /* Mudança das cores do Home */
-.cor-sec-1{
-  background:#BAD8FF;
+.cor-sec-1 {
+  background: #BAD8FF;
+  padding-top: 70px;
+  margin-bottom: 50px; /* Espaço entre section 1 e section 2 */
 }
 
-
-section.slider {
+.container-slider {
+  width: 85%;
   margin: 0 auto;
-  width: 100%;
-  height: 90vh;
-  padding: 0;
   overflow: hidden;
-  padding-top: 160px;
-  
 }
 
 .slider-content {
   width: 500%;
-  height: 100%;
+  height: 90vh;
   display: flex;
 }
 
@@ -71,17 +68,19 @@ section.slider {
 }
 
 /* Controles manuais e automáticos */
-.nav-manual,
-.nav-auto {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
+.nav-manual {
+  margin-bottom: 70px; /* ajuste conforme necessário */
+}
+
+.nav-auto,
+.nav-manual {
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-top: 0px;
 }
+
+
 
 .nav-manual .manual-btn,
 .nav-auto div {
@@ -90,6 +89,7 @@ section.slider {
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  
 }
 
 /* Efeito hover para mudar a cor dos botões */
@@ -122,6 +122,10 @@ section.slider {
 }
 #radio5:checked ~ .primeiro {
   margin-left: -80%;
+}
+
+.nav-auto {
+  display: none !important;
 }
 
 /* --------------------------------ESTILIZAÇÃO DA SECTION - 2 ( INÍCIO ) -------------------------- */
@@ -179,10 +183,17 @@ section.slider {
 /* Mudança das cores do Home */
 .cor-sec-2{
   background: #ffffff
+  
 }
+.cor-sec-2{
+  padding-bottom: 100px; /* ou ajuste conforme o espaço desejado */
+}
+
+
 
 /* Estilo para o contêiner redondo que envolve cada número */
 .numero-redondo {
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -285,10 +296,7 @@ section.slider {
 .section2-botao-aluno:hover {
   background-color: #BFAFFF; /* Cor de fundo ao passar o mouse */
 }
-.onda-roxa{
-height: 350px; /* Reduza a altura */
-margin-bottom: -1px; /* Compensa espaçamento */
-}
+
 /*Section 3 Estilização */
 
 /* Mudança Cor do Home */
@@ -296,17 +304,22 @@ margin-bottom: -1px; /* Compensa espaçamento */
   background:  #BFAFFF;
 
 }
+.cor-sec3{
+  margin-top: 80px;
+}
 
 /* Estilo para a seção "Nossos cursos" */
 .titulos-nossos-cursos {
   text-align: center; /* Alinha o conteúdo ao centro */
-  margin: 0 !important; /* Remove todas as margens */
-  padding: 0 !important;
+  padding-bottom:40px;
+  padding-top: 50px; /* Ajuste conforme necessário */
   height: auto !important; /* Altura mínima necessária */
   overflow: hidden; /* Evita vazamentos */
+  
 }
 
 .titulos-nossos-cursos h3 {
+  
   font-family: monospace; /* Fonte monospace */
   font-size: 25px; /* Tamanho da fonte em pixels */
   margin: 20px 0; /* Espaço acima e abaixo do título */
@@ -452,26 +465,23 @@ margin-bottom: -1px; /* Compensa espaçamento */
   background-color: #234d2a;
 }
 
-
-.onda-roxa2{
-  transform: scaleY(-1);
-  height: 425px; /* Reduza a altura */
-  margin-bottom: -1px; /* Compensa espaçamento */
-}
-
 /*Section 4 Estilização */
 /* Estilo para a seção "Nosso Time" */
 /* Mudança das cores do Home */
 .cor-sec-4{
   background: #FFF4E2;
+  
 }
-
+.cor-sec-4{
+  padding-bottom: 150px;
+}
 
 /* Alinhamento do título centralizado e espaçamento */
 .titulos-nosso-time {
+  padding-bottom:20px;
+  padding-top: 30px; /* Ajuste conforme necessário */
   text-align: center; /* Alinha o conteúdo ao centro */
   margin: 0 !important; /* Remove todas as margens */
-  padding: 0 !important;
   height: auto !important; /* Altura mínima necessária */
   overflow: hidden; /* Evita vazamentos */
 }
@@ -504,13 +514,13 @@ margin-bottom: -1px; /* Compensa espaçamento */
 
 /* Linha à esquerda do título */
 .titulos-nosso-time h3::before {
-  left: -130%; /* Distância da linha à esquerda do texto */
+  left: -140%; /* Distância da linha à esquerda do texto */
   width: 130%; /* Define a largura da linha */
 }
 
 /* Linha à direita do título */
 .titulos-nosso-time h3::after {
-  right: -130%; /* Distância da linha à direita do texto */
+  right: -140%; /* Distância da linha à direita do texto */
   width: 130%; /* Define a largura da linha */
 }
 
@@ -552,6 +562,7 @@ margin-bottom: -1px; /* Compensa espaçamento */
   gap: 2rem; /* Espaçamento entre os itens */
   text-align: center; /* Centraliza o texto dos itens */
   margin-top: 4rem; /* Espaço superior */
+  
 }
 
 /* Estilo das imagens da equipe */
@@ -627,93 +638,9 @@ margin-bottom: -1px; /* Compensa espaçamento */
   padding: 0 20px; /* Espaço interno ao redor do texto */
 }
 
-/* Estilo para a seção dos ícones */
-.icones-tecnologias {
-  display: flex; /* Usa flexbox para centralização */
-  justify-content: center; /* Centraliza os ícones horizontalmente */
-  gap: 20px; /* Espaçamento entre os ícones */
-  margin-top: 20px; /* Espaço acima dos ícones */
-}
 
-.icones-tecnologias img {
-  width: 50px; /* Define um tamanho fixo para os ícones */
-  height: 50px; /* Define a altura fixa dos ícones */
-  transition: transform 0.3s ease; /* Adiciona um efeito de transição suave */
-}
 
-.icones-tecnologias img:hover {
-  transform: scale(1.1); /* Aumenta o ícone levemente ao passar o mouse */
-}
-/* FIM DA SESSÃO 4 */
 
-/* INICIO SECTION 5 - DEPOIMENTOS */
-/* Mudança das cores do Home */
-.cor-sec-5{
-  background: #FFFFFF;
-}
-
-.depoimentos {
-  width: 100%;
-  padding: 50px 20px;
-  max-width: 900px;
-  position: relative;
-  overflow: hidden;
-
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.depoimentos .slide {
-  padding: 40px 60px;
-  cursor: grab;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.depoimentos i {
-  font-size: 90px;
-  color: #031836;
-  position: relative;
-  right: 300px;
-}
-
-.depoimentos p.depoi-txt {
-  font-weight: 300;
-  margin-bottom: 40px;
-  text-align: center;
-  color: #031836;
-  font-family: "Montserrat", sans-serif;
-}
-
-.slide .person {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
-  color: #031836;
-}
-
-.slide .person img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.slide .person p.nome-person {
-  font-size: 18px;
-  font-weight: 600;
-  font-family: "Montserrat", sans-serif;
-}
-
-.slide .person p.func-person {
-  font-size: 14px;
-}
 
 /* FOOTER DO SITE COM FORMULÁRIO */
 
@@ -721,7 +648,6 @@ footer {
   display: flex;
   width: 100%;
   min-height: 80vh;
-  margin-top: 12%;
 }
 
 #location {
