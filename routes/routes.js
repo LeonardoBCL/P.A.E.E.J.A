@@ -19,8 +19,8 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'login.html'));
   });
 
-  app.get('/PaginaPerfil', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'PaginaPerfil.html'));
+  app.get('/paginaperfil', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'paginaPerfil.html'));
   });
   
   app.get('/loja', (req, res) => {
@@ -36,7 +36,7 @@ module.exports = (app) => {
   });
 
    app.get('/conteudocurso', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'conteudo-curso.html'));
+    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'conteudoCurso.html'));
   });
 
 
