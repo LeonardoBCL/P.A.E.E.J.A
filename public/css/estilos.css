@@ -201,7 +201,7 @@ header {
 }
 
 .cor-sec-2 {
-  padding-bottom: 100px;
+  padding-bottom: 150px;
   /* ou ajuste conforme o espaço desejado */
 }
 
@@ -236,9 +236,9 @@ header {
   /* Centraliza os itens horizontalmente */
   align-items: flex-start;
   /* Alinha os itens ao topo */
-  gap: 230px;
+  gap: 100px;
   /* Espaçamento entre os grupos de números e parágrafos */
-  padding: 20px 0;
+  padding: 35px 0;
   /* Espaço acima e abaixo da div */
 }
 
@@ -803,7 +803,7 @@ footer {
 }
 
 #location {
-  background-color: #BFAFFF;
+  background-color: #ffffff;
   width: 30vw;
   min-height: 100%;
   padding: 100px 46px 40px;
@@ -813,7 +813,7 @@ footer {
 }
 
 #location h2 {
-  color: #ffffff;
+  color: #7C7AFF;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4%;
@@ -888,7 +888,7 @@ form textarea {
   border: none;
   outline: none;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.48);
+  background-color: rgb(247, 247, 247);
   padding: 20px 15px;
   border-radius: 15px;
   color: var(--white);
