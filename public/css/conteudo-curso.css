@@ -22,6 +22,7 @@ a {
 }
 body {
   padding-top: 75px; /* altura do header + espaço */
+  
 }
 /* Lateral */
 .menu-lateral {
@@ -184,7 +185,33 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
 
 .submodulo .tempo {
   font-size: 0.9rem;
-  color: #fff066;
+  color: white; /* cor padrão (branco) */
+  transition: color 0.3s ease;
+}
+
+/* Destacar o tempo em amarelo */
+.tempo-amarelo {
+  color: #fff066; /* amarelo */
+}
+
+/* Tempo normal branco */
+.tempo-branco {
+  color: white;
+}
+
+/* Texto em negrito */
+.bold {
+  font-weight: bold;
+}
+
+/* Título do módulo ativo em branco */
+.titulo-branco {
+  color: white !important;
+}
+
+/* Título dos exercícios em amarelo */
+.titulo-amarelo {
+  color: #fff066 !important;
 }
 
 .submodulo .tipo {
@@ -195,6 +222,9 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
 .submodulo.ativo {
   background-color: #2ea043;
   font-weight: bold;
+}
+.submodulo.ativo .tempo {
+  color: #fff066 !important; /* amarelo somente se .submodulo tiver classe ativo */
 }
 
 /* Container do curso */
@@ -248,14 +278,16 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   border-radius: 12px;
 }
 
-/* Navegação */
-.navegacao {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  max-width: 960px;
-}
 
+/* Navegação */
+
+/* Aqui o truque para alinhar e subir os botões */
+.navegacao {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
 .navegacao button {
   padding: 1rem 2.5rem;
   border: none;
@@ -280,4 +312,108 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   background: #f3f3f3;
   font-size: 0.875rem;
   color: #555;
+}
+
+
+
+
+/* PARTE REFERENTE AOS EXERCICIOS / ESTILIZAÇÃO */
+#exercicio1 {
+  background-color: white;
+  
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+#exercicio1 .questao-numero {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+#exercicio1 .enunciado {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+#exercicio1 .alternativas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#exercicio1 .alternativa {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: #f2f7f5;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.2s ease;
+  cursor: pointer;
+}
+
+#exercicio1 .alternativa:hover {
+  border-color: #1c9c7c;
+}
+
+#exercicio1 .alternativa input[type="radio"] {
+  margin-top: 4px;
+  accent-color: #1c9c7c;
+}
+
+#exercicio1 .letra {
+  font-weight: bold;
+  color: #1c9c7c;
+  min-width: 1.5rem;
+}
+
+#exercicio1 .texto {
+  color: #333;
+  line-height: 1.5;
+}
+
+#exercicio1 .linha-final {
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
+}
+
+#exercicio1,
+#exercicio1 .questao-numero,
+#exercicio1 .enunciado,
+#exercicio1 .alternativa,
+#exercicio1 .texto,
+#exercicio1 .letra {
+  color: #319F43 !important;
+}
+
+
+
+.botoes-exercicio {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  max-width: 960px !important;
+  margin-top: 1.5rem !important;
+}
+
+.botoes-exercicio button {
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background-color: #2ea043;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.botoes-exercicio button:hover {
+  background-color: #269636;
 }

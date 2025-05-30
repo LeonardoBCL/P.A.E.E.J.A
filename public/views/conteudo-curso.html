@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo - Língua Portuguesa | PAEEJA</title>
+  <link rel="stylesheet" href="/css/conteudo-curso.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+</head>
+<body>
+  <!-- Espaço reservado para a navbar -->
+  <header id="navbar"></header>
+
+  <main class="curso-container">
+    <nav class="menu-lateral">
+      <a href="#" class="btn-voltar">Voltar</a>
+
+
+      <section class="secao-modulos">
+  <h2>Módulos</h2>
+
+  <div class="desempenho">
+    Desempenho módulo:
+    <div class="tooltip">
+      <div class="icone-ajuda">?</div>
+      <div class="tooltip-text">Seu progresso no conteúdo</div>
+    </div>
+  </div>
+
+  <div class="barra">
+    <span style="width: 50%;">50%</span>
+  </div>
+
+  <details class="modulo" open>
+    <summary class="modulo-titulo">Vogais e Consoantes</summary>
+    <ul class="lista-submodulos">
+      <li class="submodulo ativo">
+        <span class="tempo">25 Minutos</span>
+        <span class="titulo">Vogais e Consoantes</span>
+      </li>
+      <li class="submodulo">
+        
+        <span class="tempo">Exercícios</span>
+        <span class="titulo">Exercício 1</span>
+      </li>
+    </ul>
+  </details>
+</section>
+    </nav>
+
+    <section class="conteudo-curso">
+
+
+
+  <div class="video-container">
+    <header class="cabecalho-conteudo">
+      <h1 class="disciplina">Língua Portuguesa</h1>
+      <h2 class="titulo-modulo">Título do Módulo</h2>
+    </header>
+
+    <div class="video-wrapper">
+      <iframe
+      class="video-player"
+      src="https://www.youtube.com/embed/dQw4w9WgXcQg"
+      title="Vídeo do Módulo"
+      frameborder="0"
+      allowfullscreen
+      ></iframe>
+      
+    </div>
+    <div class="navegacao">
+        <button class="btn-proximo">Próximo</button>
+      </div>
+    <!-- Exercício 1 -->
+  <!-- Exercício 1 – Questão com alternativas -->
+<div id="exercicio1" style="display: none; max-width: 960px; padding: 1rem; border-radius: 12px;">
+
+  <section class="questao" id="questao-1" data-id="1">
+    <h2 class="questao-numero">Questão 1</h2>
+
+    <p class="enunciado" id="enunciado-1">
+      Com base na palavra <strong>“HIPOPÓTAMO”</strong>, responda e <br>
+      assinale a alternativa que corresponde com a informação correta sobre as letras dessa palavra.
+    </p>
+
+    <form class="alternativas" id="form-questao-1" data-questao-id="1">
+      <label class="alternativa" for="q1-a" data-letra="A">
+        <input type="radio" name="resposta-1" id="q1-a" value="A" data-correta="true" />
+        <span class="bolinha" id="bolinha-q1-a"></span>
+        <span class="letra">A)</span>
+        <span class="texto">A palavra possui 5 vogais e 6 consoantes.</span>
+      </label>
+
+      <label class="alternativa" for="q1-b" data-letra="B">
+        <input type="radio" name="resposta-1" id="q1-b" value="B" data-correta="false" />
+        <span class="bolinha" id="bolinha-q1-b"></span>
+        <span class="letra">B)</span>
+        <span class="texto">A palavra possui 4 vogais e 7 consoantes.</span>
+      </label>
+
+      <label class="alternativa" for="q1-c" data-letra="C">
+        <input type="radio" name="resposta-1" id="q1-c" value="C" data-correta="false" />
+        <span class="bolinha" id="bolinha-q1-c"></span>
+        <span class="letra">C)</span>
+        <span class="texto">A palavra possui 6 vogais e 5 consoantes.</span>
+      </label>
+
+      <label class="alternativa" for="q1-d" data-letra="D">
+        <input type="radio" name="resposta-1" id="q1-d" value="D" data-correta="false" />
+        <span class="bolinha" id="bolinha-q1-d"></span>
+        <span class="letra">D)</span>
+        <span class="texto">A palavra possui 7 vogais e 4 consoantes.</span>
+      </label>
+    </form>
+
+    <div class="linha-final" style="margin-top: 1rem; border-top: 1px solid #ccc;"></div>
+    
+    <div class="botoes-exercicio">
+  <button id="btn-voltar" class="btn-voltar-exercicio">Voltar</button>
+  <button id="btn-responder" class="btn-responder-exercicio">Responder</button>
+    </div>
+
+
+</div>
+</div>
+
+
+
+  </section>
+
+
+
+
+</div>
+
+
+</div>
+</div>
+  </main>
+  <script src = "/js/conteudoCursos.js"></script>
+  <script src="/js/navbar.js"></script>
+</body>
+</html>
