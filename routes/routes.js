@@ -31,7 +31,7 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'register.html'));
   });
 
-   app.get('/materiaModulo', (req, res) => {
+   app.get('/materiamodulo', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'materiaModulo.html'));
   });
 
