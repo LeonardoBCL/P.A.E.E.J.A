@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,141 +9,143 @@
     <link rel="stylesheet" href="/css/estilos.css">
     <link rel="stylesheet" href="/css/paginaCursos.css">
     <link rel="stylesheet" href="/css/tutorialPopup.css">
-    <link
-    rel="shortcut icon"
-    href="/imgs/images_paeeja/ico-paeeja.ico"
-    type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="/imgs/images_paeeja/ico-paeeja.ico" type="image/x-icon" />
 </head>
+
 <body>
- <!-- Parágrafo para redirecionar o btn Cursos -->
- <p id="inicioCursos"></p>
- <!-- POR FAVOR, NAO APAGUE!!!!!!!!!!! -->
+    <!-- Parágrafo para redirecionar o btn Cursos -->
+    <p id="inicioCursos"></p>
+    <!-- POR FAVOR, NAO APAGUE!!!!!!!!!!! -->
 
-<!--Inicialização da NAV nesta aba-->
-<div id = "navbar"></div>
+    <!--Inicialização da NAV nesta aba-->
+    <div id="navbar"></div>
 
-<!-- Conteúdo da sessão de cursos:-->
-<main>
-  <section class="secao-cursos">
-      
-      <h1 class = "todos-cursos-digitais">Todos os Cursos Digitais</h1>
-      </div>
-      <!-- Botão VOLTAR -->
-  <nav class="top-menu">
-    <div class="voltar-fixo"> 
-    <a href="/">
-    <img src="imgs/img_loja/voltar.png" alt="Voltar" class="seta-img" />
-    <span>Voltar</span>
-    </a>
-    </div> 
-  </nav>
+    <!-- Conteúdo da sessão de cursos:-->
+    <main>
+        <section class="secao-cursos">
 
-    
-    <button id="helpButton">
-        <img src="../imgs/tutorial-popup/interrogacao-popup.png" alt="Ajuda">
-    </button>
-
-    <div id="popup" class="hidden">
-    <div class="popup-content">
-        <button id="skipButton">Pular</button>
-        <img id="popupImage" src="" alt="Imagem do tutorial">
-        <p id="popupText"></p>
-        <div class="popup-nav">
-    <button id="prevButton">
-        <img src="../imgs/tutorial-popup/seta-voltar.png" alt="Voltar">
-    </button>
-    <button id="nextButton">
-        <img src="../imgs/tutorial-popup/seta-avancar.png" alt="Avançar">
-    </button>
-        </div>
-        <button id="closeButton" class="hidden">
-            <img src="../imgs/tutorial-popup/botao-fechar.png" alt="Fechar">
-        </button>
-    </div>
-    </div>
-
-      <div class="cursos-container">
-        <div class="secao-curso-portugues">
-            <h2 class="titulo-curso">Curso - Português</h2>
-            <div class="grade-cursos">
-                <a href="link-para-curso-portugues" class="cartao-curso card-curso-port"> <!-- Substitua o link -->
-                    <div class="cartao-conteudo">
-                        <div class="icone icone-port">
-                            <img src="/imgs/imagens_tela_cursos/School.png" alt="Ícone do Curso" />
-                        </div>
-                        <div class="cartao-detalhes">
-                            <p class="cartao-titulo">Curso Digital</p>
-                            <h3 class="cartao-subtitulo">Língua Port. I</h3>
-                            <p class="cartao-modulo">Módulo Único</p>
-                        </div>
-                    </div>
-                </a>
+            <h1 class="todos-cursos-digitais">Todos os Cursos Digitais</h1>
             </div>
-        </div>
-        
-        <div class="secao-curso-matematica">
-            <h2 class="titulo-curso">Curso - Matemática</h2>
-            <div class="grade-cursos">
-                <a href="link-para-curso-matematica" class="cartao-curso" style="pointer-events: none;" > <!-- Substitua o link -->
-                    <div class="cartao-conteudo">
-                        <div class="icone">
-                            <img src="../imgs/imagens_tela_cursos/cadeado.png" alt="Ícone do Curso" />
-                        </div>
-                        <div class="cartao-detalhes">
-                            <p class="cartao-titulo">Curso Digital</p>
-                            <h3 class="cartao-subtitulo">Matemática I</h3>
-                            <p class="cartao-modulo">Módulo Único</p>
-                        </div>
+            <!-- Botão VOLTAR -->
+            <nav class="top-menu">
+                <div class="voltar-fixo">
+                    <a href="/">
+                        <img src="imgs/img_loja/voltar.png" alt="Voltar" class="seta-img" />
+                        <span>Voltar</span>
+                    </a>
+                </div>
+            </nav>
+
+
+            <button id="helpButton">
+                <img src="../imgs/tutorial-popup/interrogacao-popup.png" alt="Ajuda">
+            </button>
+
+            <div id="popup" class="hidden">
+                <div class="popup-content">
+                    <button id="skipButton">Pular</button>
+                    <img id="popupImage" src="" alt="Imagem do tutorial">
+                    <p id="popupText"></p>
+                    <div class="popup-nav">
+                        <button id="prevButton">
+                            <img src="../imgs/tutorial-popup/seta-voltar.png" alt="Voltar">
+                        </button>
+                        <button id="nextButton">
+                            <img src="../imgs/tutorial-popup/seta-avancar.png" alt="Avançar">
+                        </button>
                     </div>
-                </a>
+                    <button id="closeButton" class="hidden">
+                        <img src="../imgs/tutorial-popup/botao-fechar.png" alt="Fechar">
+                    </button>
+                </div>
             </div>
-        </div>
-        
-        <div class="secao-curso-historia">
-            <h2 class="titulo-curso">Curso - História</h2>
-            <div class="grade-cursos">
-                <a href="link-para-curso-historia" class="cartao-curso" style="pointer-events: none;"> <!-- Substitua o link -->
-                    <div class="cartao-conteudo">
-                        <div class="icone">
-                            <img src="../imgs/imagens_tela_cursos/cadeado.png" alt="Ícone do Curso" />
-                        </div>
-                        <div class="cartao-detalhes">
-                            <p class="cartao-titulo">Curso Digital</p>
-                            <h3 class="cartao-subtitulo">História I</h3>
-                            <p class="cartao-modulo">Módulo Único</p>
-                        </div>
+
+            <div class="cursos-container">
+                <div class="secao-curso-portugues">
+                    <h2 class="titulo-curso">Curso - Português</h2>
+                    <div class="grade-cursos">
+                        <a href="link-para-curso-portugues" class="cartao-curso card-curso-port">
+                            <!-- Substitua o link -->
+                            <div class="cartao-conteudo">
+                                <div class="icone icone-port">
+                                    <img src="/imgs/imagens_tela_cursos/School.png" alt="Ícone do Curso" />
+                                </div>
+                                <div class="cartao-detalhes">
+                                    <p class="cartao-titulo">Curso Digital</p>
+                                    <h3 class="cartao-subtitulo">Língua Port. I</h3>
+                                    <p class="cartao-modulo">Módulo Único</p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-        </div>
-        
-        <div class="secao-curso-geografia">
-            <h2 class="titulo-curso-geografia">Curso - Geografia</h2>
-            <div class="grade-cursos">
-                <a href="link-para-curso-geografia" class="cartao-curso" style="pointer-events: none;"> <!-- Substitua o link -->
-                    <div class="cartao-conteudo">
-                        <div class="icone">
-                            <img src="../imgs/imagens_tela_cursos/cadeado.png" alt="Ícone do Curso" />
-                        </div>
-                        <div class="cartao-detalhes">
-                            <p class="cartao-titulo">Curso Digital</p>
-                            <h3 class="cartao-subtitulo">Geografia I</h3>
-                            <p class="cartao-modulo">Módulo Único</p>
-                        </div>
+                </div>
+
+                <div class="secao-curso-matematica">
+                    <h2 class="titulo-curso">Curso - Matemática</h2>
+                    <div class="grade-cursos">
+                        <a href="link-para-curso-matematica" class="cartao-curso" style="pointer-events: none;">
+                            <!-- Substitua o link -->
+                            <div class="cartao-conteudo">
+                                <div class="icone">
+                                    <img src="../imgs/imagens_tela_cursos/cadeado.png" alt="Ícone do Curso" />
+                                </div>
+                                <div class="cartao-detalhes">
+                                    <p class="cartao-titulo">Curso Digital</p>
+                                    <h3 class="cartao-subtitulo">Matemática I</h3>
+                                    <p class="cartao-modulo">Módulo Único</p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
+
+                <div class="secao-curso-historia">
+                    <h2 class="titulo-curso">Curso - História</h2>
+                    <div class="grade-cursos">
+                        <a href="link-para-curso-historia" class="cartao-curso" style="pointer-events: none;">
+                            <!-- Substitua o link -->
+                            <div class="cartao-conteudo">
+                                <div class="icone">
+                                    <img src="../imgs/imagens_tela_cursos/cadeado.png" alt="Ícone do Curso" />
+                                </div>
+                                <div class="cartao-detalhes">
+                                    <p class="cartao-titulo">Curso Digital</p>
+                                    <h3 class="cartao-subtitulo">História I</h3>
+                                    <p class="cartao-modulo">Módulo Único</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="secao-curso-geografia">
+                    <h2 class="titulo-curso-geografia">Curso - Geografia</h2>
+                    <div class="grade-cursos">
+                        <a href="link-para-curso-geografia" class="cartao-curso" style="pointer-events: none;">
+                            <!-- Substitua o link -->
+                            <div class="cartao-conteudo">
+                                <div class="icone">
+                                    <img src="../imgs/imagens_tela_cursos/cadeado.png" alt="Ícone do Curso" />
+                                </div>
+                                <div class="cartao-detalhes">
+                                    <p class="cartao-titulo">Curso Digital</p>
+                                    <h3 class="cartao-subtitulo">Geografia I</h3>
+                                    <p class="cartao-modulo">Módulo Único</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
+
+        </section>
+    </main>
+
     </section>
-  </main>
 
-</section>
-
-<script src="/js/script-login-cadastro.js"></script>
-<script src="/js/navbar.js"></script>
-<script src="/js/tutorial-popup.js"></script>
+    <script src="/js/script-login-cadastro.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/tutorial-popup.js"></script>
 </body>
+
 </html>

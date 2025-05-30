@@ -33,7 +33,8 @@ header {
 .cor-sec-1 {
   background: #BAD8FF;
   padding-top: 100px;
-  margin-bottom: 50px; /* Espaço entre section 1 e section 2 */
+  margin-bottom: 50px;
+  /* Espaço entre section 1 e section 2 */
 }
 
 .container-slider {
@@ -69,7 +70,8 @@ header {
 
 /* Controles manuais e automáticos */
 .nav-manual {
-  margin-bottom: 70px; /* ajuste conforme necessário */
+  margin-bottom: 70px;
+  /* ajuste conforme necessário */
 }
 
 .nav-auto,
@@ -87,7 +89,7 @@ header {
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  
+
 }
 
 /* Efeito hover para mudar a cor dos botões */
@@ -97,28 +99,32 @@ header {
 }
 
 /* Mudança de cor para os inputs checados */
-#radio1:checked ~ .nav-manual .manual-btn:nth-child(1),
-#radio2:checked ~ .nav-manual .manual-btn:nth-child(2),
-#radio3:checked ~ .nav-manual .manual-btn:nth-child(3),
-#radio4:checked ~ .nav-manual .manual-btn:nth-child(4),
-#radio5:checked ~ .nav-manual .manual-btn:nth-child(5) {
+#radio1:checked~.nav-manual .manual-btn:nth-child(1),
+#radio2:checked~.nav-manual .manual-btn:nth-child(2),
+#radio3:checked~.nav-manual .manual-btn:nth-child(3),
+#radio4:checked~.nav-manual .manual-btn:nth-child(4),
+#radio5:checked~.nav-manual .manual-btn:nth-child(5) {
   background-color: #1f62c6;
 }
 
 /* Navegação dos slides */
-#radio1:checked ~ .primeiro {
+#radio1:checked~.primeiro {
   margin-left: 0%;
 }
-#radio2:checked ~ .primeiro {
+
+#radio2:checked~.primeiro {
   margin-left: -20%;
 }
-#radio3:checked ~ .primeiro {
+
+#radio3:checked~.primeiro {
   margin-left: -40%;
 }
-#radio4:checked ~ .primeiro {
+
+#radio4:checked~.primeiro {
   margin-left: -60%;
 }
-#radio5:checked ~ .primeiro {
+
+#radio5:checked~.primeiro {
   margin-left: -80%;
 }
 
@@ -129,21 +135,32 @@ header {
 /* --------------------------------ESTILIZAÇÃO DA SECTION - 2 ( INÍCIO ) -------------------------- */
 
 .o-que-aprender-sec-2 {
-  text-align: center; /* Alinha o conteúdo ao centro */
-  margin: 0 !important; /* Remove todas as margens */
+  text-align: center;
+  /* Alinha o conteúdo ao centro */
+  margin: 0 !important;
+  /* Remove todas as margens */
   padding: 0 !important;
-  height: auto !important; /* Altura mínima necessária */
-  overflow: hidden; /* Evita vazamentos */
+  height: auto !important;
+  /* Altura mínima necessária */
+  overflow: hidden;
+  /* Evita vazamentos */
 }
 
 .o-que-aprender-sec-2 h3 {
-  font-family: 'Poppins', sans-serif; /* Fonte monospace */
-  font-size: 25px; /* Tamanho da fonte em pixels */
-  margin: 20px 0; /* Espaço acima e abaixo do título */
-  color: #63B231; /* Cor do texto */
-  position: relative; /* Necessário para posicionar a borda */
-  display: inline-block; /* Faz com que o título se comporte como um bloco em linha */
-  padding: 0 20px; /* Espaço interno ao redor do texto */
+  font-family: 'Poppins', sans-serif;
+  /* Fonte monospace */
+  font-size: 25px;
+  /* Tamanho da fonte em pixels */
+  margin: 20px 0;
+  /* Espaço acima e abaixo do título */
+  color: #63B231;
+  /* Cor do texto */
+  position: relative;
+  /* Necessário para posicionar a borda */
+  display: inline-block;
+  /* Faz com que o título se comporte como um bloco em linha */
+  padding: 0 20px;
+  /* Espaço interno ao redor do texto */
 }
 
 /* Adiciona linhas contínuas antes e depois do texto */
@@ -152,21 +169,26 @@ header {
   content: "";
   position: absolute;
   top: 50%;
-  height: 2px; /* Altura da linha contínua */
-  background-color: #63B231; /* Cor da linha contínua */
-  transform: translateY(
-    -50%
-  ); /* Centraliza verticalmente em relação ao texto */
+  height: 2px;
+  /* Altura da linha contínua */
+  background-color: #63B231;
+  /* Cor da linha contínua */
+  transform: translateY(-50%);
+  /* Centraliza verticalmente em relação ao texto */
 }
 
 .o-que-aprender-sec-2 h3::before {
-  left: -75%; /* Linha à esquerda do texto */
-  width: 75%; /* Largura da linha antes do texto */
+  left: -75%;
+  /* Linha à esquerda do texto */
+  width: 75%;
+  /* Largura da linha antes do texto */
 }
 
 .o-que-aprender-sec-2 h3::after {
-  right: -75%; /* Linha à direita do texto */
-  width: 75%; /* Largura da linha depois do texto */
+  right: -75%;
+  /* Linha à direita do texto */
+  width: 75%;
+  /* Largura da linha depois do texto */
 }
 
 
@@ -174,28 +196,35 @@ header {
 /* Parte dos ( NÚMEROS - PASSO A PASSO ) da SECTION2*/
 
 /* Mudança das cores do Home */
-.cor-sec-2{
+.cor-sec-2 {
   background: #ffffff
-  
 }
-.cor-sec-2{
-  padding-bottom: 100px; /* ou ajuste conforme o espaço desejado */
+
+.cor-sec-2 {
+  padding-bottom: 100px;
+  /* ou ajuste conforme o espaço desejado */
 }
 
 
 
 /* Estilo para o contêiner redondo que envolve cada número */
 .numero-redondo {
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%; /* Faz o contêiner ser redondo */
-  background-color: #e0dede; /* Cor de fundo da esfera */
-  width: 260px; /* Tamanho fixo do contêiner redondo */
-  height: 270px; /* Tamanho fixo do contêiner redondo */
-  position: relative; /* Para posicionamento dos números dentro */
-  margin: 0; /* Remove margens */
+  border-radius: 50%;
+  /* Faz o contêiner ser redondo */
+  background-color: #e0dede;
+  /* Cor de fundo da esfera */
+  width: 260px;
+  /* Tamanho fixo do contêiner redondo */
+  height: 270px;
+  /* Tamanho fixo do contêiner redondo */
+  position: relative;
+  /* Para posicionamento dos números dentro */
+  margin: 0;
+  /* Remove margens */
   box-shadow: 0 0 40px rgba(76, 76, 76, 0.3);
 }
 
@@ -203,18 +232,25 @@ header {
 /* Estilo para o contêiner que agrupa números e descrições */
 .numeros-e-paragrafos {
   display: flex;
-  justify-content: center; /* Centraliza os itens horizontalmente */
-  align-items: flex-start; /* Alinha os itens ao topo */
-  gap: 230px; /* Espaçamento entre os grupos de números e parágrafos */
-  padding: 20px 0; /* Espaço acima e abaixo da div */
+  justify-content: center;
+  /* Centraliza os itens horizontalmente */
+  align-items: flex-start;
+  /* Alinha os itens ao topo */
+  gap: 230px;
+  /* Espaçamento entre os grupos de números e parágrafos */
+  padding: 20px 0;
+  /* Espaço acima e abaixo da div */
 }
 
 /* Estilo para cada grupo de número e descrição */
 .numero-e-descricao {
   display: flex;
-  flex-direction: column; /* Alinha número e descrição verticalmente */
-  align-items: center; /* Centraliza o número e descrição horizontalmente */
-  text-align: center; /* Centraliza o texto do parágrafo */
+  flex-direction: column;
+  /* Alinha número e descrição verticalmente */
+  align-items: center;
+  /* Centraliza o número e descrição horizontalmente */
+  text-align: center;
+  /* Centraliza o texto do parágrafo */
 }
 
 /* Estilo para o contêiner redondo que envolve cada número */
@@ -222,103 +258,149 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%; /* Faz o contêiner ser redondo */
-  background-color: #D9D9D90D; /* Cor de fundo da esfera */
-  width: 270px; /* Tamanho fixo do contêiner redondo */
-  height: 272px; /* Tamanho fixo do contêiner redondo */
-  position: relative; /* Para posicionamento dos números dentro */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra expansiva e suave */
-  padding: 20px; /* Espaçamento interno */
+  border-radius: 50%;
+  /* Faz o contêiner ser redondo */
+  background-color: #D9D9D90D;
+  /* Cor de fundo da esfera */
+  width: 270px;
+  /* Tamanho fixo do contêiner redondo */
+  height: 272px;
+  /* Tamanho fixo do contêiner redondo */
+  position: relative;
+  /* Para posicionamento dos números dentro */
+  margin: 0 auto;
+  /* Centraliza horizontalmente */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  /* Sombra expansiva e suave */
+  padding: 20px;
+  /* Espaçamento interno */
 }
 
 /* Estilo para os números dentro do contêiner redondo */
 .numero-redondo h3 {
-  font-family: "Mplus1p", sans-serif; /* Fonte Mplus1p */
-  font-weight: 800; /* Extrabold */
-  font-size: 230px; /* Tamanho da fonte ajustado para caber dentro da esfera */
-  margin: 0; /* Remove margens padrão */
-  color: inherit; /* Faz com que a cor do número herde a cor do contêiner */
+  font-family: "Mplus1p", sans-serif;
+  /* Fonte Mplus1p */
+  font-weight: 800;
+  /* Extrabold */
+  font-size: 230px;
+  /* Tamanho da fonte ajustado para caber dentro da esfera */
+  margin: 0;
+  /* Remove margens padrão */
+  color: inherit;
+  /* Faz com que a cor do número herde a cor do contêiner */
 }
 
 /* Estilos específicos para cada número */
 .numero1 h3 {
-  color: #0ACF8380; /* Verde com opacidade de 50% */
+  color: #0ACF8380;
+  /* Verde com opacidade de 50% */
 }
 
 .numero2 h3 {
-  color: #FF656580; /* Vermelho com opacidade de 50% */
+  color: #FF656580;
+  /* Vermelho com opacidade de 50% */
 }
 
 .numero3 h3 {
-  color: #0A66C280; /* Azul com opacidade de 50% */
+  color: #0A66C280;
+  /* Azul com opacidade de 50% */
 }
 
 /* Estilo para os parágrafos abaixo dos números */
 .descricao {
   font-family: "Montserrat", sans-serif;
-  font-weight: 700; /* Negrito */
-  color: #63B231; /* Cor do texto */
-  font-size: 18px; /* Tamanho da fonte ajustável */
-  margin: 40px 0 0; /* Margem superior para separar do número */
-  max-width: 320px; /* Limita a largura máxima do parágrafo */
+  font-weight: 700;
+  /* Negrito */
+  color: #63B231;
+  /* Cor do texto */
+  font-size: 18px;
+  /* Tamanho da fonte ajustável */
+  margin: 40px 0 0;
+  /* Margem superior para separar do número */
+  max-width: 320px;
+  /* Limita a largura máxima do parágrafo */
 }
 
 .section2-botao-aluno {
   display: inline-block;
-  padding: 20px 60px; /* Espaçamento interno do botão */
+  padding: 20px 60px;
+  /* Espaçamento interno do botão */
   font-family: 'Poppins', sans-serif;
-  font-weight: 700; /* Negrito */
-  color: #ffffff; /* Cor do texto */
-  background-color: #7c72a7; /* Cor de fundo do botão */
-  text-decoration: none; /* Remove o sublinhado */
-  border-radius: 16px; /* Bordas arredondadas */
-  box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4); /* Aumenta a sombra para torná-la mais aparente */
+  font-weight: 700;
+  /* Negrito */
+  color: #ffffff;
+  /* Cor do texto */
+  background-color: #7c72a7;
+  /* Cor de fundo do botão */
+  text-decoration: none;
+  /* Remove o sublinhado */
+  border-radius: 16px;
+  /* Bordas arredondadas */
+  box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4);
+  /* Aumenta a sombra para torná-la mais aparente */
 
-  margin: 40px 0; /* Margem superior para separar do conteúdo acima */
+  margin: 40px 0;
+  /* Margem superior para separar do conteúdo acima */
 }
 
 .link-aluno-section {
   display: flex;
-  justify-content: center; /* Centraliza o botão horizontalmente */
-  align-items: center; /* Alinha o botão verticalmente */
-  padding: 20px 0; /* Espaço acima e abaixo do botão */
+  justify-content: center;
+  /* Centraliza o botão horizontalmente */
+  align-items: center;
+  /* Alinha o botão verticalmente */
+  padding: 20px 0;
+  /* Espaço acima e abaixo do botão */
 }
 
 /* Efeito de hover para o botão de ser aluno */
 .section2-botao-aluno:hover {
-  background-color: #BFAFFF; /* Cor de fundo ao passar o mouse */
+  background-color: #BFAFFF;
+  /* Cor de fundo ao passar o mouse */
 }
+
 /*Section 3 Estilização */
 
 /* Mudança Cor do Home */
-.cor-sec-3{
-  background:  #BFAFFF;
+.cor-sec-3 {
+  background: #BFAFFF;
 
 }
-.cor-sec3{
+
+.cor-sec3 {
   margin-top: 80px;
 }
 
 /* Estilo para a seção "Nossos cursos" */
 .titulos-nossos-cursos {
-  text-align: center; /* Alinha o conteúdo ao centro */
-  padding-bottom:40px;
-  padding-top: 50px; /* Ajuste conforme necessário */
-  height: auto !important; /* Altura mínima necessária */
-  overflow: hidden; /* Evita vazamentos */
-  
+  text-align: center;
+  /* Alinha o conteúdo ao centro */
+  padding-bottom: 40px;
+  padding-top: 50px;
+  /* Ajuste conforme necessário */
+  height: auto !important;
+  /* Altura mínima necessária */
+  overflow: hidden;
+  /* Evita vazamentos */
+
 }
 
 .titulos-nossos-cursos h3 {
-  
-  font-family: 'Poppins', sans-serif; /* Fonte monospace */
-  font-size: 25px; /* Tamanho da fonte em pixels */
-  margin: 20px 0; /* Espaço acima e abaixo do título */
-  color: #ffffff; /* Cor do texto */
-  position: relative; /* Necessário para posicionar a borda */
-  display: inline-block; /* Faz com que o título se comporte como um bloco em linha */
-  padding: 0 20px; /* Espaço interno ao redor do texto */
+
+  font-family: 'Poppins', sans-serif;
+  /* Fonte monospace */
+  font-size: 25px;
+  /* Tamanho da fonte em pixels */
+  margin: 20px 0;
+  /* Espaço acima e abaixo do título */
+  color: #ffffff;
+  /* Cor do texto */
+  position: relative;
+  /* Necessário para posicionar a borda */
+  display: inline-block;
+  /* Faz com que o título se comporte como um bloco em linha */
+  padding: 0 20px;
+  /* Espaço interno ao redor do texto */
 }
 
 /* Adiciona linhas contínuas antes e depois do texto na seção "Nossos cursos" */
@@ -326,87 +408,115 @@ header {
 .titulos-nossos-cursos h3::after {
   content: "";
   position: absolute;
-  top: 50%; /* Posiciona verticalmente no meio */
-  height: 2px; /* Altura da linha contínua */
-  background-color: #61529C; /* Cor da linha contínua */
-  transform: translateY(
-    -50%
-  ); /* Centraliza verticalmente em relação ao texto */
+  top: 50%;
+  /* Posiciona verticalmente no meio */
+  height: 2px;
+  /* Altura da linha contínua */
+  background-color: #61529C;
+  /* Cor da linha contínua */
+  transform: translateY(-50%);
+  /* Centraliza verticalmente em relação ao texto */
 }
 
 /* Ajuste de largura para garantir que a linha fique igual à da seção anterior */
 .titulos-nossos-cursos h3::before {
-  left: -130%; /* Linha à esquerda do texto */
-  width: 130%; /* Largura da linha antes do texto ajustada para manter proporção */
+  left: -130%;
+  /* Linha à esquerda do texto */
+  width: 130%;
+  /* Largura da linha antes do texto ajustada para manter proporção */
 }
 
 .titulos-nossos-cursos h3::after {
-  right: -130%; /* Linha à direita do texto */
-  width: 130%; /* Largura da linha depois do texto ajustada para manter proporção */
+  right: -130%;
+  /* Linha à direita do texto */
+  width: 130%;
+  /* Largura da linha depois do texto ajustada para manter proporção */
 }
+
 /* Parte dos CARDS SESSÃO 3 --------------------------- */
 
 /* Parte dos CARDS SESSÃO 3 --------------------------- */
 
 .container {
   display: flex;
-  justify-content: center; /* Alinha os cards à esquerda */
-  flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha */
-  margin: auto; /* Margem externa do contêiner */
+  justify-content: center;
+  /* Alinha os cards à esquerda */
+  flex-wrap: wrap;
+  /* Permite que os cards se movam para a próxima linha */
+  margin: auto;
+  /* Margem externa do contêiner */
   gap: 20px;
 }
 
 .card {
-  border: 1px solid #ccc; /* Borda do card */
-  border-radius: 8px; /* Cantos arredondados */
+  border: 1px solid #ccc;
+  /* Borda do card */
+  border-radius: 8px;
+  /* Cantos arredondados */
 
   /* Ajustado: Reduzindo a largura do card para permitir mais espaço horizontal */
-  width: 390px; /* Largura do card ajustada para 390px */
+  width: 390px;
+  /* Largura do card ajustada para 390px */
   border-radius: 30px;
 
-  margin: 5px; /* Margem entre os cards reduzida para 5px */
-  padding: 15px; /* Espaço interno do card */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra do card */
-  display: flex; /* Permite uma organização flexível */
-  flex-direction: column; /* Organiza os elementos em coluna */
+  margin: 5px;
+  /* Margem entre os cards reduzida para 5px */
+  padding: 15px;
+  /* Espaço interno do card */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra do card */
+  display: flex;
+  /* Permite uma organização flexível */
+  flex-direction: column;
+  /* Organiza os elementos em coluna */
   box-shadow: 0 0 40px rgba(76, 76, 76, 0.3);
   box-shadow: 0 0 40px rgba(76, 76, 76, 0.3);
 }
 
 /* Cores específicas dos Cards */
 .cor-mat {
-  background-color: #99BDEB; /* Matematica */
+  background-color: #99BDEB;
+  /* Matematica */
 }
 
 .cor-port {
-  background-color: #ADABAB; /* Portugues */
+  background-color: #ADABAB;
+  /* Portugues */
 }
 
 .cor-cien {
-  background-color: #ADABAB; /* Ciencias */
+  background-color: #ADABAB;
+  /* Ciencias */
 }
 
 .card img {
-  width: 100%; /* Imagem ocupa toda a largura do card */
-  border-radius: 8px 8px 0 0; /* Arredondamento no topo da imagem */
+  width: 100%;
+  /* Imagem ocupa toda a largura do card */
+  border-radius: 8px 8px 0 0;
+  /* Arredondamento no topo da imagem */
 }
 
 .card h2 {
-  font-size: 1.5em; /* Tamanho da fonte do título */
-  margin: 10px 0; /* Margem acima e abaixo do título */
+  font-size: 1.5em;
+  /* Tamanho da fonte do título */
+  margin: 10px 0;
+  /* Margem acima e abaixo do título */
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
 }
 
 .card ul {
-  padding-left: 20px; /* Mantém os pontos visíveis com um recuo */
-  margin: 15px 0; /* Margem acima e abaixo da lista */
+  padding-left: 20px;
+  /* Mantém os pontos visíveis com um recuo */
+  margin: 15px 0;
+  /* Margem acima e abaixo da lista */
   color: #fefeff;
   font-weight: 400;
 }
 
 .card ul li {
-  margin: 5px 0; /* Margem entre os itens da lista */
+  margin: 5px 0;
+  /* Margem entre os itens da lista */
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
@@ -414,39 +524,52 @@ header {
 .saber-mais {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  display: inline-block; /* Permite o uso de margens e padding */
-  margin-top: 15px; /* Espaço acima do botão */
-  width: 136.07px; /* Largura do botão */
-  height: 25.43px; /* Altura do botão */
-  background-color: #031836; /* Cor de fundo do botão */
-  color: white; /* Cor do texto do botão */
-  text-decoration: none; /* Remove sublinhado do link */
-  border-radius: 30px; /* Cantos arredondados do botão */
-  text-align: center; /* Centraliza o texto do botão */
-  line-height: 25.43px; /* Centraliza verticalmente o texto */
+  display: inline-block;
+  /* Permite o uso de margens e padding */
+  margin-top: 15px;
+  /* Espaço acima do botão */
+  width: 136.07px;
+  /* Largura do botão */
+  height: 25.43px;
+  /* Altura do botão */
+  background-color: #031836;
+  /* Cor de fundo do botão */
+  color: white;
+  /* Cor do texto do botão */
+  text-decoration: none;
+  /* Remove sublinhado do link */
+  border-radius: 30px;
+  /* Cantos arredondados do botão */
+  text-align: center;
+  /* Centraliza o texto do botão */
+  line-height: 25.43px;
+  /* Centraliza verticalmente o texto */
 
-  margin: 15px auto 0; /* Margens verticais: 15px em cima, auto nas laterais para centralizar */
-  font-size: 13.78px; /* Ajustado: unidade 'px' adicionada */
+  margin: 15px auto 0;
+  /* Margens verticais: 15px em cima, auto nas laterais para centralizar */
+  font-size: 13.78px;
+  /* Ajustado: unidade 'px' adicionada */
 }
 
 /* Cor de fundo do botão */
-.cor-botao-mat{
+.cor-botao-mat {
   background-color: #5186CD;
 }
 
-.cor-botao-port{
+.cor-botao-port {
   background-color: #D9D9D9;
 }
 
-.cor-botao-cie{
+.cor-botao-cie {
   background-color: #D9D9D9;
 }
 
 
 /* Cor de fundo ao passar o mouse */
 .cor-botao-mat:hover {
-  background-color: #2e4a70; 
+  background-color: #2e4a70;
 }
+
 /* DESATIVADO POIS ESSES BOTÕES PRECISAM ESTAR INDISPONÍVEIS*/
 /* .cor-botao-port:hover {
   background-color: #b9b9b9; 
@@ -461,83 +584,110 @@ header {
 /*Section 4 Estilização */
 /* Estilo para a seção "Nosso Time" */
 /* Mudança das cores do Home */
-.cor-sec-4{
+.cor-sec-4 {
   background: #BFAFFF;
-  
+
 }
-.cor-sec-4{
+
+.cor-sec-4 {
   padding-bottom: 150px;
 }
 
 /* Alinhamento do título centralizado e espaçamento */
 .titulos-nosso-time {
-  margin-bottom:40px;
-  text-align: center; /* Alinha o conteúdo ao centro */
+  margin-bottom: 40px;
+  text-align: center;
+  /* Alinha o conteúdo ao centro */
   /*margin: 0 !important;  Remove todas as margens */
-  height: 80px !important; /*Altura mínima necessária */
+  height: 80px !important;
+  /*Altura mínima necessária */
   /*overflow: hidden;  Evita vazamentos */
 }
 
 /* Estilo do título */
 .titulos-nosso-time h3 {
-  font-family: "Poppins", sans-serif; /* Define a fonte como monospace */
-  font-size: 25px; /* Define o tamanho da fonte */
-  color: #fff; /* Define a cor do texto */
-  position: relative; /* Necessário para posicionar os pseudo-elementos (::before e ::after) */
-  display: inline-block; /* Faz com que o título se comporte como um bloco em linha */
-   /*padding: 0 20px; Espaço interno ao redor do texto */
+  font-family: "Poppins", sans-serif;
+  /* Define a fonte como monospace */
+  font-size: 25px;
+  /* Define o tamanho da fonte */
+  color: #fff;
+  /* Define a cor do texto */
+  position: relative;
+  /* Necessário para posicionar os pseudo-elementos (::before e ::after) */
+  display: inline-block;
+  /* Faz com que o título se comporte como um bloco em linha */
+  /*padding: 0 20px; Espaço interno ao redor do texto */
   margin: 10 !important;
-  padding: 50px 0 !important; /* Espaçamento interno apenas */
-  
+  padding: 50px 0 !important;
+  /* Espaçamento interno apenas */
+
 }
 
 /* Pseudo-elementos para criar as linhas antes e depois do título */
 .titulos-nosso-time h3::before,
 .titulos-nosso-time h3::after {
-  content: ""; /* Cria conteúdo vazio para as linhas */
-  position: absolute; /* Posicionamento absoluto para as linhas */
-  top: 50%; /* Posiciona verticalmente no meio do título */
-  height: 2px; /* Define a altura das linhas */
-  background-color: #61529C; /* Cor das linhas */
-  transform: translateY(
-    -50%
-  ); /* Centraliza verticalmente em relação ao texto */
+  content: "";
+  /* Cria conteúdo vazio para as linhas */
+  position: absolute;
+  /* Posicionamento absoluto para as linhas */
+  top: 50%;
+  /* Posiciona verticalmente no meio do título */
+  height: 2px;
+  /* Define a altura das linhas */
+  background-color: #61529C;
+  /* Cor das linhas */
+  transform: translateY(-50%);
+  /* Centraliza verticalmente em relação ao texto */
 }
 
 /* Linha à esquerda do título */
 .titulos-nosso-time h3::before {
-  left: -140%; /* Distância da linha à esquerda do texto */
-  width: 130%; /* Define a largura da linha */
+  left: -140%;
+  /* Distância da linha à esquerda do texto */
+  width: 130%;
+  /* Define a largura da linha */
 }
 
 /* Linha à direita do título */
 .titulos-nosso-time h3::after {
-  right: -140%; /* Distância da linha à direita do texto */
-  width: 130%; /* Define a largura da linha */
+  right: -140%;
+  /* Distância da linha à direita do texto */
+  width: 130%;
+  /* Define a largura da linha */
 }
 
 /* Reset de margens e padding, configuração padrão de box-sizing e fonte */
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; /* Garante que padding e bordas sejam incluídos nas dimensões dos elementos */
-  font-family: 'Poppins', sans-serif; /* Define a fonte padrão */
-  text-decoration: none; /* Remove o sublinhado de links */
+  box-sizing: border-box;
+  /* Garante que padding e bordas sejam incluídos nas dimensões dos elementos */
+  font-family: 'Poppins', sans-serif;
+  /* Define a fonte padrão */
+  text-decoration: none;
+  /* Remove o sublinhado de links */
 }
 
 /* Estilo da seção da equipe */
 .team {
-  position: relative; /* Para possibilitar o uso de elementos posicionados dentro dessa div */
-  width: 100%; /* Largura total da tela */
-  height: 100vh; /* Altura total da tela */
+  position: relative;
+  /* Para possibilitar o uso de elementos posicionados dentro dessa div */
+  width: 100%;
+  /* Largura total da tela */
+  height: 100vh;
+  /* Altura total da tela */
   /* background: radial-gradient(
     #281c3e,
     #0f051d
   ); Fundo com gradiente radial */
-  display: flex; /* Usado para centralizar conteúdo */
-  align-items: center; /* Centraliza verticalmente os itens */
-  justify-content: center; /* Centraliza horizontalmente os itens */
-  flex-direction: column; /* Alinha os itens verticalmente */
+  display: flex;
+  /* Usado para centralizar conteúdo */
+  align-items: center;
+  /* Centraliza verticalmente os itens */
+  justify-content: center;
+  /* Centraliza horizontalmente os itens */
+  flex-direction: column;
+  /* Alinha os itens verticalmente */
 }
 
 /* Layout do conteúdo da equipe com grid */
@@ -546,12 +696,14 @@ header {
 }
 
 .team-row:first-child {
-  margin-top: 40px; /* Ajusta o valor conforme quiser */
+  margin-top: 40px;
+  /* Ajusta o valor conforme quiser */
 }
 
 .team-row {
   display: flex;
-  justify-content: center; /*  Isso aqui centraliza os cards na linha */
+  justify-content: center;
+  /*  Isso aqui centraliza os cards na linha */
   gap: 4rem;
 }
 
@@ -559,63 +711,87 @@ header {
   justify-content: center;
 }
 
-.team-row + .team-row {
-  margin-top: 20px; /* gap vertical entre a primeira linha e a segunda */
+.team-row+.team-row {
+  margin-top: 20px;
+  /* gap vertical entre a primeira linha e a segunda */
 }
 
 /* Estilo das imagens da equipe */
 .team-content img {
-  width: 100%; /* Largura total da célula */
-  height: auto; /* Mantém a proporção da imagem */
-  border-radius: 8px; /* Bordas arredondadas */
-  margin-bottom: 8px; /* Espaçamento abaixo da imagem */
+  width: 100%;
+  /* Largura total da célula */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  margin-bottom: 8px;
+  /* Espaçamento abaixo da imagem */
 }
 
 /* Estilo dos cards da equipe */
 .box {
-  padding: 16px; /* Espaçamento interno do card */
-  background-color: #61529C; /* Cor de fundo transparente */
-  border-radius: 15px; /* Bordas arredondadas */
-  transition: all 0.38s ease; /* Transição suave para animações */
+  padding: 16px;
+  /* Espaçamento interno do card */
+  background-color: #61529C;
+  /* Cor de fundo transparente */
+  border-radius: 15px;
+  /* Bordas arredondadas */
+  transition: all 0.38s ease;
+  /* Transição suave para animações */
 }
 
 /* Estilo do nome no card */
 .box h3 {
-  font-size: 23px; /* Tamanho da fonte do nome */
-  font-weight: 600; /* Negrito */
-  color: #ffffff; /* Cor do texto branco */
-  margin-bottom: 8px; /* Espaçamento abaixo do nome */
+  font-size: 23px;
+  /* Tamanho da fonte do nome */
+  font-weight: 600;
+  /* Negrito */
+  color: #ffffff;
+  /* Cor do texto branco */
+  margin-bottom: 8px;
+  /* Espaçamento abaixo do nome */
 }
 
 /* Estilo da função no card */
 .box h5 {
-  font-size: 15px; /* Tamanho da fonte da função */
-  font-weight: 200; /* Negrito */
-  color: #ffffff; /* Cor do texto branco */
-  margin-bottom: 15px; /* Espaçamento abaixo da função */
-  letter-spacing: 2px; /* Espaçamento entre letras */
+  font-size: 15px;
+  /* Tamanho da fonte da função */
+  font-weight: 200;
+  /* Negrito */
+  color: #ffffff;
+  /* Cor do texto branco */
+  margin-bottom: 15px;
+  /* Espaçamento abaixo da função */
+  letter-spacing: 2px;
+  /* Espaçamento entre letras */
 }
 
 /* Estilo dos ícones */
 .icons i {
-  display: inline-block; /* Alinha ícones em linha */
-  color: #020e20; /* Cor branca para os ícones */
-  font-size: 20px; /* Tamanho dos ícones */
-  margin: 0 8px; /* Espaçamento entre os ícones */
-  transition: all 0.38s ease; /* Transição suave para animação dos ícones */
+  display: inline-block;
+  /* Alinha ícones em linha */
+  color: #020e20;
+  /* Cor branca para os ícones */
+  font-size: 20px;
+  /* Tamanho dos ícones */
+  margin: 0 8px;
+  /* Espaçamento entre os ícones */
+  transition: all 0.38s ease;
+  /* Transição suave para animação dos ícones */
 }
 
 /* Efeito de hover nos ícones */
 .icons i:hover {
-  transform: scale(1.2); /* Aumenta o tamanho ao passar o mouse */
+  transform: scale(1.2);
+  /* Aumenta o tamanho ao passar o mouse */
 }
 
 /* Efeito de hover no card */
 .box:hover {
-  transform: translateY(
-    -10px
-  ); /* Move o card 10px para cima ao passar o mouse */
-  cursor: pointer; /* Mostra que o card é clicável */
+  transform: translateY(-10px);
+  /* Move o card 10px para cima ao passar o mouse */
+  cursor: pointer;
+  /* Mostra que o card é clicável */
 }
 
 /* FOOTER DO SITE COM FORMULÁRIO */
@@ -751,4 +927,3 @@ form button {
 form button:hover {
   background-color: #ffffffc9;
 }
-

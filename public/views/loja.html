@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,22 +8,23 @@
   <link rel="stylesheet" href="/css/paginaLoja.css" />
   <link rel="stylesheet" href="/css/navbar.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  
+
 </head>
+
 <body>
   <!-- NAVBAR fixa (você adiciona o conteúdo depois) -->
   <div id="navbar"></div>
-    <!-- Navbar será fixa no topo. Altura: 70px -->
+  <!-- Navbar será fixa no topo. Altura: 70px -->
   </div>
 
   <!-- Botão VOLTAR -->
   <nav class="top-menu">
-    <div class="voltar-fixo"> 
-    <a href="/">
-    <img src="imgs/img_loja/voltar.png" alt="Voltar" class="seta-img" />
-    <span>Voltar</span>
-    </a>
-    </div> 
+    <div class="voltar-fixo">
+      <a href="/">
+        <img src="imgs/img_loja/voltar.png" alt="Voltar" class="seta-img" />
+        <span>Voltar</span>
+      </a>
+    </div>
     <span class="active">Loja</span>
   </nav>
 
@@ -30,37 +32,47 @@
   <div class="page-wrapper">
 
     <!-- Sidebar lateral com busca e filtros -->
-      <aside class="sidebar">
-  <h3>Filtros</h3>
-  <div class="filtro-opcoes">
-  <label><input type="checkbox" name="filtro1"> Avatares</label>
-</div>
-      </aside>
+    <aside class="sidebar">
+      <h3>Filtros</h3>
+      <div class="filtro-opcoes">
+        <label><input type="checkbox" name="filtro1"> Avatares</label>
+      </div>
+    </aside>
 
     <!-- Área de conteúdo (planos de fundo e emblemas) -->
     <section class="content">
 
       <div class="section-title">Avatares</div>
       <div class="grid">
-       <div class="item"><img src="/imgs/images-avatares/avatar-1.png" alt="Plano de Fundo 1" data-id="1" data-tipo="capa" class="item-img"/><p>50</p></div>
-      <div class="item"><img src="/imgs/images-avatares/avatar-2.png" alt="Plano de Fundo 2" class="item-img"/><p>50</p></div>
-      <div class="item"><img src="/imgs/images-avatares/avatar-fem.png" alt="Plano de Fundo 3" class="item-img"/><p>50</p></div>
-      <div class="item"><img src="/imgs/images-avatares/avatar-fem2.png" alt="Plano de Fundo 4" class="item-img"/> <p>50</p></div>
+        <div class="item"><img src="/imgs/images-avatares/avatar-1.png" alt="Plano de Fundo 1" data-id="1"
+            data-tipo="capa" class="item-img" />
+          <p>50</p>
+        </div>
+        <div class="item"><img src="/imgs/images-avatares/avatar-2.png" alt="Plano de Fundo 2" class="item-img" />
+          <p>50</p>
+        </div>
+        <div class="item"><img src="/imgs/images-avatares/avatar-fem.png" alt="Plano de Fundo 3" class="item-img" />
+          <p>50</p>
+        </div>
+        <div class="item"><img src="/imgs/images-avatares/avatar-fem2.png" alt="Plano de Fundo 4" class="item-img" />
+          <p>50</p>
+        </div>
       </div>
 
     </section>
   </div>
 
-<div id="confirm-modal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <p class="confirm-text" id="confirm-text">Deseja finalizar a compra?</p>
-    <button id="confirm-no">Não</button>
-    <button id="confirm-yes">Sim</button>
-    <p id="modal-message"></p>
-    <button id="close-modal" style="display: none;">Fechar</button>
+  <div id="confirm-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <p class="confirm-text" id="confirm-text">Deseja finalizar a compra?</p>
+      <button id="confirm-no">Não</button>
+      <button id="confirm-yes">Sim</button>
+      <p id="modal-message"></p>
+      <button id="close-modal" style="display: none;">Fechar</button>
+    </div>
   </div>
-</div>
   <script src="/js/loja.js"></script>
   <script src="/js/navbar.js"></script>
 </body>
+
 </html>
