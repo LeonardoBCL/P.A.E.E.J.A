@@ -18,22 +18,12 @@ async function buscarNomeUsuario(email) {
 }
 
 async function buscarCapas() {
-  const [capas] = await db.query("SELECT id, nome, preco FROM capas");
-  return capas;
-}
-
-async function buscarTemas() {
-  const [temas] = await db.query("SELECT id, nome, preco FROM temas");
-  return temas;
+  const [avatar] = await db.query("SELECT id, nome, preco FROM avatar");
+  return avatar;
 }
 
 async function buscarPrecoItem(tipo, itemId) {
-  const [rows] = await db.query(
-    tipo === 'capa'
-      ? "SELECT preco FROM capas WHERE id = ?"
-      : "SELECT preco FROM temas WHERE id = ?",
-    [itemId]
-  );
+  const [rows] = await db.query("SELECT preco FROM avatar WHERE id = ?", [itemId]);
   return rows[0];
 }
 
@@ -61,15 +51,26 @@ async function registrarCompra(usuarioId, tipo, itemId) {
   );
 }
 
+async function atualizarAvatar(usuarioId, avatarId) {
+  const sql = 'UPDATE usuarios SET avatar_id = ? WHERE id = ?';
+  await db.query(sql, [avatarId, usuarioId]);
+}
+
+async function buscarAvatarEquipado(usuarioId) {
+  const [rows] = await db.query("SELECT avatar_id FROM usuarios WHERE id = ?", [usuarioId]);
+  return rows[0];
+}
+
 module.exports = {
   criarUsuario,
   buscarPorEmailSenha,
   buscarNomeUsuario,
   buscarCapas,
-  buscarTemas,
   buscarPrecoItem,
   buscarMoedas,
   jaComprou,
   descontarMoedas,
   registrarCompra,
+  atualizarAvatar,
+  buscarAvatarEquipado
 };

@@ -7,19 +7,11 @@ CREATE TABLE usuarios (
     email VARCHAR(100) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL,
     moedas INT DEFAULT 0,
-    tema_id INT,
-    capa_id INT,
-    FOREIGN KEY (tema_id) REFERENCES temas(id),
-    FOREIGN KEY (capa_id) REFERENCES capas(id)
+    avatar_id INT,
+    FOREIGN KEY (avatar_id) REFERENCES avatar(id)
 );
 
-CREATE TABLE temas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    preco INT NOT NULL
-);
-
-CREATE TABLE capas (
+CREATE TABLE avatar (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     preco INT NOT NULL
@@ -85,7 +77,7 @@ CREATE TABLE respostas_usuario (
 
 CREATE TABLE personalizacoes_compradas (
     usuario_id INT,
-    tipo ENUM('tema', 'capa'),
+    tipo ENUM('avatar'),
     item_id INT,
     PRIMARY KEY (usuario_id, tipo, item_id),
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
