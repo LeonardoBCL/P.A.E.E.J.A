@@ -20,21 +20,25 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 body {
-  padding-top: 75px; /* altura do header + espaço */
+  padding-top: 75px;
+  /* altura do header + espaço */
 }
+
 /* Lateral */
 .menu-lateral {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  transform: translateX(-170px); /* move tudo da lateral 40px para a esquerda */
+  transform: translateX(-170px);
+  /* move tudo da lateral 40px para a esquerda */
 }
 
 .btn-voltar {
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 24px;
   color: #219653;
   font-weight: 700;
   cursor: pointer;
@@ -75,11 +79,14 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius:50%;
-  background-color: white;        /* fundo branco */
-  border: 2px solid #219653;      /* borda verde */
-  color: #219653;                 /* cor do "?" verde */
- 
+  border-radius: 50%;
+  background-color: white;
+  /* fundo branco */
+  border: 2px solid #219653;
+  /* borda verde */
+  color: #219653;
+  /* cor do "?" verde */
+
   cursor: help;
 }
 
@@ -139,17 +146,18 @@ body {
   border-radius: 7px;
   padding: 0.75rem;
   color: white;
-  width: 450px;  /* largura definida conforme layout */
-  min-height: 52px; 
+  width: 450px;
+  /* largura definida conforme layout */
+  min-height: 52px;
 
-  
+
 }
 
 .modulo-titulo {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
-  
+
 }
 
 .lista-submodulos {
@@ -165,15 +173,19 @@ body {
   color: white;
   padding: 1rem;
   font-size: 1rem;
-  border-radius: 7px; /* alterado de 6px para 5px, conforme seu layout */
+  border-radius: 7px;
+  /* alterado de 6px para 5px, conforme seu layout */
   border-bottom: 3px solid #ffc107;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 
-  width: 412px;  /* largura definida conforme layout */
-  min-height: 52px; /* respeita o layout, mas cresce se o conteúdo exigir */
-height: auto;      /* permite ajuste automático conforme o conteúdo */
+  width: 412px;
+  /* largura definida conforme layout */
+  min-height: 52px;
+  /* respeita o layout, mas cresce se o conteúdo exigir */
+  height: auto;
+  /* permite ajuste automático conforme o conteúdo */
 
 }
 
@@ -220,7 +232,7 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   font-size: 1.25rem;
   margin-top: 0.25rem;
   font-weight: 600;
-  margin-top:4px;
+  margin-top: 4px;
   margin-bottom: 20px;
 }
 
