@@ -209,6 +209,7 @@ h2 {
 .item {
   width: 100px;
   height: 100px;
+  cursor: pointer;
   /* background-color: #0A2349; */
 }
 
@@ -230,9 +231,9 @@ h2 {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,62 +242,104 @@ h2 {
 
 
 /* Estilização do Popup */
-.modal-content {
-  background: white;
-  width: 420px;
-  height: 200px;
-  border: 5px solid #6CC87A;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  text-align: center;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
 
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border: 5px solid #6CC87A;
+  border-radius: 15px;
+  text-align: center;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.imagemCompra {
+  width: 220px;
+  margin-bottom: 15px;
+}
+
 /* Muda a cor e centraliza o texto de confirmação de compra */
 .confirm-text {
-  margin-top: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-weight: bold;
-  color: #319F43;
-  justify-content: center;
+  font-size: 18px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 /* Deixa o texto centralizado no botão e deixa uma fonte padrão */
 .modal-content button {
-  margin: 0 10px;
+  background-color: #48A14D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+
+.button-group {
+  display: flex;
+  gap: 15px;  /* espaçamento entre os botões */
+  margin-top: 15px;
 }
 
 /* Botão de sim */
 #confirm-yes {
   border: 12px solid #319F43;
-  border-radius: 100px;
+  border-radius: 50px;
   width: 80px;
+  color: white;
+  cursor: pointer;
   background: #319F43;
 }
 
 /* Botão de não */
 #confirm-no {
   border: 12px solid #DE6550;
-  border-radius: 100px;
+  border-radius: 50px;
   width: 80px;
+  color: white;
+  cursor: pointer;
   background: #DE6550;
 }
 
 /* Muda a cor e centraliza o texto de falha na de compra */
 #modal-message {
-  margin-top: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-weight: bold;
-  color: #DE6550;
-  justify-content: center;
+  font-size: 18px;
 }
 
 /* Botão de fechar */
 #close-modal {
+  background-color: #DE6550;
+  color: #fff;
   border: 12px solid #DE6550;
-  border-radius: 100px;
-  width: 80px;
-  background: #DE6550;
+  border-radius: 50px;
+  cursor: pointer;
 }

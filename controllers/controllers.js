@@ -117,6 +117,45 @@ async function verificarComprado(req, res) {
   }
 }
 
+async function equiparAvatar(req, res) {
+  const { avatarId } = req.body;
+  const usuarioId = req.session.usuario.id;
+
+  if (!usuarioId) {
+    return res.status(401).json({ sucesso: false, message: "Usuário não autenticado." });
+  }
+
+  try {
+    const comprado = await usuarioModel.jaComprou(usuarioId, 'avatar', avatarId);
+
+    if (!comprado) {
+      return res.status(403).json({ sucesso: false, message: "Avatar não comprado." });
+    }
+
+    await usuarioModel.atualizarAvatar(usuarioId, avatarId);
+    req.session.usuario.avatar_id = avatarId;
+
+    res.json({ sucesso: true, avatarId });
+  } catch (err) {
+    console.error("Erro ao equipar avatar:", err);
+    res.status(500).json({ sucesso: false, message: "Erro interno ao equipar avatar." });
+  }
+}
+
+async function getAvatarEquipado(req, res) {
+  if (!req.session.usuario || !req.session.usuario.id) {
+    return res.status(401).json({ sucesso: false, message: "Usuário não autenticado" });
+  }
+
+  try {
+    const usuario = await usuarioModel.buscarAvatarEquipado(req.session.usuario.id);
+    return res.json({ sucesso: true, avatarId: usuario.avatar_id }); // Certifique-se que `avatar_id` vem do banco
+  } catch (err) {
+    console.error("Erro ao buscar avatar equipado:", err);
+    return res.status(500).json({ sucesso: false, message: "Erro ao buscar avatar." });
+  }
+}
+
 
 module.exports = {
   criarUsuario,
@@ -124,5 +163,7 @@ module.exports = {
   verificarSessao,
   getItensLoja,
   comprarItem,
-  verificarComprado
+  verificarComprado,
+  equiparAvatar,
+  getAvatarEquipado
 };

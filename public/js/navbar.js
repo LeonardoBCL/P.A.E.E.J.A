@@ -1,14 +1,13 @@
 // Função para carregar a barra de navegação
-function loadNavbar() {
-  fetch('/views/nav.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
-      verificarLogin(); // Verifica o estado de login após carregar a navbar
-    })
-    .catch(err => {
-      console.error("Erro ao carregar navbar:", err);
-    });
+async function loadNavbar() {
+  try {
+    const response = await fetch('/views/nav.html');
+    const data = await response.text();
+    document.getElementById('navbar').innerHTML = data;
+    await verificarLogin(); // Aguarda navbar renderizada antes de prosseguir
+  } catch (err) {
+    console.error("Erro ao carregar navbar:", err);
+  }
 }
 
 // Redireciona para o topo da página inicial
@@ -82,10 +81,41 @@ async function verificarLogin() {
 
       document.getElementById("botaoEntrarNav").style.display = "none";
       document.getElementById("botaoCadastrarNav").style.display = "none";
-
       document.getElementById("botaoSair").style.display = "inline";
       document.getElementById("nomeUsuario").hidden = false;
       document.getElementById("iconUsuario").hidden = false;
+
+      // Verifica se já há avatar no localStorage para carregar instantaneamente
+      const avatarIdLocal = localStorage.getItem("avatarEquipadoId");
+      const iconUsuario = document.getElementById("iconUsuario");
+
+      if (iconUsuario && avatarIdLocal) {
+        const avatarSelecionado = getAvatarFileName(parseInt(avatarIdLocal));
+        if (avatarSelecionado) {
+          iconUsuario.onload = () => iconUsuario.hidden = false;
+          iconUsuario.src = `/imgs/images-avatares/${avatarSelecionado}.png`;
+        }
+      }
+
+      // Requisição ao backend para garantir consistência do avatar
+      try {
+        const resposta = await fetch("/avatar-equipado");
+        const resultado = await resposta.json();
+
+        if (resultado.sucesso && resultado.avatarId) {
+          const avatarSelecionado = getAvatarFileName(parseInt(resultado.avatarId));
+          if (iconUsuario && avatarSelecionado) {
+            iconUsuario.onload = () => iconUsuario.hidden = false;
+            iconUsuario.src = `/imgs/images-avatares/${avatarSelecionado}.png`;
+
+            // Atualiza o cache local
+            localStorage.setItem("avatarEquipadoId", resultado.avatarId);
+          }
+        }
+      } catch (err) {
+        console.error("Erro ao carregar avatar da navbar:", err);
+      }
+
     } else {
       document.getElementById("botaoSair").style.display = "none";
       document.getElementById("nomeUsuario").hidden = true;
@@ -96,10 +126,22 @@ async function verificarLogin() {
   }
 }
 
+// Mapeia o ID para o nome do arquivo do avatar
+function getAvatarFileName(avatarId) {
+  switch (avatarId) {
+    case 1: return "avatar-1-desblock";
+    case 2: return "avatar-2-desblock";
+    case 3: return "avatar-fem-desblock";
+    case 4: return "avatar-fem2-desblock";
+    default: return null;
+  }
+}
+
 // Função para o botão de Sair (Logout)
 function sairLogin(event) {
   event.preventDefault();
   localStorage.removeItem("usuarioLogado");
+  localStorage.removeItem("avatarEquipadoId"); // limpa o avatar cacheado
   window.location.href = '/logout';
 }
 

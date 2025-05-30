@@ -51,6 +51,16 @@ async function registrarCompra(usuarioId, tipo, itemId) {
   );
 }
 
+async function atualizarAvatar(usuarioId, avatarId) {
+  const sql = 'UPDATE usuarios SET avatar_id = ? WHERE id = ?';
+  await db.query(sql, [avatarId, usuarioId]);
+}
+
+async function buscarAvatarEquipado(usuarioId) {
+  const [rows] = await db.query("SELECT avatar_id FROM usuarios WHERE id = ?", [usuarioId]);
+  return rows[0];
+}
+
 module.exports = {
   criarUsuario,
   buscarPorEmailSenha,
@@ -61,4 +71,6 @@ module.exports = {
   jaComprou,
   descontarMoedas,
   registrarCompra,
+  atualizarAvatar,
+  buscarAvatarEquipado
 };
