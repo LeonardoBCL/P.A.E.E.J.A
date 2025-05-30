@@ -273,6 +273,7 @@ h2 {
   border: 12px solid #319F43;
   border-radius: 100px;
   width: 80px;
+  color: white;
   background: #319F43;
 }
 
@@ -281,6 +282,7 @@ h2 {
   border: 12px solid #DE6550;
   border-radius: 100px;
   width: 80px;
+  color: white;
   background: #DE6550;
 }
 
