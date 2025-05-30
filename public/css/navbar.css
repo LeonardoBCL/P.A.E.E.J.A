@@ -159,9 +159,7 @@ O elemento first-child pega primeira tag referenciada dentro de uma div. */
 
 /* Style - username */
 .nome-usuario-logado {
-  color: #5186CD;
-  margin-right: 20px;
-  font-weight: 700;
+  display:none;
 }
 
 /* Style - userprofile */
@@ -174,6 +172,9 @@ O elemento first-child pega primeira tag referenciada dentro de uma div. */
   border: 1.2px solid #ffffff;
   border-radius: 51.52px;
   box-shadow: 0px 4px 4px 0px #00000040;
+  /* Cursor mudar ao passar o mouse encima da imagem */
+  cursor: pointer;
+  pointer-events: auto;
 
 }
 
