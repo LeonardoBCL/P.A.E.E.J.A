@@ -83,43 +83,177 @@
   <!-- Exercício 1 – Questão com alternativas -->
 <div id="exercicio1" style="display: none; max-width: 960px; padding: 1rem; border-radius: 12px;">
 
-  <section class="questao" id="questao-1" data-id="1">
-    <h2 class="questao-numero">Questão 1</h2>
+  <!-- Questão 1 -->
+<section class="questao" id="questao-numero-1">
 
-    <p class="enunciado" id="enunciado-1">
-      Com base na palavra <strong>“HIPOPÓTAMO”</strong>, responda e <br>
-      assinale a alternativa que corresponde com a informação correta sobre as letras dessa palavra.
-    </p>
+  <h2 class="questao-numero" id="numero-da-questao-1">Questão 1</h2>
 
-    <form class="alternativas" id="form-questao-1" data-questao-id="1">
-      <label class="alternativa" for="q1-a" data-letra="A">
-        <input type="radio" name="resposta-1" id="q1-a" value="A" data-correta="true" />
-        <span class="bolinha" id="bolinha-q1-a"></span>
-        <span class="letra">A)</span>
-        <span class="texto">A palavra possui 5 vogais e 6 consoantes.</span>
-      </label>
+  <p class="enunciado" id="enunciado-da-questao-1">
+    Leia o trecho da propaganda a seguir:
+  </p>
 
-      <label class="alternativa" for="q1-b" data-letra="B">
-        <input type="radio" name="resposta-1" id="q1-b" value="B" data-correta="false" />
-        <span class="bolinha" id="bolinha-q1-b"></span>
-        <span class="letra">B)</span>
-        <span class="texto">A palavra possui 4 vogais e 7 consoantes.</span>
-      </label>
+  <blockquote style="margin: 1rem 0; font-style: italic;">
+    “Não é pelo prazer de fumar, é pelo prazer de saber que você fuma o melhor.” <br />
+    <small>(Revista O Cruzeiro, 1953. Apud: VARGAS, M. A. <i>Cigarro: prazer e poder na mídia impressa brasileira</i>. Revista Eco-Pós, n. 8, jul.-dez. 2007.)</small>
+  </blockquote>
 
-      <label class="alternativa" for="q1-c" data-letra="C">
-        <input type="radio" name="resposta-1" id="q1-c" value="C" data-correta="false" />
-        <span class="bolinha" id="bolinha-q1-c"></span>
-        <span class="letra">C)</span>
-        <span class="texto">A palavra possui 6 vogais e 5 consoantes.</span>
-      </label>
+  <p class="enunciado">
+    Na construção da propaganda, o uso da vírgula no trecho destacado tem como objetivo principal:
+  </p>
 
-      <label class="alternativa" for="q1-d" data-letra="D">
-        <input type="radio" name="resposta-1" id="q1-d" value="D" data-correta="false" />
-        <span class="bolinha" id="bolinha-q1-d"></span>
-        <span class="letra">D)</span>
-        <span class="texto">A palavra possui 7 vogais e 4 consoantes.</span>
-      </label>
-    </form>
+  <form class="alternativas" id="formulario-respostas-questao-1" data-questao-id="1">
+    <label class="alternativa" for="input-alternativa-questao-1-letra-A" id="label-alternativa-questao-1-letra-A" data-letra="A">
+      <input type="radio" name="resposta-1" id="input-alternativa-questao-1-letra-A" value="A" data-correta="true" />
+      <span class="bolinha" id="bolinha-alternativa-questao-1-letra-A"></span>
+      <span class="letra">A)</span>
+      <span class="texto">Separar orações coordenadas que se contradizem.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-1-letra-B" id="label-alternativa-questao-1-letra-B" data-letra="B">
+      <input type="radio" name="resposta-1" id="input-alternativa-questao-1-letra-B" value="B" />
+      <span class="bolinha" id="bolinha-alternativa-questao-1-letra-B"></span>
+      <span class="letra">B)</span>
+      <span class="texto">Marcar a omissão de um termo anteriormente citado.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-1-letra-C" id="label-alternativa-questao-1-letra-C" data-letra="C">
+      <input type="radio" name="resposta-1" id="input-alternativa-questao-1-letra-C" value="C" />
+      <span class="bolinha" id="bolinha-alternativa-questao-1-letra-C"></span>
+      <span class="letra">C)</span>
+      <span class="texto">Separar elementos com a mesma função sintática.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-1-letra-D" id="label-alternativa-questao-1-letra-D" data-letra="D">
+      <input type="radio" name="resposta-1" id="input-alternativa-questao-1-letra-D" value="D" />
+      <span class="bolinha" id="bolinha-alternativa-questao-1-letra-D"></span>
+      <span class="letra">D)</span>
+      <span class="texto">Destacar uma enumeração de ideias centrais.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-1-letra-E" id="label-alternativa-questao-1-letra-E" data-letra="E">
+      <input type="radio" name="resposta-1" id="input-alternativa-questao-1-letra-E" value="E" />
+      <span class="bolinha" id="bolinha-alternativa-questao-1-letra-E"></span>
+      <span class="letra">E)</span>
+      <span class="texto">Introduzir uma explicação acessória.</span>
+    </label>
+  </form>
+
+</section>
+
+<!-- Questão 2 -->
+<section class="questao" id="questao-numero-2" style="margin-top: 2rem;">
+
+  <h2 class="questao-numero" id="numero-da-questao-2">Questão 2</h2>
+
+  <p class="enunciado" id="enunciado-da-questao-2">
+    Então por que o sr. me fez prometer que nunca diria a ninguém?
+  </p>
+
+  <blockquote style="margin: 1rem 0; font-style: italic;">
+    — Porque eu pretendia esquecer também — respondeu ele —, e esperava nunca mais ver o tal homem.<br />
+    <small>(DICKENS, C. Grandes esperanças. São Paulo: Cia. das Letras, 2012.)</small>
+  </blockquote>
+
+  <p class="enunciado">
+    A pontuação empregada no trecho “— Porque eu pretendia esquecer também — respondeu ele —, e esperava nunca mais ver o tal homem.” contribui para
+  </p>
+
+  <form class="alternativas" id="formulario-respostas-questao-2" data-questao-id="2">
+    <label class="alternativa" for="input-alternativa-questao-2-letra-A" id="label-alternativa-questao-2-letra-A" data-letra="A">
+      <input type="radio" name="resposta-2" id="input-alternativa-questao-2-letra-A" value="A" />
+      <span class="bolinha" id="bolinha-alternativa-questao-2-letra-A"></span>
+      <span class="letra">A)</span>
+      <span class="texto">Evitar a ambiguidade de sentido.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-2-letra-B" id="label-alternativa-questao-2-letra-B" data-letra="B">
+      <input type="radio" name="resposta-2" id="input-alternativa-questao-2-letra-B" value="B" />
+      <span class="bolinha" id="bolinha-alternativa-questao-2-letra-B"></span>
+      <span class="letra">B)</span>
+      <span class="texto">Enfatizar a dramaticidade do relato.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-2-letra-C" id="label-alternativa-questao-2-letra-C" data-letra="C">
+      <input type="radio" name="resposta-2" id="input-alternativa-questao-2-letra-C" value="C" />
+      <span class="bolinha" id="bolinha-alternativa-questao-2-letra-C"></span>
+      <span class="letra">C)</span>
+      <span class="texto">Separar a fala do narrador da fala do personagem.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-2-letra-D" id="label-alternativa-questao-2-letra-D" data-letra="D">
+      <input type="radio" name="resposta-2" id="input-alternativa-questao-2-letra-D" value="D" />
+      <span class="bolinha" id="bolinha-alternativa-questao-2-letra-D"></span>
+      <span class="letra">D)</span>
+      <span class="texto">Evidenciar o discurso indireto da narrativa.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-2-letra-E" id="label-alternativa-questao-2-letra-E" data-letra="E">
+      <input type="radio" name="resposta-2" id="input-alternativa-questao-2-letra-E" value="E" />
+      <span class="bolinha" id="bolinha-alternativa-questao-2-letra-E"></span>
+      <span class="letra">E)</span>
+      <span class="texto">Garantir a omissão de termos repetidos.</span>
+    </label>
+  </form>
+
+</section>
+
+<!-- Questão 3 -->
+<section class="questao" id="questao-numero-3" style="margin-top: 2rem;">
+
+  <h2 class="questao-numero" id="numero-da-questao-3">Questão 3</h2>
+
+  <p class="enunciado" id="enunciado-da-questao-3">
+    Eu vos direi: “Amai para entendê-las!<br />
+    Porque só o amor pode entendê-las!”
+  </p>
+
+  <blockquote style="margin: 1rem 0; font-style: italic;">
+    (MEIRELES, C. Obra poética. Rio de Janeiro: Nova Aguilar, 2001.)
+  </blockquote>
+
+  <p class="enunciado">
+    No poema, o uso da forma verbal “vos direi” e da construção exclamativa “Porque só o amor pode entendê-las!” evidencia um recurso expressivo da linguagem literária. Esse recurso consiste em
+  </p>
+
+  <form class="alternativas" id="formulario-respostas-questao-3" data-questao-id="3">
+    <label class="alternativa" for="input-alternativa-questao-3-letra-A" id="label-alternativa-questao-3-letra-A" data-letra="A">
+      <input type="radio" name="resposta-3" id="input-alternativa-questao-3-letra-A" value="A" />
+      <span class="bolinha" id="bolinha-alternativa-questao-3-letra-A"></span>
+      <span class="letra">A)</span>
+      <span class="texto">recorrer à impessoalidade da linguagem.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-3-letra-B" id="label-alternativa-questao-3-letra-B" data-letra="B">
+      <input type="radio" name="resposta-3" id="input-alternativa-questao-3-letra-B" value="B" />
+      <span class="bolinha" id="bolinha-alternativa-questao-3-letra-B"></span>
+      <span class="letra">B)</span>
+      <span class="texto">atribuir às palavras sentidos objetivos.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-3-letra-C" id="label-alternativa-questao-3-letra-C" data-letra="C">
+      <input type="radio" name="resposta-3" id="input-alternativa-questao-3-letra-C" value="C" />
+      <span class="bolinha" id="bolinha-alternativa-questao-3-letra-C"></span>
+      <span class="letra">C)</span>
+      <span class="texto">expressar subjetividade por meio da linguagem.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-3-letra-D" id="label-alternativa-questao-3-letra-D" data-letra="D">
+      <input type="radio" name="resposta-3" id="input-alternativa-questao-3-letra-D" value="D" />
+      <span class="bolinha" id="bolinha-alternativa-questao-3-letra-D"></span>
+      <span class="letra">D)</span>
+      <span class="texto">aproximar o autor e o leitor pelo discurso direto.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-3-letra-E" id="label-alternativa-questao-3-letra-E" data-letra="E">
+      <input type="radio" name="resposta-3" id="input-alternativa-questao-3-letra-E" value="E" />
+      <span class="bolinha" id="bolinha-alternativa-questao-3-letra-E"></span>
+      <span class="letra">E)</span>
+      <span class="texto">substituir as marcas do eu lírico pela narração.</span>
+    </label>
+  </form>
+
+</section>
+
 
     <div class="linha-final" style="margin-top: 1rem; border-top: 1px solid #ccc;"></div>
     
@@ -127,12 +261,8 @@
   <button id="btn-voltar" class="btn-voltar-exercicio">Voltar</button>
   <button id="btn-responder" class="btn-responder-exercicio">Responder</button>
     </div>
-
-
 </div>
 </div>
-
-
 
   </section>
 

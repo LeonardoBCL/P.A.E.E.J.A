@@ -331,7 +331,8 @@ body {
 /* PARTE REFERENTE AOS EXERCICIOS / ESTILIZAÇÃO */
 #exercicio1 {
   background-color: white;
-  
+  overflow-y: auto;
+  height: 600px;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -427,4 +428,29 @@ body {
 
 .botoes-exercicio button:hover {
   background-color: #269636;
+}
+
+
+/* Scroll personalizado para a div #exercicio1 */
+
+/* Chrome, Edge e Safari */
+#exercicio1::-webkit-scrollbar {
+  width: 8px;               /* largura da barra de rolagem */
+}
+
+#exercicio1::-webkit-scrollbar-track {
+  background: #f1f1f1;      /* cor do trilho (fundo da scrollbar) */
+  border-radius: 8px;
+}
+
+#exercicio1::-webkit-scrollbar-thumb {
+  background-color: #319F43; /* cor da "bolinha" da scrollbar */
+  border-radius: 8px;
+  border: 2px solid #f1f1f1; /* margem entre a thumb e o track */
+}
+
+/* Firefox */
+#exercicio1 {
+  scrollbar-width: thin;             /* largura fina */
+  scrollbar-color: #319F43 #f1f1f1; /* cor da thumb e do track */
 }
