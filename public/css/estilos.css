@@ -205,7 +205,7 @@ header {
   display: flex;
   justify-content: center; /* Centraliza os itens horizontalmente */
   align-items: flex-start; /* Alinha os itens ao topo */
-  gap: 230px; /* Espaçamento entre os grupos de números e parágrafos */
+  gap: 100px; /* Espaçamento entre os grupos de números e parágrafos */
   padding: 20px 0; /* Espaço acima e abaixo da div */
 }
 
@@ -599,7 +599,7 @@ header {
 /* Estilo dos ícones */
 .icons i {
   display: inline-block; /* Alinha ícones em linha */
-  color: #020e20; /* Cor branca para os ícones */
+  color: #ffffff; /* Cor branca para os ícones */
   font-size: 20px; /* Tamanho dos ícones */
   margin: 0 8px; /* Espaçamento entre os ícones */
   transition: all 0.38s ease; /* Transição suave para animação dos ícones */
@@ -618,6 +618,58 @@ header {
   cursor: pointer; /* Mostra que o card é clicável */
 }
 
+/* SECTION FAQ */
+
+  .faq-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 95vh;
+  padding: 0 5%;
+  background-color: white;
+}
+
+.faq-content {
+  text-align: right;
+  margin-right: 40px;
+  max-width: 400px;
+}
+
+.faq-subtitle {
+  color: #61529C;
+  font-weight: bold;
+  margin: 0;
+  font-size: 30px;
+}
+
+.faq-title {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.faq-text {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.faq-button {
+  display: inline-block;
+  background-color: #61529C;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.faq-button:hover {
+  background-color: #6563fd;
+}
+
 /* FOOTER DO SITE COM FORMULÁRIO */
 
 footer {
@@ -627,7 +679,7 @@ footer {
 }
 
 #location {
-  background-color: #f0eded;
+  background-color: #BFAFFF;
   width: 30vw;
   min-height: 100%;
   padding: 100px 46px 40px;
@@ -637,21 +689,21 @@ footer {
 }
 
 #location h2 {
-  color: #031836;
+  color: #fff;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4%;
 }
 
 .p-local {
-  color: #031836;
+  color: #706697;
   font-size: 1.25rem;
   margin-top: 24px;
   margin-bottom: 200px;
 }
 
 .p-copy {
-  color: #031836;
+  color: #fff;
   font-size: 1.25rem;
   margin-top: 24px;
   margin-bottom: 0;
@@ -661,7 +713,7 @@ footer {
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: #031836;
+  background-color: #8579B5;
   color: white;
   border-radius: 50%;
   text-align: center;
@@ -676,7 +728,7 @@ footer {
 }
 
 #contact {
-  background-color: #7C7AFF;
+  background-color: #61529C;
   width: 70vw;
   text-align: center;
   color: #ffffff;
@@ -712,10 +764,10 @@ form textarea {
   border: none;
   outline: none;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.48);
+  background-color: rgba(255, 255, 255, 0.829);
   padding: 20px 15px;
   border-radius: 15px;
-  color: var(--white);
+  color: #61529C;
   font-size: 1.1rem;
   font-family: "Poppins", sans-serif;
 }

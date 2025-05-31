@@ -21,7 +21,7 @@ a {
 }
 body {
   padding-top: 75px; /* altura do header + espaço */
-  
+  /* overflow: hidden;  tira scroll da página  */
 }
 /* Lateral */
 .menu-lateral {
