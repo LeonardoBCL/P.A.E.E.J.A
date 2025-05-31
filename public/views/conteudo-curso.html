@@ -6,8 +6,29 @@
   <title>Módulo - Língua Portuguesa | PAEEJA</title>
   <link rel="stylesheet" href="/css/conteudo-curso.css" />
   <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/tutorial-popup.css">
 </head>
 <body>
+
+    <div id="popup" class="hidden">
+    <div class="popup-content">
+        <button id="skipButton">Pular</button>
+        <img id="popupImage" src="" alt="Imagem do tutorial">
+        <p id="popupText"></p>
+        <div class="popup-nav">
+    <button id="prevButton">
+        <img src="../imgs/tutorial-popup/seta-voltar.png" alt="Voltar">
+    </button>
+    <button id="nextButton">
+        <img src="../imgs/tutorial-popup/seta-avancar.png" alt="Avançar">
+    </button>
+        </div>
+        <button id="closeButton" class="hidden">
+            <img src="../imgs/tutorial-popup/botao-fechar.png" alt="Fechar">
+        </button>
+    </div>
+    </div>
+
   <!-- Espaço reservado para a navbar -->
   <header id="navbar"></header>
 
@@ -277,5 +298,6 @@
   </main>
   <script src = "/js/conteudoCursos.js"></script>
   <script src="/js/navbar.js"></script>
+  <script src="/js/tutorial-popup.js"></script> 
 </body>
 </html>

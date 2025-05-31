@@ -6,7 +6,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-
 }
 
 html {
@@ -82,6 +81,7 @@ body {
   color: #219653;                 /* cor do "?" verde */
  
   cursor: help;
+  cursor: pointer;
 }
 
 /* Tooltip */
