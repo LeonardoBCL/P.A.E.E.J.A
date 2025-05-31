@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+
 
 /* Styles global.*/
 * {
@@ -278,11 +281,11 @@ header {
 
 /* Estilo para os números dentro do contêiner redondo */
 .numero-redondo h3 {
-  font-family: "Mplus1p", sans-serif;
+  font-family: 'Pixelify Sans', sans-serif;
   /* Fonte Mplus1p */
-  font-weight: 800;
+  font-weight: bold;
   /* Extrabold */
-  font-size: 230px;
+  font-size: 280px;
   /* Tamanho da fonte ajustado para caber dentro da esfera */
   margin: 0;
   /* Remove margens padrão */
