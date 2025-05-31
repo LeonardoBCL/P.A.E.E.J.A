@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
 
 
 
@@ -281,7 +281,7 @@ header {
 
 /* Estilo para os números dentro do contêiner redondo */
 .numero-redondo h3 {
-  font-family: 'Pixelify Sans', sans-serif;
+  font-family: "Jersey 25", sans-serif;
   /* Fonte Mplus1p */
   font-weight: bold;
   /* Extrabold */
