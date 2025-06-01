@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
 /* Styles global.*/
 * {
   margin: 0;
@@ -235,7 +235,7 @@ header {
 
 /* Estilo para os números dentro do contêiner redondo */
 .numero-redondo h3 {
-  font-family: "Micro 5", sans-serif;
+  font-family: "Jersey 25", sans-serif;
   font-weight: 800; /* Extrabold */
   font-size: 270px; /* Tamanho da fonte ajustado para caber dentro da esfera */
   margin: 0; /* Remove margens padrão */
