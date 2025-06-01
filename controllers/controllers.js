@@ -156,6 +156,31 @@ async function getAvatarEquipado(req, res) {
   }
 }
 
+async function registrarProgresso(req, res){
+  const { aulaId } = req.body;
+  const usuarioId = req.session.usuario.id;
+
+  try {
+    const jaConcluiu = await usuarioModel.verificarProgresso(usuarioId, aulaId);
+
+    if (!jaConcluiu) {
+      await usuarioModel.registrarProgresso(usuarioId, aulaId);
+      await usuarioModel.adicionarMoedas(usuarioId, 50);
+
+      const novoSaldo = await usuarioModel.buscarMoedas(usuarioId);
+      req.session.usuario.moedas = novoSaldo.moedas;
+      return res.status(200).json({ 
+        mensagem: 'Progresso salvo e moedas adicionadas.', 
+        novoSaldo: novoSaldo.moedas 
+      });
+    }
+
+    res.status(200).json({ mensagem: 'Progresso já registrado anteriormente.' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: 'Erro ao registrar progresso.' });
+  }
+};
 
 module.exports = {
   criarUsuario,
@@ -165,5 +190,6 @@ module.exports = {
   comprarItem,
   verificarComprado,
   equiparAvatar,
-  getAvatarEquipado
+  getAvatarEquipado,
+  registrarProgresso
 };

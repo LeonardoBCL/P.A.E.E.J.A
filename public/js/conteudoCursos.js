@@ -66,13 +66,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Adiciona eventos se elementos existem
   if (btnProximo && videoWrapper && navegacao && exercicio1 && btnVoltar && btnResponder) {
-    btnProximo.addEventListener('click', () => {
+    btnProximo.addEventListener('click', async () => {
       videoWrapper.style.display = 'none';
       navegacao.style.display = 'none';
       exercicio1.style.display = 'block';
-
-      // Aqui força o exercício a ficar ativo (amarelo)
       marcarExercicioAtivo();
+
+      // IDs de exemplo – substitua pelos valores reais vindos da sessão ou contexto
+      const aulaId = 1
+
+      try {
+        const resposta = await fetch('/registrar-progresso', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ aulaId })
+        });
+
+        const resultado = await resposta.json();
+        console.log(resultado.mensagem);
+
+        const spanMoedas = document.getElementById("paeeja-moeda-valor");
+        if (resultado.novoSaldo !== undefined && spanMoedas) {
+          spanMoedas.textContent = resultado.novoSaldo;
+        }
+      } catch (error) {
+        console.error('Erro ao registrar progresso:', error);
+      }
+      document.getElementById("paeeja-moeda-valor").textContent = dadosUsuario.usuario.moedas;
     });
 
     btnVoltar.addEventListener('click', () => {

@@ -61,6 +61,28 @@ async function buscarAvatarEquipado(usuarioId) {
   return rows[0];
 }
 
+async function verificarProgresso(usuarioId, aulaId){
+  const [rows] = await db.execute(
+    'SELECT * FROM progresso_usuario WHERE usuario_id = ? AND aula_id = ?',
+    [usuarioId, aulaId]
+  );
+  return rows.length > 0;
+};
+
+async function registrarProgresso(usuarioId, aulaId){
+  await db.execute(
+    'INSERT INTO progresso_usuario (usuario_id, aula_id, concluido) VALUES (?, ?, ?)',
+    [usuarioId, aulaId, true]
+  );
+};
+
+async function adicionarMoedas(usuarioId, quantidade){
+  await db.execute(
+    'UPDATE usuarios SET moedas = moedas + ? WHERE id = ?',
+    [quantidade, usuarioId]
+  );
+};
+
 module.exports = {
   criarUsuario,
   buscarPorEmailSenha,
@@ -72,5 +94,8 @@ module.exports = {
   descontarMoedas,
   registrarCompra,
   atualizarAvatar,
-  buscarAvatarEquipado
+  buscarAvatarEquipado,
+  verificarProgresso,
+  registrarProgresso,
+  adicionarMoedas
 };
