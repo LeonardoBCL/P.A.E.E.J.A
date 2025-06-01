@@ -23,7 +23,7 @@ const tutorialSteps = [
   } 
 ];
 
-const helpButton = document.getElementById('helpButton');
+const helpButton = document.getElementById('icone-ajuda');
 const popup = document.getElementById('popup');
 const popupText = document.getElementById('popupText');
 const popupImage = document.getElementById('popupImage');
@@ -45,11 +45,13 @@ function updatePopup() {
   closeButton.classList.toggle('hidden', currentStep !== tutorialSteps.length - 1);
 }
 
-helpButton.addEventListener('click', () => {
-  popup.classList.remove('hidden');
-  currentStep = 0;
-  updatePopup();
-});
+if (helpButton) {
+  helpButton.addEventListener('click', () => {
+    popup.classList.remove('hidden');   // Mostra o popup
+    currentStep = 0;                    // Começa do primeiro passo
+    updatePopup();                      // Atualiza conteúdo
+  });
+}
 
 nextButton.addEventListener('click', () => {
   if (currentStep < tutorialSteps.length - 1) {
@@ -70,16 +72,24 @@ skipButton.addEventListener('click', () => {
   updatePopup();
 });
 
-closeButton.addEventListener('click', () => {
-  popup.classList.add('hidden');
+  closeButton.addEventListener('click', () => {
+    popup.classList.add('hidden');
+    console.log("Tutorial encerrado");
+  });
 
-  // Chamada ao backend informando que usuário viu o tutorial
-  fetch('/tutorial/visto', { method: 'POST' })
-    .then(() => console.log('Tutorial marcado como visto.'))
-    .catch(err => console.error('Erro ao marcar tutorial visto', err));
-});
+  // startButton.addEventListener('click', () => {
+  // popup.classList.add('hidden');
+  // console.log('Tutorial concluído e iniciado!');
+  // Aqui pode chamar função para iniciar curso
+// });
 
-// Exibir automaticamente se backend mandar showTutorial = true
+// // Chamada ao backend informando que usuário viu o tutorial
+//   fetch('/tutorial/visto', { method: 'POST' })
+//     .then(() => console.log('Tutorial marcado como visto.'))
+//     .catch(err => console.error('Erro ao marcar tutorial visto', err));
+
+// // Exibir automaticamente se backend mandar showTutorial = true
+
 if (showTutorial) {
   popup.classList.remove('hidden');
   updatePopup();

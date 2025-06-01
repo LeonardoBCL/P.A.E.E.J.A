@@ -7,17 +7,13 @@
 
 /* Estilos globais do body: fonte, fundo e cor do texto */
 body {
-  font-family: "Arial", sans-serif;
+  
   background-color: #f9f9f9;
   color: #333;
-  overflow-x: hidden;
-  /* impede rolagem lateral */
-  overflow-y: auto;
-  /* rola só quando necessário */
-  height: auto;
-  /* deixa o body crescer conforme o conteúdo */
-  min-height: 100vh;
-  /* garante que cubra pelo menos a altura da tela */
+  /* overflow: hidden; */
+  height: auto;       /* deixa o body crescer conforme o conteúdo */
+  min-height: 100vh;  /* garante que cubra pelo menos a altura da tela */
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -49,13 +45,15 @@ body {
   gap: 2rem;
   padding: 2rem 4rem;
   align-items: start;
+  padding-top: 150px;
 }
 
 /* Botão voltar: tamanho e cor da seta */
 .voltar {
+  gap:8px;
   grid-area: voltar;
   display: flex;
-  margin: 0 15px;
+  
   outline: none;
   color: #48A14D;
   font-weight: bold;
@@ -65,13 +63,13 @@ body {
 
 .voltar a {
   text-decoration: none;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
   color: #48A14D;
   line-height: 1;
 }
 
-.seta-img {
+.seta-img{
   width: 27px;
   height: auto;
 }
@@ -108,11 +106,25 @@ body {
   font-size: 21.59px;
 }
 
-/* Tooltip de ajuda com texto oculto que aparece ao passar mouse */
+/* Ícone "?" - estilo copiado de conteudo-cursos */
+.icone-ajuda {
+  width: 26px;
+  height: 26px;
+  font-size: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;        /* fundo branco */
+  border: 2px solid #219653;      /* borda verde */
+  color: #219653;                 /* cor do "?" verde */
+  cursor: pointer;
+}
+
+/* Tooltip - mesmo estilo da outra página */
 .tooltip {
   position: relative;
   display: inline-block;
-  margin-left: 0.5rem;
 }
 
 .tooltip-text {
@@ -126,32 +138,20 @@ body {
   left: 110%;
   width: 160px;
   z-index: 1;
+  font-size: 0.8rem; /* compatível com a outra página */
 }
 
 .tooltip:hover .tooltip-text {
   visibility: visible;
 }
 
-/* Ícone "?" verde para ajuda */
-.icone-ajuda {
-  width: 26px;
-  height: 26px;
-  font-size: 16px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background: #219653;
-  color: white;
-}
 
 /* Barra de progresso: fundo cinza com barra verde preenchida */
 .barra {
+  margin-top: 10px;
   background-color: #eee;
-  width: 259px;
-  /* altera a largura da barra */
-  height: 22px;
-  /* altera a altura da barra */
+  width: 259px; /* altera a largura da barra */
+  height: 22px; /* altera a altura da barra */
   border-radius: 43.6px;
   overflow: hidden;
   position: relative;
@@ -196,10 +196,8 @@ body {
 }
 
 .btn-iniciar {
-  width: 100%;
-  /* largura total do container pai, igual ao vídeo */
-  max-width: 900px;
-  /* opcional: limitar largura máxima se quiser */
+  width: 100%;            /* largura total do container pai, igual ao vídeo */
+  max-width: 900px;       /* opcional: limitar largura máxima se quiser */
   height: 42px;
   border-radius: 10px;
   background-color: #319F43;
@@ -211,8 +209,7 @@ body {
   cursor: pointer;
   border: none;
   transition: background 0.3s ease;
-  margin-top: 0.5rem;
-  /* um espaçamento pequeno acima */
+  margin-top: 0.5rem;     /* um espaçamento pequeno acima */
 }
 
 .btn-iniciar:hover {
@@ -229,17 +226,14 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
 .modulo-info {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
-
 .icone {
   font-size: 1.2rem;
 }
-
 .aulas {
   font-size: 0.95rem;
 }
@@ -251,17 +245,12 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 24.76px;
-  line-height: 1;
-  /* 100% */
+  line-height: 1; /* 100% */
   letter-spacing: 0;
-  width: 241px;
-  /* conforme layout */
-  height: 37px;
-  /* conforme layout */
-  margin-top: 40px;
-  /* ajuste para aproximar do topo (opcional) */
-  margin-left: 0;
-  /* deixa alinhado à esquerda no grid */
+  width: 241px;  /* conforme layout */
+  height: 37px;  /* conforme layout */
+  margin-top: 40px; /* ajuste para aproximar do topo (opcional) */
+  margin-left: 0;  /* deixa alinhado à esquerda no grid */
 }
 
 /* Bloco do módulo "Português" */
@@ -274,14 +263,10 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  width: 498px;
-  /* conforme layout */
-  height: 52px;
-  /* conforme layout */
-  margin-top: 20px;
-  /* ajusta a distância do título */
-  margin-left: 0;
-  /* deixa alinhado à esquerda no grid */
+  width: 498px;   /* conforme layout */
+  height: 52px;   /* conforme layout */
+  margin-top: 20px;  /* ajusta a distância do título */
+  margin-left: 0;    /* deixa alinhado à esquerda no grid */
 }
 
 
@@ -289,12 +274,9 @@ body {
 .descricao {
   width: 100%;
   max-width: 900px;
-  margin: 1rem auto 0 auto;
-  /* centraliza e adiciona espaçamento superior */
-  grid-area: descricao;
-  /* se ainda estiver em grid */
+  margin: 1rem auto 0 auto;  /* centraliza e adiciona espaçamento superior */
+  grid-area: descricao;      /* se ainda estiver em grid */
 }
-
 /* Título "O que você aprenderá" */
 .descricao h2 {
   width: 273px;
@@ -305,14 +287,12 @@ body {
   line-height: 100%;
   letter-spacing: 0;
   color: #319F43;
-  margin-bottom: 1rem;
-  /* espaçamento padrão */
+  margin-bottom: 1rem; /* espaçamento padrão */
 }
-
 /* Parágrafo da descrição */
 .descricao p {
   width: 450px;
-
+  
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -345,8 +325,8 @@ body {
       "footer";
     padding: 1.5rem;
   }
-
   .video-box {
     width: 100%;
   }
 }
+

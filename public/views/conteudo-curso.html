@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo - Língua Portuguesa | PAEEJA</title>
+  <link rel="stylesheet" href="/css/conteudo-curso.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/tutorial-popup.css">
+</head>
+<body>
+
+    <div id="popup" class="hidden">
+    <div class="popup-content">
+        <button id="skipButton">Pular</button>
+        <img id="popupImage" src="" alt="Imagem do tutorial">
+        <p id="popupText"></p>
+        <div class="popup-nav">
+    <button id="prevButton">
+        <img src="../imgs/tutorial-popup/seta-voltar.png" alt="Voltar">
+    </button>
+    <button id="nextButton">
+        <img src="../imgs/tutorial-popup/seta-avancar.png" alt="Avançar">
+    </button>
+        </div>
+        <button id="closeButton" class="hidden">
+            <img src="../imgs/tutorial-popup/botao-fechar.png" alt="Fechar">
+        </button>
+    </div>
+    </div>
+
+  <!-- Espaço reservado para a navbar -->
+  <header id="navbar"></header>
+
+  <main class="curso-container">
+    <nav class="menu-lateral">
+      <a href="#" class="btn-voltar">
+      <img src="imgs/img_loja/voltar.png" alt="Voltar" class="seta-img" />
+      <span>Voltar</span>
+      </a>
+
+
+      <section class="secao-modulos">
+  <h2>Módulos</h2>
+
+  <div class="desempenho">
+    Desempenho módulo:
+    <div class="tooltip">
+      <div class="icone-ajuda" id="icone-ajuda">?</div>
+      <div class="tooltip-text">Seu progresso no conteúdo</div>
+    </div>
+  </div>
+
+  <div class="barra">
+    <span style="width: 50%;">50%</span>
+  </div>
+
+  <details class="modulo" open>
+    <summary class="modulo-titulo">Vogais e Consoantes</summary>
+    <ul class="lista-submodulos">
+      <li class="submodulo ativo">
+        <span class="tempo">25 Minutos</span>
+        <span class="titulo">Vogais e Consoantes</span>
+      </li>
+      <li class="submodulo">
+        
+        <span class="tempo">Exercícios</span>
+        <span class="titulo">Exercício 1</span>
+      </li>
+    </ul>
+  </details>
+</section>
+    </nav>
+
+    <section class="conteudo-curso">
+
+
+
+  <div class="video-container">
+    <header class="cabecalho-conteudo">
+      <h1 class="disciplina">Língua Portuguesa</h1>
+      <h2 class="titulo-modulo">Título do Módulo</h2>
+    </header>
+
+    <div class="video-wrapper">
+      <iframe 
+        class="video-player"
+        src="https://www.youtube.com/embed/8BOujHJqepo?si=TaSrIso4giaZyGYB" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; 
+        autoplay; 
+        clipboard-write; 
+        encrypted-media; 
+        gyroscope; 
+        picture-in-picture; 
+        web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+      
+    </div>
+    <div class="navegacao">
+        <button class="btn-proximo">Próximo</button>
+      </div>
+    <!-- Exercício 1 -->
+  <!-- Exercício 1 – Questão com alternativas -->
+<div id="exercicio1" style="display: none; max-width: 960px; padding: 1rem; border-radius: 12px;">
+
+  <!-- Questão 1 -->
+<section class="questao" id="questao-numero-1">
+
+  <h2 class="questao-numero" id="numero-da-questao-1">Questão 1</h2>
+
+  <p class="enunciado" id="enunciado-da-questao-1">
+    Leia o trecho da propaganda a seguir:
+  </p>
+
+  <blockquote style="margin: 1rem 0; font-style: italic;">
+    “Não é pelo prazer de fumar, é pelo prazer de saber que você fuma o melhor.” <br />
+    <small>(Revista O Cruzeiro, 1953. Apud: VARGAS, M. A. <i>Cigarro: prazer e poder na mídia impressa brasileira</i>. Revista Eco-Pós, n. 8, jul.-dez. 2007.)</small>
+  </blockquote>
+
+  <p class="enunciado">
+    Na construção da propaganda, o uso da vírgula no trecho destacado tem como objetivo principal:
+  </p>
+
+  <form class="alternativas" id="formulario-respostas-questao-1" data-questao-id="1">
+    <label class="alternativa" for="input-alternativa-questao-1-letra-A" id="label-alternativa-questao-1-letra-A" data-letra="A">
+      <input type="radio" name="resposta-1" id="input-alternativa-questao-1-letra-A" value="A" data-correta="true" />
+      <span class="bolinha" id="bolinha-alternativa-questao-1-letra-A"></span>
+      <span class="letra">A)</span>
+      <span class="texto">Separar orações coordenadas que se contradizem.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-1-letra-B" id="label-alternativa-questao-1-letra-B" data-letra="B">
+      <input type="radio" name="resposta-1" id="input-alternativa-questao-1-letra-B" value="B" />
+      <span class="bolinha" id="bolinha-alternativa-questao-1-letra-B"></span>
+      <span class="letra">B)</span>
+      <span class="texto">Marcar a omissão de um termo anteriormente citado.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-1-letra-C" id="label-alternativa-questao-1-letra-C" data-letra="C">
+      <input type="radio" name="resposta-1" id="input-alternativa-questao-1-letra-C" value="C" />
+      <span class="bolinha" id="bolinha-alternativa-questao-1-letra-C"></span>
+      <span class="letra">C)</span>
+      <span class="texto">Separar elementos com a mesma função sintática.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-1-letra-D" id="label-alternativa-questao-1-letra-D" data-letra="D">
+      <input type="radio" name="resposta-1" id="input-alternativa-questao-1-letra-D" value="D" />
+      <span class="bolinha" id="bolinha-alternativa-questao-1-letra-D"></span>
+      <span class="letra">D)</span>
+      <span class="texto">Destacar uma enumeração de ideias centrais.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-1-letra-E" id="label-alternativa-questao-1-letra-E" data-letra="E">
+      <input type="radio" name="resposta-1" id="input-alternativa-questao-1-letra-E" value="E" />
+      <span class="bolinha" id="bolinha-alternativa-questao-1-letra-E"></span>
+      <span class="letra">E)</span>
+      <span class="texto">Introduzir uma explicação acessória.</span>
+    </label>
+  </form>
+
+</section>
+
+<!-- Questão 2 -->
+<section class="questao" id="questao-numero-2" style="margin-top: 2rem;">
+
+  <h2 class="questao-numero" id="numero-da-questao-2">Questão 2</h2>
+
+  <p class="enunciado" id="enunciado-da-questao-2">
+    Então por que o sr. me fez prometer que nunca diria a ninguém?
+  </p>
+
+  <blockquote style="margin: 1rem 0; font-style: italic;">
+    — Porque eu pretendia esquecer também — respondeu ele —, e esperava nunca mais ver o tal homem.<br />
+    <small>(DICKENS, C. Grandes esperanças. São Paulo: Cia. das Letras, 2012.)</small>
+  </blockquote>
+
+  <p class="enunciado">
+    A pontuação empregada no trecho “— Porque eu pretendia esquecer também — respondeu ele —, e esperava nunca mais ver o tal homem.” contribui para
+  </p>
+
+  <form class="alternativas" id="formulario-respostas-questao-2" data-questao-id="2">
+    <label class="alternativa" for="input-alternativa-questao-2-letra-A" id="label-alternativa-questao-2-letra-A" data-letra="A">
+      <input type="radio" name="resposta-2" id="input-alternativa-questao-2-letra-A" value="A" />
+      <span class="bolinha" id="bolinha-alternativa-questao-2-letra-A"></span>
+      <span class="letra">A)</span>
+      <span class="texto">Evitar a ambiguidade de sentido.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-2-letra-B" id="label-alternativa-questao-2-letra-B" data-letra="B">
+      <input type="radio" name="resposta-2" id="input-alternativa-questao-2-letra-B" value="B" />
+      <span class="bolinha" id="bolinha-alternativa-questao-2-letra-B"></span>
+      <span class="letra">B)</span>
+      <span class="texto">Enfatizar a dramaticidade do relato.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-2-letra-C" id="label-alternativa-questao-2-letra-C" data-letra="C">
+      <input type="radio" name="resposta-2" id="input-alternativa-questao-2-letra-C" value="C" />
+      <span class="bolinha" id="bolinha-alternativa-questao-2-letra-C"></span>
+      <span class="letra">C)</span>
+      <span class="texto">Separar a fala do narrador da fala do personagem.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-2-letra-D" id="label-alternativa-questao-2-letra-D" data-letra="D">
+      <input type="radio" name="resposta-2" id="input-alternativa-questao-2-letra-D" value="D" />
+      <span class="bolinha" id="bolinha-alternativa-questao-2-letra-D"></span>
+      <span class="letra">D)</span>
+      <span class="texto">Evidenciar o discurso indireto da narrativa.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-2-letra-E" id="label-alternativa-questao-2-letra-E" data-letra="E">
+      <input type="radio" name="resposta-2" id="input-alternativa-questao-2-letra-E" value="E" />
+      <span class="bolinha" id="bolinha-alternativa-questao-2-letra-E"></span>
+      <span class="letra">E)</span>
+      <span class="texto">Garantir a omissão de termos repetidos.</span>
+    </label>
+  </form>
+
+</section>
+
+<!-- Questão 3 -->
+<section class="questao" id="questao-numero-3" style="margin-top: 2rem;">
+
+  <h2 class="questao-numero" id="numero-da-questao-3">Questão 3</h2>
+
+  <p class="enunciado" id="enunciado-da-questao-3">
+    Eu vos direi: “Amai para entendê-las!<br />
+    Porque só o amor pode entendê-las!”
+  </p>
+
+  <blockquote style="margin: 1rem 0; font-style: italic;">
+    (MEIRELES, C. Obra poética. Rio de Janeiro: Nova Aguilar, 2001.)
+  </blockquote>
+
+  <p class="enunciado">
+    No poema, o uso da forma verbal “vos direi” e da construção exclamativa “Porque só o amor pode entendê-las!” evidencia um recurso expressivo da linguagem literária. Esse recurso consiste em
+  </p>
+
+  <form class="alternativas" id="formulario-respostas-questao-3" data-questao-id="3">
+    <label class="alternativa" for="input-alternativa-questao-3-letra-A" id="label-alternativa-questao-3-letra-A" data-letra="A">
+      <input type="radio" name="resposta-3" id="input-alternativa-questao-3-letra-A" value="A" />
+      <span class="bolinha" id="bolinha-alternativa-questao-3-letra-A"></span>
+      <span class="letra">A)</span>
+      <span class="texto">recorrer à impessoalidade da linguagem.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-3-letra-B" id="label-alternativa-questao-3-letra-B" data-letra="B">
+      <input type="radio" name="resposta-3" id="input-alternativa-questao-3-letra-B" value="B" />
+      <span class="bolinha" id="bolinha-alternativa-questao-3-letra-B"></span>
+      <span class="letra">B)</span>
+      <span class="texto">atribuir às palavras sentidos objetivos.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-3-letra-C" id="label-alternativa-questao-3-letra-C" data-letra="C">
+      <input type="radio" name="resposta-3" id="input-alternativa-questao-3-letra-C" value="C" />
+      <span class="bolinha" id="bolinha-alternativa-questao-3-letra-C"></span>
+      <span class="letra">C)</span>
+      <span class="texto">expressar subjetividade por meio da linguagem.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-3-letra-D" id="label-alternativa-questao-3-letra-D" data-letra="D">
+      <input type="radio" name="resposta-3" id="input-alternativa-questao-3-letra-D" value="D" />
+      <span class="bolinha" id="bolinha-alternativa-questao-3-letra-D"></span>
+      <span class="letra">D)</span>
+      <span class="texto">aproximar o autor e o leitor pelo discurso direto.</span>
+    </label>
+
+    <label class="alternativa" for="input-alternativa-questao-3-letra-E" id="label-alternativa-questao-3-letra-E" data-letra="E">
+      <input type="radio" name="resposta-3" id="input-alternativa-questao-3-letra-E" value="E" />
+      <span class="bolinha" id="bolinha-alternativa-questao-3-letra-E"></span>
+      <span class="letra">E)</span>
+      <span class="texto">substituir as marcas do eu lírico pela narração.</span>
+    </label>
+  </form>
+
+</section>
+
+
+    <div class="linha-final" style="margin-top: 1rem; border-top: 1px solid #ccc;"></div>
+    
+    <div class="botoes-exercicio">
+  <button id="btn-voltar" class="btn-voltar-exercicio">Voltar</button>
+  <button id="btn-responder" class="btn-responder-exercicio">Responder</button>
+    </div>
+</div>
+</div>
+
+  </section>
+
+
+
+
+</div>
+
+
+</div>
+</div>
+  </main>
+  <script src = "/js/conteudoCursos.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/tutorial-popup.js"></script> 
+</body>
+</html>

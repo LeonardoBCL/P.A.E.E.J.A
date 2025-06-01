@@ -1,36 +1,55 @@
 <div class="navbar">
-  <!-- DIV da logo e a navegação das barras (nav) -->
+    <!-- DIV da logo e a navegação das barras (nav) -->
+    
+    <div class="logo">
+      <img onclick="navegacaoLogo()" src="/imgs/images_paeeja/logo-paeeja-sombreado.png" alt="Logo imagem" />
+      
+    </div>
 
-  <div class="logo">
-    <img onclick="navegacaoLogo()" src="/imgs/images_paeeja/logo-paeeja-sombreado.png" alt="Logo imagem" />
+    <div class="moeda-container">
+      <img src="../imgs/images_paeeja/moeda-paeeja.png" alt="Moeda Paeeja">
+      <span id="paeeja-moeda-valor" class="paeeja-moeda-valor">0</span>
+    </div>
 
+    <nav class="nav-menu">
+      <ul>
+        <li onclick="navegacaoCursos()" class="cursos">Cursos</li>
+        <li onclick="navegacaoLoja()" class="sobrenos">Loja</li>
+        <li onclick="navegacaoFale()" class="falecos">FAQ</li>
+
+      </ul>
+    </nav>
+
+    <!-- Div da entrada de login -->
+    <div class="entrada-links">
+      <a href="/login" id="botaoEntrarNav"> Entrar</a>
+      <a
+        href="/register"
+        class="registrar-link"
+        id="botaoCadastrarNav"
+      >
+        Cadastrar</a
+      >
+
+      <p hidden id="nomeUsuario" class="nome-usuario-logado" onclick="navegacaoPerfil()"></p>
+
+      <img
+        hidden
+        src="/imgs/images_perfil/user-padrão.png"
+        alt="icone do usuario"
+        loading="lazy"
+        id="iconUsuario"
+        class="icon-usuario"
+        onclick="navegacaoPerfil()"
+      />
+      
+      <a
+        href="/"
+        id="botaoSair"
+        class="sair-link"
+        onclick="sairLogin(event)"
+        style="display: none"
+        >Sair</a
+      >
+    </div>
   </div>
-
-  <div class="moeda-container">
-    <img src="../imgs/images_paeeja/moeda-paaeja.png" alt="Moeda Paeeja">
-    <span id="paeeja-moeda-valor" class="paeeja-moeda-valor">0</span>
-  </div>
-
-  <nav class="nav-menu">
-    <ul>
-      <li onclick="navegacaoCursos()" class="cursos">Cursos</li>
-      <li onclick="navegacaoLoja()" class="sobrenos">Loja</li>
-      <li onclick="navegacaoFale()" class="falecos">FAQ</li>
-
-    </ul>
-  </nav>
-
-  <!-- Div da entrada de login -->
-  <div class="entrada-links">
-    <a href="/login" id="botaoEntrarNav"> Entrar</a>
-    <a href="/register" class="registrar-link" id="botaoCadastrarNav">
-      Cadastrar</a>
-
-    <p hidden id="nomeUsuario" class="nome-usuario-logado" onclick="navegacaoPerfil()"></p>
-
-    <img hidden src="/imgs/images_perfil/user-padrão.png" alt="icone do usuario" id="iconUsuario" class="icon-usuario"
-      onclick="navegacaoPerfil()"/>
-
-    <a href="/" id="botaoSair" class="sair-link" onclick="sairLogin(event)" style="display: none">Sair</a>
-  </div>
-</div>
