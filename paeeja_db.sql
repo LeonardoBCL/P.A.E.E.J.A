@@ -52,6 +52,7 @@ CREATE TABLE questoes (
     alternativa_b VARCHAR(255),
     alternativa_c VARCHAR(255),
     alternativa_d VARCHAR(255),
+    alternativa_e VARCHAR(255),
     correta CHAR(1),
     FOREIGN KEY (questionario_id) REFERENCES questionarios(id)
 );

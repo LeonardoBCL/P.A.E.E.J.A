@@ -7,6 +7,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnVoltar = document.getElementById('btn-voltar');
   const btnResponder = document.getElementById('btn-responder');
 
+  // IDs de exemplo – substitua pelos valores reais vindos da sessão ou contexto
+  const aulaId = 1
+
+  async function atualizarTextoBotaoProximo() {
+    try {
+      const resposta = await fetch('/verificar-progresso', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ aulaId })
+      });
+
+      const resultado = await resposta.json();
+      if (btnProximo) {
+        btnProximo.textContent = resultado.jaConcluiu ? 'Próximo' : 'Finalizar Aula';
+      }
+    } catch (error) {
+      console.error('Erro ao verificar progresso da aula:', error);
+    }
+  }
+
+  // Chama ao carregar a página
+  atualizarTextoBotaoProximo();
+
   // Função para trocar o estilo de destaque de um submódulo
   function marcarSubmodulo(submodulo, ativo) {
     if (!submodulo) return;
@@ -72,9 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
       exercicio1.style.display = 'block';
       marcarExercicioAtivo();
 
-      // IDs de exemplo – substitua pelos valores reais vindos da sessão ou contexto
-      const aulaId = 1
-
       try {
         const resposta = await fetch('/registrar-progresso', {
           method: 'POST',
@@ -91,10 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (resultado.novoSaldo !== undefined && spanMoedas) {
           spanMoedas.textContent = resultado.novoSaldo;
         }
+        atualizarTextoBotaoProximo();
       } catch (error) {
         console.error('Erro ao registrar progresso:', error);
       }
-      document.getElementById("paeeja-moeda-valor").textContent = dadosUsuario.usuario.moedas;
     });
 
     btnVoltar.addEventListener('click', () => {

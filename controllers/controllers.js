@@ -182,6 +182,19 @@ async function registrarProgresso(req, res){
   }
 };
 
+async function verificarProgresso(req, res) {
+  const { aulaId } = req.body;
+  const usuarioId = req.session.usuario.id;
+
+  try {
+    const jaConcluiu = await usuarioModel.verificarProgresso(usuarioId, aulaId);
+    res.status(200).json({ jaConcluiu });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: 'Erro ao verificar progresso.' });
+  }
+};
+
 module.exports = {
   criarUsuario,
   login,
@@ -191,5 +204,6 @@ module.exports = {
   verificarComprado,
   equiparAvatar,
   getAvatarEquipado,
-  registrarProgresso
+  registrarProgresso,
+  verificarProgresso
 };

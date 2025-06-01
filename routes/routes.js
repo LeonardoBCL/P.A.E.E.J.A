@@ -59,5 +59,7 @@ module.exports = (app) => {
   app.post('/loja/comprar', controller.comprarItem);
   app.post('/equipar-avatar', controller.equiparAvatar);
   app.get("/avatar-equipado", controller.getAvatarEquipado);
+
   app.post('/registrar-progresso', controller.registrarProgresso);
+  app.post('/verificar-progresso', controller.verificarProgresso);
 };
