@@ -22,12 +22,14 @@
 .moeda-container {
   display: flex;
   align-items: center;
-  gap: 20px; /* Espaçamento controlado entre imagem e número */
+  gap: 20px;
+  /* Espaçamento controlado entre imagem e número */
 }
 
 /* Ajustes específicos para a moeda */
 .navbar img[alt="Moeda Paeeja"] {
-  margin-right: -3px; /* Puxa a imagem para mais perto do número */
+  margin-right: -3px;
+  /* Puxa a imagem para mais perto do número */
 }
 
 /* Valor da moeda */
@@ -41,8 +43,10 @@
   line-height: 1;
   white-space: nowrap;
   min-width: 60px;
-  margin-left: -2px; /* Ajuste fino para aproximar do ícone */
-  letter-spacing: -0.5px; /* Reduz espaçamento entre caracteres */
+  margin-left: -2px;
+  /* Ajuste fino para aproximar do ícone */
+  letter-spacing: -0.5px;
+  /* Reduz espaçamento entre caracteres */
 }
 
 
@@ -56,6 +60,7 @@
   justify-content: center;
   margin-left: 37px;
 }
+
 /* Styles ( Contatos, FaleConosco, Cursos ). */
 .nav-menu li {
   color: #ffffff;
@@ -71,8 +76,9 @@
 .nav-menu li:hover {
   color: #57a062;
   transform: scale(1.025);
-   transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease;
 }
+
 .nav-menu li {
   list-style-type: none;
 }
@@ -102,20 +108,20 @@ O elemento first-child pega primeira tag referenciada dentro de uma div. */
 }
 
 /* Botão de Sair */
-.sair-link{
-border: 15px;
-border-radius: 25px;
-border-width: 5px 0;
-font-family: 'Montserrat';
-font-weight: 700;
-font-size: 18.73px;
-line-height: 100%;
-letter-spacing: 0%;
-width: 97px;
-height: 36px;
-vertical-align: middle;
-text-align: center;
-background-color: #DE6550;
+.sair-link {
+  border: 15px;
+  border-radius: 25px;
+  border-width: 5px 0;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 18.73px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  width: 97px;
+  height: 36px;
+  vertical-align: middle;
+  text-align: center;
+  background-color: #DE6550;
 }
 
 
@@ -130,7 +136,7 @@ background-color: #DE6550;
 /* Hover button - (Cadastrar) */
 .registrar-link:hover {
   background-color: #364bc2;
-   transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease;
 }
 
 /* Ajusta o posicionamento do contêiner dos links de entrada e registro 
@@ -147,28 +153,32 @@ background-color: #DE6550;
 
 /* Style navegação principal */
 .nav-menu li {
-  margin: 0 20px; /* Espaçamento horizontal entre os itens */
+  margin: 0 20px;
+  /* Espaçamento horizontal entre os itens */
 }
 
 /* Style - username */
 .nome-usuario-logado {
-  color: #5186CD;
-  margin-right: 20px;
-  font-weight: 700;
+  display:none;
 }
 
 /* Style - userprofile */
 .icon-usuario {
   margin-right: 0px;
-  width: 68px; /* Define o tamanho final da imagem na página */
-  height: 62px; /* Mantém a proporção */
+  width: 68px;
+  /* Define o tamanho final da imagem na página */
+  height: 62px;
+  /* Mantém a proporção */
   border: 1.2px solid #ffffff;
   border-radius: 51.52px;
   box-shadow: 0px 4px 4px 0px #00000040;
+  /* Cursor mudar ao passar o mouse encima da imagem */
+  cursor: pointer;
+  pointer-events: auto;
 
 }
 
-.icon-usuario:hover{
+.icon-usuario:hover {
   background: #48A14D;
 }
 
@@ -176,7 +186,8 @@ background-color: #DE6550;
 .voltar-fixo {
   position: absolute;
   left: 20px;
-  top: 140px; /* mesmo nível do menu */
+  top: 140px;
+  /* mesmo nível do menu */
   font-size: 16px;
   color: #48A14D;
   font-weight: bold;

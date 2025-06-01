@@ -9,7 +9,8 @@
 }
 
 /* Garantir que a altura ocupe 100% da tela */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -20,8 +21,10 @@ html, body {
 
 /* Menu superior */
 .top-menu {
-  position: relative;  /* essa linha aqui */
-  margin-top: 150px; /* empurrado mais para baixo */
+  position: relative;
+  /* essa linha aqui */
+  margin-top: 150px;
+  /* empurrado mais para baixo */
   height: 48px;
   display: flex;
   justify-content: center;
@@ -46,9 +49,10 @@ html, body {
 }
 
 .voltar-fixo {
-  position:relative;
+  position: relative;
   left: 20px;
-  margin-top: -130px; /* mesmo nível do menu */
+  margin-top: -130px;
+  /* mesmo nível do menu */
   font-size: 24px;
   font-weight: 700;
   color: #48A14D;
@@ -65,17 +69,22 @@ html, body {
 }
 
 .voltar-fixo span {
-  font-size: 30px;   /* tamanho da fonte que quiser */
-  font-weight: 700;  /* negrito */
-  color: #48A14D;    /* mesma cor que você está usando */
-  line-height: 1;    /* evita espaçamento estranho */
+  font-size: 24px;
+  /* tamanho da fonte que quiser */
+  font-weight: 700;
+  /* negrito */
+  color: #48A14D;
+  /* mesma cor que você está usando */
+  line-height: 1;
+  /* evita espaçamento estranho */
 }
 
 /* Layout principal */
 .page-wrapper {
   display: flex;
   background-color: #fff;
-  min-height: calc(100vh - 138px); /* altura dinâmica total */
+  min-height: calc(100vh - 138px);
+  /* altura dinâmica total */
 }
 
 /* Sidebar lateral */
@@ -87,7 +96,8 @@ html, body {
   background-color: #a5dfae;
   padding: 30px;
   box-sizing: border-box;
-  min-height: calc(100vh - 138px); /* altura fluida */
+  min-height: calc(100vh - 138px);
+  /* altura fluida */
   border-radius: 15px;
 }
 
@@ -104,8 +114,10 @@ html, body {
   font-size: 20px;
   font-weight: bold;
   margin: 22px 0 20px 0;
-  padding-bottom: 5px; /* espaço entre texto e linha */
-  border-bottom: 2px solid #319F43; /* linha verde */
+  padding-bottom: 5px;
+  /* espaço entre texto e linha */
+  border-bottom: 2px solid #319F43;
+  /* linha verde */
   color: #319F43;
 }
 
@@ -126,15 +138,17 @@ html, body {
 }
 
 .filtro-opcoes input[type="checkbox"] {
-    appearance: none; /* Remove estilo padrão */
+  appearance: none;
+  /* Remove estilo padrão */
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
-  width:20px;
-  height:20px;
+  width: 20px;
+  height: 20px;
   margin: 0;
-  border:none;
-  background-color: white; /* opcional para garantir fundo branco */
+  border: none;
+  background-color: white;
+  /* opcional para garantir fundo branco */
   position: relative;
 }
 
@@ -146,10 +160,12 @@ html, body {
   top: 2px;
   width: 6px;
   height: 12px;
-  border: solid #319F43;  /* checkmark verde */
+  border: solid #319F43;
+  /* checkmark verde */
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
-  border-width: 0 3px 3px 0; /* aqui você regula a espessura */
+  border-width: 0 3px 3px 0;
+  /* aqui você regula a espessura */
 
 }
 
@@ -162,7 +178,8 @@ html, body {
   box-sizing: border-box;
   width: 80%;
   margin-left: 50px;
-  min-height: calc(100vh - 138px); /* altura fluida */
+  min-height: calc(100vh - 138px);
+  /* altura fluida */
   border-radius: 15px;
 
 }
@@ -174,8 +191,10 @@ h2 {
   font-weight: bold;
   color: #319F43;
   margin: 20px 0 10px 0;
-  padding-bottom: 5px; /* espaço entre texto e linha */
-  border-bottom: 2px solid #319F43; /* linha verde */
+  padding-bottom: 5px;
+  /* espaço entre texto e linha */
+  border-bottom: 2px solid #319F43;
+  /* linha verde */
 }
 
 /* Grade de itens */
@@ -190,6 +209,7 @@ h2 {
 .item {
   width: 100px;
   height: 100px;
+  cursor: pointer;
   /* background-color: #0A2349; */
 }
 
@@ -199,7 +219,8 @@ h2 {
 }
 
 .item p {
-  text-align: center;      /* centraliza o texto dentro do <p> */
+  text-align: center;
+  /* centraliza o texto dentro do <p> */
   font-weight: bold;
   color: #FED41E;
   font-size: 1.7rem;
@@ -208,8 +229,11 @@ h2 {
 
 .modal {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -218,62 +242,104 @@ h2 {
 
 
 /* Estilização do Popup */
-.modal-content {
-  background: white;
-  width: 420px;
-  height: 200px;
-  border: 5px solid #6CC87A;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
-  border-radius: 8px;
-  text-align: center;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
 
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border: 5px solid #6CC87A;
+  border-radius: 15px;
+  text-align: center;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.imagemCompra {
+  width: 220px;
+  margin-bottom: 15px;
+}
+
 /* Muda a cor e centraliza o texto de confirmação de compra */
-.confirm-text{
-  margin-top: 50px; 
-  margin-bottom: 30px;
+.confirm-text {
+  margin-bottom: 10px;
   font-weight: bold;
-  color: #319F43;
-  justify-content: center;
+  font-size: 18px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 /* Deixa o texto centralizado no botão e deixa uma fonte padrão */
 .modal-content button {
-  margin: 0 10px;
+  background-color: #48A14D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+
+.button-group {
+  display: flex;
+  gap: 15px;  /* espaçamento entre os botões */
+  margin-top: 15px;
 }
 
 /* Botão de sim */
-#confirm-yes{
+#confirm-yes {
   border: 12px solid #319F43;
-  border-radius: 100px;
+  border-radius: 50px;
   width: 80px;
+  color: white;
+  cursor: pointer;
   background: #319F43;
 }
 
 /* Botão de não */
-#confirm-no{
+#confirm-no {
   border: 12px solid #DE6550;
-  border-radius: 100px;
+  border-radius: 50px;
   width: 80px;
+  color: white;
+  cursor: pointer;
   background: #DE6550;
 }
 
 /* Muda a cor e centraliza o texto de falha na de compra */
-#modal-message{
-  margin-top: 50px; 
-  margin-bottom: 30px;
+#modal-message {
+  margin-bottom: 10px;
   font-weight: bold;
-  color: #DE6550;
-  justify-content: center;
+  font-size: 18px;
 }
 
 /* Botão de fechar */
-#close-modal{
+#close-modal {
+  background-color: #DE6550;
+  color: #fff;
   border: 12px solid #DE6550;
-  border-radius: 100px;
-  width: 80px;
-  background: #DE6550;
+  border-radius: 50px;
+  cursor: pointer;
 }
