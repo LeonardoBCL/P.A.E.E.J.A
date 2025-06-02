@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
 /* Styles global.*/
 * {
   margin: 0;
@@ -205,8 +205,9 @@ header {
   display: flex;
   justify-content: center; /* Centraliza os itens horizontalmente */
   align-items: flex-start; /* Alinha os itens ao topo */
-  gap: 230px; /* Espaçamento entre os grupos de números e parágrafos */
+  gap: 100px; /* Espaçamento entre os grupos de números e parágrafos */
   padding: 20px 0; /* Espaço acima e abaixo da div */
+  
 }
 
 /* Estilo para cada grupo de número e descrição */
@@ -234,9 +235,9 @@ header {
 
 /* Estilo para os números dentro do contêiner redondo */
 .numero-redondo h3 {
-  font-family: "Mplus1p", sans-serif; /* Fonte Mplus1p */
+  font-family: "Jersey 25", sans-serif;
   font-weight: 800; /* Extrabold */
-  font-size: 230px; /* Tamanho da fonte ajustado para caber dentro da esfera */
+  font-size: 270px; /* Tamanho da fonte ajustado para caber dentro da esfera */
   margin: 0; /* Remove margens padrão */
   color: inherit; /* Faz com que a cor do número herde a cor do contêiner */
 }
@@ -287,7 +288,8 @@ header {
 
 /* Efeito de hover para o botão de ser aluno */
 .section2-botao-aluno:hover {
-  background-color: #BFAFFF; /* Cor de fundo ao passar o mouse */
+  background-color: #61529C; /* Cor de fundo ao passar o mouse */
+  transition: background-color 0.4s ease;
 }
 /*Section 3 Estilização */
 
@@ -442,10 +444,10 @@ header {
   background-color: #D9D9D9;
 }
 
-
 /* Cor de fundo ao passar o mouse */
 .cor-botao-mat:hover {
-  background-color: #2e4a70; 
+  background-color: #1b57a7; /* Cor de fundo ao passar o mouse */
+  transition: background-color 0.4s ease;
 }
 /* DESATIVADO POIS ESSES BOTÕES PRECISAM ESTAR INDISPONÍVEIS*/
 /* .cor-botao-port:hover {
@@ -456,7 +458,6 @@ header {
   background-color: #b9b9b9; 
 }
 */
-
 
 /*Section 4 Estilização */
 /* Estilo para a seção "Nosso Time" */
@@ -599,7 +600,7 @@ header {
 /* Estilo dos ícones */
 .icons i {
   display: inline-block; /* Alinha ícones em linha */
-  color: #020e20; /* Cor branca para os ícones */
+  color: #ffffff; /* Cor branca para os ícones */
   font-size: 20px; /* Tamanho dos ícones */
   margin: 0 8px; /* Espaçamento entre os ícones */
   transition: all 0.38s ease; /* Transição suave para animação dos ícones */
@@ -618,6 +619,59 @@ header {
   cursor: pointer; /* Mostra que o card é clicável */
 }
 
+/* SECTION FAQ */
+
+  .faq-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 95vh;
+  padding: 0 5%;
+  background-color: white;
+}
+
+.faq-content {
+  text-align: right;
+  margin-right: 40px;
+  max-width: 400px;
+}
+
+.faq-subtitle {
+  color: #61529C;
+  font-weight: bold;
+  margin: 0;
+  font-size: 30px;
+}
+
+.faq-title {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.faq-text {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.faq-button {
+  display: inline-block;
+  background-color: #61529C;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.faq-button:hover {
+  background-color: #51477e; /* Cor de fundo ao passar o mouse */
+  transition: background-color 0.4s ease;
+}
+
 /* FOOTER DO SITE COM FORMULÁRIO */
 
 footer {
@@ -627,7 +681,7 @@ footer {
 }
 
 #location {
-  background-color: #f0eded;
+  background-color: #BFAFFF;
   width: 30vw;
   min-height: 100%;
   padding: 100px 46px 40px;
@@ -637,21 +691,21 @@ footer {
 }
 
 #location h2 {
-  color: #031836;
+  color: #fff;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4%;
 }
 
 .p-local {
-  color: #031836;
+  color: #706697;
   font-size: 1.25rem;
   margin-top: 24px;
   margin-bottom: 200px;
 }
 
 .p-copy {
-  color: #031836;
+  color: #fff;
   font-size: 1.25rem;
   margin-top: 24px;
   margin-bottom: 0;
@@ -661,7 +715,7 @@ footer {
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: #031836;
+  background-color: #8579B5;
   color: white;
   border-radius: 50%;
   text-align: center;
@@ -676,7 +730,7 @@ footer {
 }
 
 #contact {
-  background-color: #7C7AFF;
+  background-color: #61529C;
   width: 70vw;
   text-align: center;
   color: #ffffff;
@@ -712,10 +766,10 @@ form textarea {
   border: none;
   outline: none;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.48);
+  background-color: rgba(255, 255, 255, 0.829);
   padding: 20px 15px;
   border-radius: 15px;
-  color: var(--white);
+  color: #61529C;
   font-size: 1.1rem;
   font-family: "Poppins", sans-serif;
 }
@@ -751,4 +805,3 @@ form button {
 form button:hover {
   background-color: #ffffffc9;
 }
-

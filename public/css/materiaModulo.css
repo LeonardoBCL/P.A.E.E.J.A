@@ -7,13 +7,13 @@
 
 /* Estilos globais do body: fonte, fundo e cor do texto */
 body {
-  font-family: "Arial", sans-serif;
+  
   background-color: #f9f9f9;
   color: #333;
-  overflow-x: hidden; /* impede rolagem lateral */
-  overflow-y: auto;   /* rola só quando necessário */
+  /* overflow: hidden; */
   height: auto;       /* deixa o body crescer conforme o conteúdo */
   min-height: 100vh;  /* garante que cubra pelo menos a altura da tela */
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -45,13 +45,15 @@ body {
   gap: 2rem;
   padding: 2rem 4rem;
   align-items: start;
+  padding-top: 150px;
 }
 
 /* Botão voltar: tamanho e cor da seta */
 .voltar {
+  gap:8px;
   grid-area: voltar;
   display: flex;
-  margin: 0 15px;
+  
   outline: none;
   color: #48A14D;
   font-weight: bold;
@@ -104,12 +106,27 @@ body {
   font-size: 21.59px;
 }
 
-/* Tooltip de ajuda com texto oculto que aparece ao passar mouse */
+/* Ícone "?" - estilo copiado de conteudo-cursos */
+.icone-ajuda {
+  width: 26px;
+  height: 26px;
+  font-size: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;        /* fundo branco */
+  border: 2px solid #219653;      /* borda verde */
+  color: #219653;                 /* cor do "?" verde */
+  cursor: pointer;
+}
+
+/* Tooltip - mesmo estilo da outra página */
 .tooltip {
   position: relative;
   display: inline-block;
-  margin-left: 0.5rem;
 }
+
 .tooltip-text {
   visibility: hidden;
   background-color: #444;
@@ -121,26 +138,17 @@ body {
   left: 110%;
   width: 160px;
   z-index: 1;
+  font-size: 0.8rem; /* compatível com a outra página */
 }
+
 .tooltip:hover .tooltip-text {
   visibility: visible;
 }
 
-/* Ícone "?" verde para ajuda */
-.icone-ajuda {
-  width: 26px;
-  height: 26px;
-  font-size: 16px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background: #219653;
-  color: white;
-}
 
 /* Barra de progresso: fundo cinza com barra verde preenchida */
 .barra {
+  margin-top: 10px;
   background-color: #eee;
   width: 259px; /* altera a largura da barra */
   height: 22px; /* altera a altura da barra */
