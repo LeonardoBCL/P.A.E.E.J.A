@@ -60,4 +60,9 @@ module.exports = (app) => {
   app.post('/equipar-avatar', controller.equiparAvatar);
   app.get("/avatar-equipado", controller.getAvatarEquipado);
 
+  app.post('/registrar-progresso', controller.registrarProgresso);
+  app.post('/verificar-progresso', controller.verificarProgresso);
+  app.post('/obter-progresso-curso', controller.obterProgressoCurso);
+  app.post('/responder-questionario', controller.responderQuestionario);
+  app.post('/obter-respostas-salvas', controller.obterRespostasSalvas);
 };

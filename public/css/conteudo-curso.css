@@ -443,3 +443,10 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   scrollbar-width: thin;             /* largura fina */
   scrollbar-color: #319F43 #f1f1f1; /* cor da thumb e do track */
 }
+
+.correta {
+  background-color: #a5d6a7 !important; /* verde claro */
+}
+.incorreta {
+  background-color: #ef9a9a !important; /* vermelho claro */
+}

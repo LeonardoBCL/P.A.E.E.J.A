@@ -156,6 +156,117 @@ async function getAvatarEquipado(req, res) {
   }
 }
 
+async function registrarProgresso(req, res) {
+  const { aulaId } = req.body;
+  const usuarioId = req.session.usuario.id;
+
+  try {
+    const jaConcluiu = await usuarioModel.verificarProgresso(usuarioId, aulaId);
+
+    if (!jaConcluiu) {
+      await usuarioModel.registrarProgresso(usuarioId, aulaId);
+      await usuarioModel.adicionarMoedas(usuarioId, 50);
+
+      const novoSaldo = await usuarioModel.buscarMoedas(usuarioId);
+      req.session.usuario.moedas = novoSaldo.moedas;
+      return res.status(200).json({
+        mensagem: 'Progresso salvo e moedas adicionadas.',
+        novoSaldo: novoSaldo.moedas
+      });
+    }
+
+    res.status(200).json({ mensagem: 'Progresso já registrado anteriormente.' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: 'Erro ao registrar progresso.' });
+  }
+};
+
+async function verificarProgresso(req, res) {
+  const { aulaId } = req.body;
+  const usuarioId = req.session.usuario.id;
+
+  try {
+    const jaConcluiu = await usuarioModel.verificarProgresso(usuarioId, aulaId);
+    res.status(200).json({ jaConcluiu });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: 'Erro ao verificar progresso.' });
+  }
+};
+
+async function obterProgressoCurso(req, res) {
+  const usuarioId = req.session.usuario.id;
+
+  try {
+    const totalAulas = await usuarioModel.contarTotalAulas();
+    const totalExercicios = await usuarioModel.contarTotalExercicios();
+
+    const concluidasAulas = await usuarioModel.contarAulasConcluidas(usuarioId);
+    const exerciciosFeitos = await usuarioModel.contarExerciciosFeitos(usuarioId);
+
+    const totalConteudos = totalAulas + totalExercicios;
+    const totalConcluidos = concluidasAulas + exerciciosFeitos;
+
+    const progresso = totalConteudos === 0
+      ? 0
+      : Math.round((totalConcluidos / totalConteudos) * 100);
+
+    res.status(200).json({ progresso });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: 'Erro ao calcular progresso do curso.' });
+  }
+}
+
+async function responderQuestionario(req, res) {
+  const { respostas, questionarioId } = req.body;
+  const usuarioId = req.session.usuario.id;
+
+  // Obter questões e validar
+  const questoes = await usuarioModel.obterQuestoesDoQuestionario(questionarioId);
+  const respostasComCorrecao = respostas.map(resp => {
+    const questao = questoes.find(q => q.id === resp.questao_id);
+    return {
+      ...resp,
+      correta: questao.correta === resp.resposta,
+      alternativa_correta: questao.correta
+    };
+  });
+
+  const acertos = respostasComCorrecao.filter(r => r.correta).length;
+
+  // Se acertou 2 ou mais, salvar definitivamente e dar moedas
+  if (acertos >= 2) {
+    await usuarioModel.salvarRespostas(usuarioId, respostasComCorrecao);
+    await usuarioModel.adicionarMoedas(usuarioId, 50);
+    const novoSaldo = await usuarioModel.buscarMoedas(usuarioId);
+    req.session.usuario.moedas = novoSaldo.moedas;
+    return res.status(200).json({
+      acertos,
+      bloqueia: true,
+      ganhouMoeda: true,
+      respostas: respostasComCorrecao,
+      novoSaldo: novoSaldo.moedas
+    });
+  }
+
+  // Se abaixo da média, não salva, apenas retorna feedback
+  return res.status(200).json({
+    acertos,
+    bloqueia: false,
+    ganhouMoeda: false,
+    respostas: respostasComCorrecao
+  });
+}
+
+async function obterRespostasSalvas(req, res) {
+  const { questionarioId } = req.body;
+  const usuarioId = req.session.usuario.id;
+
+  const respostas = await usuarioModel.obterRespostasUsuario(usuarioId, questionarioId);
+  res.status(200).json({ respostas });
+}
 
 module.exports = {
   criarUsuario,
@@ -165,5 +276,10 @@ module.exports = {
   comprarItem,
   verificarComprado,
   equiparAvatar,
-  getAvatarEquipado
+  getAvatarEquipado,
+  registrarProgresso,
+  verificarProgresso,
+  obterProgressoCurso,
+  responderQuestionario,
+  obterRespostasSalvas
 };
