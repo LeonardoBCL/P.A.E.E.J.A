@@ -156,7 +156,7 @@ async function getAvatarEquipado(req, res) {
   }
 }
 
-async function registrarProgresso(req, res){
+async function registrarProgresso(req, res) {
   const { aulaId } = req.body;
   const usuarioId = req.session.usuario.id;
 
@@ -169,9 +169,9 @@ async function registrarProgresso(req, res){
 
       const novoSaldo = await usuarioModel.buscarMoedas(usuarioId);
       req.session.usuario.moedas = novoSaldo.moedas;
-      return res.status(200).json({ 
-        mensagem: 'Progresso salvo e moedas adicionadas.', 
-        novoSaldo: novoSaldo.moedas 
+      return res.status(200).json({
+        mensagem: 'Progresso salvo e moedas adicionadas.',
+        novoSaldo: novoSaldo.moedas
       });
     }
 
@@ -199,17 +199,17 @@ async function obterProgressoCurso(req, res) {
   const usuarioId = req.session.usuario.id;
 
   try {
-    const totalAulas = await usuarioModel.contarTotalAulas();         
-    const totalExercicios = await usuarioModel.contarTotalExercicios();   
+    const totalAulas = await usuarioModel.contarTotalAulas();
+    const totalExercicios = await usuarioModel.contarTotalExercicios();
 
-    const concluidasAulas = await usuarioModel.contarAulasConcluidas(usuarioId); 
+    const concluidasAulas = await usuarioModel.contarAulasConcluidas(usuarioId);
     const exerciciosFeitos = await usuarioModel.contarExerciciosFeitos(usuarioId);
 
     const totalConteudos = totalAulas + totalExercicios;
     const totalConcluidos = concluidasAulas + exerciciosFeitos;
 
-    const progresso = totalConteudos === 0 
-      ? 0 
+    const progresso = totalConteudos === 0
+      ? 0
       : Math.round((totalConcluidos / totalConteudos) * 100);
 
     res.status(200).json({ progresso });
@@ -219,6 +219,36 @@ async function obterProgressoCurso(req, res) {
   }
 }
 
+async function responderQuestionario(req, res) {
+  const { respostas, questionarioId } = req.body;
+  const usuarioId = req.session.usuario.id;
+
+  const jaRespondeu = await usuarioModel.verificarSeJaRespondeu(usuarioId, questionarioId);
+  if (jaRespondeu) {
+    return res.status(400).json({ mensagem: 'Você já respondeu esse questionário.' });
+  }
+
+  const questoes = await usuarioModel.obterQuestoesDoQuestionario(questionarioId);
+  const respostasComCorrecao = respostas.map(resp => {
+    const questao = questoes.find(q => q.id === resp.questao_id);
+    return {
+      ...resp,
+      correta: questao.correta === resp.resposta
+    };
+  });
+
+  await usuarioModel.salvarRespostas(usuarioId, respostasComCorrecao);
+
+  const acertos = respostasComCorrecao.filter(r => r.correta).length;
+
+  if (acertos >= 2) {
+    await usuarioModel.adicionarMoedas(usuarioId, 50);
+  }
+
+  const novoSaldo = await usuarioModel.buscarMoedas(usuarioId);
+  req.session.usuario.moedas = novoSaldo.moedas;
+  res.status(200).json({ acertos, ganhouMoeda: acertos >= 2, respostasComCorrecao, novoSaldo: novoSaldo.moedas });
+}
 
 module.exports = {
   criarUsuario,
@@ -231,5 +261,6 @@ module.exports = {
   getAvatarEquipado,
   registrarProgresso,
   verificarProgresso,
-  obterProgressoCurso
+  obterProgressoCurso,
+  responderQuestionario
 };

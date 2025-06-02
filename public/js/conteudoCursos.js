@@ -148,10 +148,65 @@ document.addEventListener('DOMContentLoaded', () => {
       resetarSubmodulos();
     });
 
-    btnResponder.addEventListener('click', () => {
-      alert('Lógica para responder a questão vai aqui!');
-      // Se quiser, pode chamar atualizarProximoSubmodulo() aqui para avançar após resposta
-      atualizarBarraDeProgressoCurso();
+    btnResponder.addEventListener('click', async () => {
+      const formularios = document.querySelectorAll('form.alternativas');
+      const respostas = [];
+
+      formularios.forEach(form => {
+        const questaoId = parseInt(form.dataset.questaoId);
+        const selecionado = form.querySelector('input[type="radio"]:checked');
+        if (selecionado) {
+          respostas.push({ questao_id: questaoId, resposta: selecionado.value });
+        }
+      });
+
+      const resposta = await fetch('/responder-questionario', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          questionarioId: 1, // Substituir dinamicamente depois
+          respostas
+        })
+      });
+
+      const resultado = await resposta.json();
+
+      const spanMoedas = document.getElementById("paeeja-moeda-valor");
+        if (resultado.novoSaldo !== undefined && spanMoedas) {
+          spanMoedas.textContent = resultado.novoSaldo;
+        }
+      if (resposta.status !== 200) {
+        alert(resultado.mensagem);
+        return;
+      }
+
+      // Mostrar resultado visual
+      resultado.respostasComCorrecao.forEach(res => {
+        const questaoForm = document.querySelector(`form[data-questao-id="${res.questao_id}"]`);
+        const alternativas = questaoForm.querySelectorAll('label.alternativa');
+
+        alternativas.forEach(label => {
+          label.classList.remove('correta', 'incorreta');
+          const input = label.querySelector('input');
+          if (input.value === res.resposta && !res.correta) {
+            label.classList.add('incorreta');
+          }
+          if (input.value === res.resposta && res.correta) {
+            label.classList.add('correta');
+          }
+          if (input.value === res.correta && !res.correta) {
+            const corretaLabel = questaoForm.querySelector(`input[value="${res.correta}"]`).parentElement;
+            corretaLabel.classList.add('correta');
+          }
+          input.disabled = true;
+        });
+      });
+
+      if (resultado.ganhouMoeda) {
+        alert('Parabéns! Você ganhou 50 moedas.');
+      }
+
+      btnResponder.disabled = true;
     });
   }
 });

@@ -61,7 +61,7 @@ async function buscarAvatarEquipado(usuarioId) {
   return rows[0];
 }
 
-async function verificarProgresso(usuarioId, aulaId){
+async function verificarProgresso(usuarioId, aulaId) {
   const [rows] = await db.execute(
     'SELECT * FROM progresso_usuario WHERE usuario_id = ? AND aula_id = ?',
     [usuarioId, aulaId]
@@ -69,14 +69,14 @@ async function verificarProgresso(usuarioId, aulaId){
   return rows.length > 0;
 };
 
-async function registrarProgresso(usuarioId, aulaId){
+async function registrarProgresso(usuarioId, aulaId) {
   await db.execute(
     'INSERT INTO progresso_usuario (usuario_id, aula_id, concluido) VALUES (?, ?, ?)',
     [usuarioId, aulaId, true]
   );
 };
 
-async function adicionarMoedas(usuarioId, quantidade){
+async function adicionarMoedas(usuarioId, quantidade) {
   await db.execute(
     'UPDATE usuarios SET moedas = moedas + ? WHERE id = ?',
     [quantidade, usuarioId]
@@ -115,6 +115,43 @@ async function contarExerciciosFeitos(usuarioId) {
   return rows[0].total;
 }
 
+async function obterQuestoesDoQuestionario(questionarioId) {
+  const [rows] = await db.execute(
+    'SELECT * FROM questoes WHERE questionario_id = ? ORDER BY id',
+    [questionarioId]
+  );
+  return rows;
+}
+
+async function salvarRespostas(usuarioId, respostas) {
+  for (const { questao_id, resposta, correta } of respostas) {
+    await db.execute(
+      'REPLACE INTO respostas_usuario (usuario_id, questao_id, resposta, correta) VALUES (?, ?, ?, ?)',
+      [usuarioId, questao_id, resposta, correta]
+    );
+  }
+}
+
+async function contarAcertos(usuarioId, questionarioId) {
+  const [rows] = await db.execute(
+    `SELECT COUNT(*) AS acertos FROM respostas_usuario r
+       JOIN questoes q ON r.questao_id = q.id
+       WHERE r.usuario_id = ? AND r.correta = 1 AND q.questionario_id = ?`,
+    [usuarioId, questionarioId]
+  );
+  return rows[0].acertos;
+}
+
+async function verificarSeJaRespondeu(usuarioId, questionarioId) {
+  const [rows] = await db.execute(
+    `SELECT 1 FROM respostas_usuario r
+       JOIN questoes q ON r.questao_id = q.id
+       WHERE r.usuario_id = ? AND q.questionario_id = ? LIMIT 1`,
+    [usuarioId, questionarioId]
+  );
+  return rows.length > 0;
+}
+
 module.exports = {
   criarUsuario,
   buscarPorEmailSenha,
@@ -133,5 +170,9 @@ module.exports = {
   contarTotalAulas,
   contarTotalExercicios,
   contarAulasConcluidas,
-  contarExerciciosFeitos
+  contarExerciciosFeitos,
+  obterQuestoesDoQuestionario,
+  salvarRespostas,
+  contarAcertos,
+  verificarSeJaRespondeu
 };
