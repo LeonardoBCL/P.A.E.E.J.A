@@ -26,6 +26,10 @@
   /* Espaçamento controlado entre imagem e número */
 }
 
+.paeeja-moeda-imagem:hover{
+    
+}
+
 /* Ajustes específicos para a moeda */
 .navbar img[alt="Moeda Paeeja"] {
   margin-right: -3px;
