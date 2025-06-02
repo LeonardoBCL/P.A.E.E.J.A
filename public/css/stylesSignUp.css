@@ -23,7 +23,7 @@ body {
   width: 40%; /* Ocupa 40% da largura da tela */
   height: 100%; /* Ocupa toda a altura da tela */
   padding: 40px; /* Adiciona espaço interno ao redor do conteúdo */
-  background-color: #97BFE4; /* Define a cor de fundo da seção do formulário */
+  background-color: #FFFDE9; /* Define a cor de fundo da seção do formulário */
   display: flex; /* Usa flexbox para organizar os elementos dentro da seção */
   flex-direction: column; /* Organiza os elementos na vertical */
   justify-content: center; /* Centraliza os elementos verticalmente */
@@ -59,6 +59,7 @@ body {
   font-size: 24px; /* Tamanho da fonte do título */
   margin-top: 10px; /* Espaço acima do título */
   padding-bottom: 20px; /* Espaço abaixo do título */
+  color: #4687E4;
 }
 
 /* Contêiner principal do formulário */
@@ -118,7 +119,7 @@ body {
 /* Texto de login social */
 .social-login-text-cadastro {
   text-align: center; /* Centraliza o texto de login social */
-  color: #fff; /* Cor do texto */
+  color: #4687E4; /* Cor do texto */
   margin-bottom: 10px; /* Espaçamento abaixo do texto */
 }
 
@@ -144,7 +145,7 @@ body {
 
 /* Texto de "não tem uma conta?" no rodapé */
 .signup-text-cadastro {
-  color: #FFF; /* Cor do texto no rodapé */
+  color: #4687E4; /* Cor do texto no rodapé */
 }
 
 /* Link de cadastro */
@@ -180,7 +181,7 @@ body {
   width: 40%;
   height: 100%;
   padding: 40px;
-  background-color: #97BFE4;
+  background-color: #FFFDE9;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -192,6 +193,13 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.form-header-login h1,
+.form-header-login h2 {
+    margin: 0; /* Remove completamente a margem */
+    /* ou */
+    margin-bottom: -10px; /* Mantém um espaçamento pequeno */
 }
 
 .container-logo-login {
@@ -212,6 +220,7 @@ body {
   font-size: 24px;
   margin-top: 10px;
   padding-bottom: 20px;
+  color: #4687E4;
 }
 
 .registration-form-login {
@@ -289,7 +298,7 @@ div i{
 }
 
 .signup-text-login {
-  color: #fff;
+  color: #4687E4;
 }
 
 .signup-link-login {
