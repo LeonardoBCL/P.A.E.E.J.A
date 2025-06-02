@@ -83,6 +83,38 @@ async function adicionarMoedas(usuarioId, quantidade){
   );
 };
 
+// Total de aulas no curso
+async function contarTotalAulas() {
+  const [rows] = await db.execute('SELECT COUNT(*) AS total FROM aulas');
+  return rows[0].total;
+}
+
+// Total de exercícios (questionários) no curso
+async function contarTotalExercicios() {
+  const [rows] = await db.execute('SELECT COUNT(*) AS total FROM questionarios');
+  return rows[0].total;
+}
+
+// Aulas concluídas pelo usuário
+async function contarAulasConcluidas(usuarioId) {
+  const [rows] = await db.execute(
+    'SELECT COUNT(*) AS total FROM progresso_usuario WHERE usuario_id = ? AND concluido = 1',
+    [usuarioId]
+  );
+  return rows[0].total;
+}
+
+// Exercícios feitos pelo usuário (ao menos 1 resposta em qualquer questão daquele questionário)
+async function contarExerciciosFeitos(usuarioId) {
+  const [rows] = await db.execute(`
+    SELECT COUNT(DISTINCT q.questionario_id) AS total
+    FROM respostas_usuario r
+    JOIN questoes q ON r.questao_id = q.id
+    WHERE r.usuario_id = ?
+  `, [usuarioId]);
+  return rows[0].total;
+}
+
 module.exports = {
   criarUsuario,
   buscarPorEmailSenha,
@@ -97,5 +129,9 @@ module.exports = {
   buscarAvatarEquipado,
   verificarProgresso,
   registrarProgresso,
-  adicionarMoedas
+  adicionarMoedas,
+  contarTotalAulas,
+  contarTotalExercicios,
+  contarAulasConcluidas,
+  contarExerciciosFeitos
 };

@@ -195,6 +195,31 @@ async function verificarProgresso(req, res) {
   }
 };
 
+async function obterProgressoCurso(req, res) {
+  const usuarioId = req.session.usuario.id;
+
+  try {
+    const totalAulas = await usuarioModel.contarTotalAulas();         
+    const totalExercicios = await usuarioModel.contarTotalExercicios();   
+
+    const concluidasAulas = await usuarioModel.contarAulasConcluidas(usuarioId); 
+    const exerciciosFeitos = await usuarioModel.contarExerciciosFeitos(usuarioId);
+
+    const totalConteudos = totalAulas + totalExercicios;
+    const totalConcluidos = concluidasAulas + exerciciosFeitos;
+
+    const progresso = totalConteudos === 0 
+      ? 0 
+      : Math.round((totalConcluidos / totalConteudos) * 100);
+
+    res.status(200).json({ progresso });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: 'Erro ao calcular progresso do curso.' });
+  }
+}
+
+
 module.exports = {
   criarUsuario,
   login,
@@ -205,5 +230,6 @@ module.exports = {
   equiparAvatar,
   getAvatarEquipado,
   registrarProgresso,
-  verificarProgresso
+  verificarProgresso,
+  obterProgressoCurso
 };

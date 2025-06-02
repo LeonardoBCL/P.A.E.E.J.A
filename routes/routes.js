@@ -62,4 +62,5 @@ module.exports = (app) => {
 
   app.post('/registrar-progresso', controller.registrarProgresso);
   app.post('/verificar-progresso', controller.verificarProgresso);
+  app.post('/obter-progresso-curso', controller.obterProgressoCurso);
 };

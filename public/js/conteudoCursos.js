@@ -30,6 +30,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // Chama ao carregar a página
   atualizarTextoBotaoProximo();
 
+  async function atualizarBarraDeProgressoCurso() {
+    try {
+      const resposta = await fetch('/obter-progresso-curso', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      const { progresso } = await resposta.json();
+      const barra = document.querySelector('.barra span');
+      if (barra) {
+        barra.style.width = `${progresso}%`;
+        barra.textContent = `${progresso}%`;
+      }
+    } catch (error) {
+      console.error('Erro ao atualizar barra de progresso do curso:', error);
+    }
+  }
+
+  // Chamada ao carregar a página
+  atualizarBarraDeProgressoCurso();
+
   // Função para trocar o estilo de destaque de um submódulo
   function marcarSubmodulo(submodulo, ativo) {
     if (!submodulo) return;
@@ -112,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
           spanMoedas.textContent = resultado.novoSaldo;
         }
         atualizarTextoBotaoProximo();
+        atualizarBarraDeProgressoCurso();
       } catch (error) {
         console.error('Erro ao registrar progresso:', error);
       }
@@ -129,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnResponder.addEventListener('click', () => {
       alert('Lógica para responder a questão vai aqui!');
       // Se quiser, pode chamar atualizarProximoSubmodulo() aqui para avançar após resposta
+      atualizarBarraDeProgressoCurso();
     });
   }
 });
