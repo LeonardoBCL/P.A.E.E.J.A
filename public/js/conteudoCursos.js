@@ -1,14 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Seleção dos elementos necessários
   const btnProximo = document.querySelector('.btn-proximo');
   const videoWrapper = document.querySelector('.video-wrapper');
   const navegacao = document.querySelector('.navegacao');
   const exercicio1 = document.getElementById('exercicio1');
   const btnVoltar = document.getElementById('btn-voltar');
   const btnResponder = document.getElementById('btn-responder');
-
-  // IDs de exemplo – substitua pelos valores reais vindos da sessão ou contexto
-  const aulaId = 1
+  const aulaId = 1;
 
   async function atualizarTextoBotaoProximo() {
     try {
@@ -27,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Chama ao carregar a página
   atualizarTextoBotaoProximo();
 
   async function atualizarBarraDeProgressoCurso() {
@@ -48,10 +44,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Chamada ao carregar a página
   atualizarBarraDeProgressoCurso();
 
-  // Função para trocar o estilo de destaque de um submódulo
+  async function carregarRespostasSalvas() {
+    const resposta = await fetch('/obter-respostas-salvas', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ questionarioId: 1 })
+    });
+
+    const dados = await resposta.json();
+
+    dados.respostas.forEach(resp => {
+      const form = document.querySelector(`form[data-questao-id="${resp.questao_id}"]`);
+      if (!form) return;
+
+      const alternativas = form.querySelectorAll('label.alternativa');
+      alternativas.forEach(label => {
+        const input = label.querySelector('input');
+        label.classList.remove('correta', 'incorreta');
+
+        if (input.value === resp.resposta && resp.correta) {
+          label.classList.add('correta');
+        }
+        if (input.value === resp.resposta && !resp.correta) {
+          label.classList.add('incorreta');
+        }
+        if (input.value === resp.correta_questao && !resp.correta) {
+          label.classList.add('correta');
+        }
+        input.checked = input.value === resp.resposta;
+        input.disabled = true;
+      });
+    });
+
+    const totalCorretas = dados.respostas.filter(r => r.correta).length;
+    if (dados.respostas.length >= 3 && totalCorretas >= 2) {
+      btnResponder.disabled = true;
+    } else {
+      btnResponder.disabled = false;
+    }
+  }
+
+  carregarRespostasSalvas();
+
   function marcarSubmodulo(submodulo, ativo) {
     if (!submodulo) return;
     if (ativo) {
@@ -61,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Função para resetar todos os submódulos, deixando só o primeiro ativo
   function resetarSubmodulos() {
     const submodulos = document.querySelectorAll('.submodulo');
     submodulos.forEach((sub, index) => {
@@ -69,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Função para atualizar o destaque do próximo submódulo
   function atualizarProximoSubmodulo() {
     const submodulos = document.querySelectorAll('.submodulo');
     const atualIndex = [...submodulos].findIndex(el => el.classList.contains('ativo'));
@@ -82,11 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const proximo = submodulos[atualIndex + 1];
         marcarSubmodulo(proximo, true);
       } else {
-        // Se já está no último, mantém ele ativo
         marcarSubmodulo(atual, true);
       }
 
-      // Atualiza título do módulo (ajuste conforme necessário)
       const tituloModuloAtual = document.querySelector('.titulo-modulo');
       if (tituloModuloAtual) {
         tituloModuloAtual.classList.add('titulo-branco');
@@ -95,20 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Função para forçar o exercício (último submódulo) a ficar ativo
   function marcarExercicioAtivo() {
     const submodulos = document.querySelectorAll('.submodulo');
-    submodulos.forEach(sub => marcarSubmodulo(sub, false)); // limpa todos
+    submodulos.forEach(sub => marcarSubmodulo(sub, false));
     const ultimoSub = submodulos[submodulos.length - 1];
     if (ultimoSub) {
       marcarSubmodulo(ultimoSub, true);
     }
   }
 
-  // Inicializa estado ao carregar a página
   resetarSubmodulos();
 
-  // Adiciona eventos se elementos existem
   if (btnProximo && videoWrapper && navegacao && exercicio1 && btnVoltar && btnResponder) {
     btnProximo.addEventListener('click', async () => {
       videoWrapper.style.display = 'none';
@@ -119,9 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const resposta = await fetch('/registrar-progresso', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ aulaId })
         });
 
@@ -143,8 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
       videoWrapper.style.display = 'block';
       navegacao.style.display = 'flex';
       exercicio1.style.display = 'none';
-
-      // Ao voltar, resetar destaque para o primeiro submódulo
       resetarSubmodulos();
     });
 
@@ -164,49 +189,52 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          questionarioId: 1, // Substituir dinamicamente depois
+          questionarioId: 1,
           respostas
         })
       });
 
       const resultado = await resposta.json();
 
-      const spanMoedas = document.getElementById("paeeja-moeda-valor");
-        if (resultado.novoSaldo !== undefined && spanMoedas) {
-          spanMoedas.textContent = resultado.novoSaldo;
-        }
-      if (resposta.status !== 200) {
-        alert(resultado.mensagem);
-        return;
-      }
+      const totalCorretas = resultado.respostas.filter(r => r.correta).length;
 
-      // Mostrar resultado visual
-      resultado.respostasComCorrecao.forEach(res => {
-        const questaoForm = document.querySelector(`form[data-questao-id="${res.questao_id}"]`);
-        const alternativas = questaoForm.querySelectorAll('label.alternativa');
+      resultado.respostas.forEach(resp => {
+        const form = document.querySelector(`form[data-questao-id="${resp.questao_id}"]`);
+        const alternativas = form.querySelectorAll('label.alternativa');
 
         alternativas.forEach(label => {
-          label.classList.remove('correta', 'incorreta');
           const input = label.querySelector('input');
-          if (input.value === res.resposta && !res.correta) {
-            label.classList.add('incorreta');
-          }
-          if (input.value === res.resposta && res.correta) {
+          const letra = input.value;
+          label.classList.remove('correta', 'incorreta');
+
+          if (letra === resp.alternativa_correta) {
             label.classList.add('correta');
           }
-          if (input.value === res.correta && !res.correta) {
-            const corretaLabel = questaoForm.querySelector(`input[value="${res.correta}"]`).parentElement;
-            corretaLabel.classList.add('correta');
+
+          if (letra === resp.resposta && !resp.correta) {
+            label.classList.add('incorreta');
           }
-          input.disabled = true;
+
+          if (letra === resp.resposta && resp.correta) {
+            label.classList.add('correta');
+          }
+
+          // Se acertou 2 ou mais, desabilita. Se não, deixa habilitado para tentar de novo
+          input.disabled = totalCorretas >= 2;
         });
       });
 
-      if (resultado.ganhouMoeda) {
-        alert('Parabéns! Você ganhou 50 moedas.');
+      btnResponder.disabled = totalCorretas >= 2;
+
+      if (resultado.novoSaldo !== undefined) {
+        const spanMoedas = document.getElementById("paeeja-moeda-valor");
+        if (spanMoedas) {
+          spanMoedas.textContent = resultado.novoSaldo;
+        }
       }
 
-      btnResponder.disabled = true;
+      atualizarBarraDeProgressoCurso();
     });
+
   }
 });

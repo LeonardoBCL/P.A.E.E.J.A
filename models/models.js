@@ -152,6 +152,17 @@ async function verificarSeJaRespondeu(usuarioId, questionarioId) {
   return rows.length > 0;
 }
 
+async function obterRespostasUsuario(usuarioId, questionarioId) {
+  const [rows] = await db.execute(
+    `SELECT r.questao_id, r.resposta, r.correta, q.correta AS correta_questao
+       FROM respostas_usuario r
+       JOIN questoes q ON r.questao_id = q.id
+       WHERE r.usuario_id = ? AND q.questionario_id = ?`,
+    [usuarioId, questionarioId]
+  );
+  return rows;
+}
+
 module.exports = {
   criarUsuario,
   buscarPorEmailSenha,
@@ -174,5 +185,6 @@ module.exports = {
   obterQuestoesDoQuestionario,
   salvarRespostas,
   contarAcertos,
-  verificarSeJaRespondeu
+  verificarSeJaRespondeu,
+  obterRespostasUsuario
 };

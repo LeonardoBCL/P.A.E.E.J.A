@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Curso - Português</title>
   <link rel="stylesheet" href="/css/materiaModulo.css" />
   <link rel="stylesheet" href="/css/navbar.css" />
 </head>
+
 <body>
 
   <!-- Slot reservado para a navbar (será incluída por ID no seu script) -->
-  <div id="navbar-placeholder"></div>
+  <div id="navbar"></div>
 
   <!-- Container principal da página -->
   <main class="curso-container">
 
     <!-- Botão de voltar -->
-   <div class="voltar">
-  <img src="imgs/img_loja/voltar.png" alt="Voltar" class="seta-img" />
-  <a href="/">Voltar</a>
-</div>
+    <div class="voltar">
+      <img src="imgs/img_loja/voltar.png" alt="Voltar" class="seta-img" />
+      <a href="/">Voltar</a>
+    </div>
 
 
     <!-- Informações básicas do curso -->
@@ -34,8 +36,10 @@
           <span class="tooltip-text">Seu progresso neste curso até agora.</span>
         </span>
         <div class="progresso">
-          <div class="barra"><span style="width: 25%;">25%</span></div>
-          
+          <div class="barra">
+            <span style="width: 0%;">0%</span>
+          </div>
+
         </div>
       </div>
     </section>
@@ -63,8 +67,10 @@
         <h2>O que você aprenderá</h2>
         <p>
           Neste curso, você aprenderá as melhores práticas da língua portuguesa de forma clara e acessível.
-          As aulas cobrem os principais tópicos de leitura, escrita e interpretação de texto, com foco nas necessidades dos alunos.<br>
-          Para uma experiência de aprendizagem completa, é fundamental que você, aluno, tenha acesso a cadernos, caneta ou lápis e utilize os materiais fornecidos ao longo do curso.<br>
+          As aulas cobrem os principais tópicos de leitura, escrita e interpretação de texto, com foco nas necessidades
+          dos alunos.<br>
+          Para uma experiência de aprendizagem completa, é fundamental que você, aluno, tenha acesso a cadernos, caneta
+          ou lápis e utilize os materiais fornecidos ao longo do curso.<br>
           O conteúdo é adaptado para garantir um aprendizado gradual e efetivo. Bons estudos!
         </p>
       </section>
@@ -75,5 +81,7 @@
 
   </main>
   <script src="/js/navbar.js"></script>
+  <script src="/js/materiaModulo.js"></script>
 </body>
+
 </html>
