@@ -155,7 +155,7 @@ body {
 /* Painel "Seus Cursos" com tamanho fixo */
 #painel-cursos {
   width: 608px;
-  height: 601px;
+  height: 420px;
   background-color: #388e3c;
   border-radius: 8px;
   padding: 24px;
@@ -228,7 +228,7 @@ body {
   background-color: #279c41;
   padding: 24px;
   border-radius: 8px;
-  height: 300.5px; /* metade exata de 601px */
+  height: 200.5px; /* metade exata de 601px */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -383,11 +383,15 @@ body {
 
 /* Títulos */
 #box-informacoes h3.titulo-secao {
+ font-size: 1.29rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #cddc39;
+  font-size: 20.63px;
   color: white;
-  font-size: 25px; /* <-- Ajustado conforme pedido */
-  font-weight: 700; /* Figma geralmente usa bold para títulos */
-  margin-bottom: 12px;
 }
+
 
 
 .coluna-informacao label {
@@ -400,3 +404,65 @@ body {
 body {
   background-color: white;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container de conquistas (pai dos dois blocos) */
+#painel-conquistas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaço entre conquistas e itens comprados */
+  flex: 1;
+}
+
+/* Box das conquistas */
+#box-conquista {
+  background-color: #2a963d;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+}
+
+
+
+/* Box dos itens comprados */
+#box-itens-comprados {
+  background-color: #2a963d;
+  width:622px;
+ height: auto;              /* deixa o conteúdo controlar a altura */
+  min-height: 200.5px;         /* mantém uma base mínima */
+  margin: 0;                 /* evita deslocamentos laterais */
+  height: auto;
+  padding:10px;
+  border-radius: 8px;
+  color: white;
+  margin-left:0px;
+}
+
+#box-itens-comprados .titulo-secao {
+  font-size: 20.63px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #fdd835;
+  color: white;
+}
+
+/* Imagem de item comprado */
+#box-itens-comprados img {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+
