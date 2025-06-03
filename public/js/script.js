@@ -40,7 +40,7 @@ async function navegacaoPortugues() {
   const dados = await resposta.json();
 
   if (dados.logado && path !== "/cursos" && logado) {
-    window.location = '/materiaModulo';
+    window.location = '/cursoPortugues';
   } else if (path === "/" && !logado) {
     window.location = '/login';
   } else {
