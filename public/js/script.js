@@ -16,3 +16,34 @@ var swiper = new Swiper(".mySwiper", {
     disableOnInteraction: false,
   },
 });
+
+
+async function navegacaoVerCursos() {
+  const path = window.location.pathname;
+  const logado = localStorage.getItem("usuarioLogado") === "true";
+  const resposta = await fetch("/sessao");
+  const dados = await resposta.json();
+
+  if (dados.logado && path !== "/cursos" && logado) {
+    window.location = '/cursos';
+  } else if (path === "/" && !logado) {
+    window.location = '/login';
+  } else {
+    window.location = '/#sectionCursos';
+  }
+}
+
+async function navegacaoPortugues() {
+  const path = window.location.pathname;
+  const logado = localStorage.getItem("usuarioLogado") === "true";
+  const resposta = await fetch("/sessao");
+  const dados = await resposta.json();
+
+  if (dados.logado && path !== "/cursos" && logado) {
+    window.location = '/cursoPortugues';
+  } else if (path === "/" && !logado) {
+    window.location = '/login';
+  } else {
+    window.location = '/#sectionCursos';
+  }
+}

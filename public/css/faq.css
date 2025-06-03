@@ -4,6 +4,18 @@
       padding: 0;
     }
 
+    .voltar-fixo a {
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .voltar-fixo span {
+    font-size: 30px;   /* tamanho da fonte que quiser */
+    font-weight: 700;  /* negrito */
+    color: #48A14D;    /* mesma cor que você está usando */
+    line-height: 1;    /* evita espaçamento estranho */
+    }
+
     .faq {
       max-width: 800px;
       margin: 50px auto;

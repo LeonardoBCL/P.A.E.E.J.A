@@ -6,10 +6,6 @@ module.exports = (app) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'home.html'));
   });
-
-  app.get('/home', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', 'views', 'home.html'));
-  });
   
   app.get('/cursos', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'cursos.html'));
@@ -31,7 +27,7 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'register.html'));
   });
 
-   app.get('/materiaModulo', (req, res) => {
+   app.get('/cursoPortugues', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'materiaModulo.html'));
   });
 

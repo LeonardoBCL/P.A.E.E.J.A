@@ -251,7 +251,13 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   margin-top: 0.25rem;
   font-weight: 600;
   margin-top:4px;
-  margin-bottom: 20px;
+}
+.cabecalho-conteudo .direitos-autorais {
+   color: #2ea043;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 38rem;
+  
 }
 
 .video-container {
