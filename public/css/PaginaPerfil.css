@@ -27,6 +27,13 @@ body {
   border-bottom: 4px solid #f0f0f0;
 }
 
+#info-usuario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 #foto-usuario {
   width: 132px;
   height: 132px;
@@ -36,12 +43,6 @@ body {
   margin-top: 9rem;
 }
 
-#info-usuario {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-}
 
 #nome-usuario {
   color: white;
@@ -53,7 +54,7 @@ body {
 
 .top-menu {
   position: relative;  /* essa linha aqui */
-  margin-top: 15px; /* empurrado mais para baixo */
+ /* empurrado mais para baixo */
   height: 48px;
   display: flex;
   justify-content: center;
@@ -80,7 +81,7 @@ body {
 .voltar-fixo {
   position:relative;
   left: 20px;
-  margin-top: -105px; /* mesmo nível do menu */
+  margin-top: -125px;
   font-size: 24px;
   font-weight: 700;
   color: #48A14D;
@@ -92,15 +93,14 @@ body {
 }
 
 .seta-img {
-  width: 27px;
+  width: 20px;
   height: auto;
 }
 
 .voltar-fixo span {
-  font-size: 30px;   /* tamanho da fonte que quiser */
-  font-weight: 700;  /* negrito */
-  color: #48A14D;    /* mesma cor que você está usando */
-  line-height: 1;    /* evita espaçamento estranho */
+  font-size: 22px; 
+  font-weight: 700;  
+  color: #48A14D;  
 }
 
 #usuario-handle {
@@ -119,9 +119,7 @@ body {
   display: flex;
   justify-content: center; /* Alinha os itens ao centro */
   gap: 1.5rem;
-  border-bottom: 2px solid #ccc;
   padding: 0;
-  margin: 0 auto;
 }
 
 #abas-perfil .aba a {

@@ -55,7 +55,7 @@ function navegacaoFale() {
   if (path === "/") {
     window.location = '#faq';
   } else {
-    window.location = '/#faq';
+    window.location = '/faq';
   }
 }
 
