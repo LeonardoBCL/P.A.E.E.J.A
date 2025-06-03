@@ -1,3 +1,4 @@
+USE paeeja;
 INSERT INTO `avatar`(`id`,`nome`,`preco`) VALUES
 (1,'avatar-1',50),
 (2,'avatar-2',50),
