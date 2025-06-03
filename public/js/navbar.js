@@ -21,7 +21,7 @@ function navegacaoLogo() {
 }
 
 // Redireciona para cursos com base no login
-async function navegacaoCursos() {
+async function navegacaoCursosNav() {
   const path = window.location.pathname;
   const logado = localStorage.getItem("usuarioLogado") === "true";
   const resposta = await fetch("/sessao");
@@ -53,9 +53,9 @@ async function navegacaoLoja() {
 function navegacaoFale() {
   const path = window.location.pathname;
   if (path === "/") {
-    window.location = '#faleConosco';
+    window.location = '#faq';
   } else {
-    window.location = '/#faleConosco';
+    window.location = '/#faq';
   }
 }
 
