@@ -86,7 +86,7 @@ body {
 .info-curso h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 45px;
+  font-size: 36px;
   max-width: 235px;
   height: 68px;
 }
@@ -216,16 +216,6 @@ body {
   background-color: #287c36;
 }
 
-/* Conteúdo dos módulos do curso com fundo verde e espaçamento */
-.modulo {
-  background-color: #219653;
-  color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .modulo-info {
   display: flex;
   gap: 0.5rem;
@@ -241,7 +231,7 @@ body {
 /* Descrição do curso */
 /* Título "Conteúdo do curso" */
 .conteudo-curso h2 {
-  color: #219653;
+  color: #319F43;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 24.76px;
@@ -255,7 +245,7 @@ body {
 
 /* Bloco do módulo "Português" */
 .modulo {
-  background-color: #219653;
+  background-color: #319F43;
   color: white;
   padding: 1rem;
   border-radius: 8px;
@@ -265,7 +255,7 @@ body {
 
   width: 498px;   /* conforme layout */
   height: 52px;   /* conforme layout */
-  margin-top: 20px;  /* ajusta a distância do título */
+  margin-top: 15px;  /* ajusta a distância do título */
   margin-left: 0;    /* deixa alinhado à esquerda no grid */
 }
 

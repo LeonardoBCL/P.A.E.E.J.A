@@ -4,7 +4,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-
 #helpButton {
   position: fixed;
   top: 20px;
@@ -118,14 +117,17 @@ body {
 #skipButton {
   position: absolute;
   top: 10px;
-  right: 10px; /* Mantém à direita */
+  right: 10px;
+  /* Mantém à direita */
   border: 10px solid #6CC87A;
   border-radius: 10px;
-  font-size: 14px; /* Corrigido de 'size' */
+  font-size: 14px;
+  /* Corrigido de 'size' */
   background-color: #6CC87A;
   font-family: 'Poppins', sans-serif;
   color: #ffffff;
-  cursor: pointer; /* adicionado para garantir clique */
+  cursor: pointer;
+  /* adicionado para garantir clique */
 }
 
 #closeButton {
