@@ -219,20 +219,35 @@ body {
   gap: 1rem;
 }
 
+
+#box-conquista > img {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Se quiser controlar tamanho da medalha, pode ajustar aqui */
+  max-width: 150px; /* exemplo */
+  height: auto;
+}
+
+
+
+
+
+
+
 #box-conquista,
 #conquista-em-breve {
   border-radius: 10px;
 }
 
 #box-conquista {
-  background-color: #279c41;
+  background-color: #ADABAB !important;
   padding: 24px;
   border-radius: 8px;
   height: 200.5px; /* metade exata de 601px */
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+ position: relative;
 }
 #box-conquista .titulo-secao {
   font-size: 1.29rem;
@@ -244,6 +259,7 @@ body {
   color: white;
 }
 #box-conquista img {
+  
   max-width: 70px;
   display: block;
   margin: 0;
@@ -438,12 +454,11 @@ body {
 /* Box dos itens comprados */
 #box-itens-comprados {
   background-color: #2a963d;
-  width:622px;
+  padding:10px;
  height: auto;              /* deixa o conteúdo controlar a altura */
   min-height: 200.5px;         /* mantém uma base mínima */
   margin: 0;                 /* evita deslocamentos laterais */
-  height: auto;
-  padding:10px;
+
   border-radius: 8px;
   color: white;
   margin-left:0px;
@@ -462,7 +477,7 @@ body {
 #box-itens-comprados img {
   width: 100px;
   height: auto;
-  margin-top: 10px;
+ 
 }
 
 
