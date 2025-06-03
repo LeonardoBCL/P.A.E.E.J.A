@@ -268,6 +268,28 @@ async function obterRespostasSalvas(req, res) {
   res.status(200).json({ respostas });
 }
 
+
+async function adicionarAvatarBox(req, res) {
+  const usuarioId = req.session.usuario.id;
+  const { avatar } = req.body;
+  if (!usuarioId) {
+    return res.status(401).json({ sucesso: false, message: "Usuário não autenticado." });
+  }
+
+  try {
+    const comprado = await usuarioModel.jaComprou(usuarioId, 'avatar', avatar);
+
+    if (!comprado) {
+      return res.status(403).json({ sucesso: false, message: "Avatar não comprado." });
+    }
+
+    res.status(200).json({ sucesso: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: 'Erro ao calcular progresso do curso.' });
+  }
+}
+
 module.exports = {
   criarUsuario,
   login,
@@ -281,5 +303,6 @@ module.exports = {
   verificarProgresso,
   obterProgressoCurso,
   responderQuestionario,
-  obterRespostasSalvas
+  obterRespostasSalvas,
+  adicionarAvatarBox
 };
