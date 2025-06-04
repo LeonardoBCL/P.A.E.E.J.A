@@ -7,7 +7,7 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'home.html'));
   });
   
-  app.get('/cursos', (req, res) => {
+  app.get('/trilhas', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'cursos.html'));
   });
 

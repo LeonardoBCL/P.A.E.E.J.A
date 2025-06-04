@@ -6,6 +6,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalMessage = document.getElementById("modal-message");
   const btnClose = document.getElementById("close-modal");
   let btnEquipar;
+
+  function animarContadorMoedas(elemento, inicio, fim, duracao) {
+    const range = fim - inicio;
+    const startTime = performance.now();
+
+    function atualizarContador(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progresso = Math.min(elapsed / duracao, 1); // de 0 a 1
+      const valorAtual = Math.floor(inicio + range * progresso);
+      elemento.textContent = valorAtual;
+
+      if (progresso < 1) {
+        requestAnimationFrame(atualizarContador);
+      }
+    }
+
+    requestAnimationFrame(atualizarContador);
+  }
+
   async function verificarItensComprados() {
     const imagens = document.querySelectorAll(".item-img");
 
@@ -109,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     case 4:
                       avatarSelecionado = "avatar-fem2-desblock"
                       break;
-                  
+
                     default:
                       break;
                   }
@@ -165,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
       modalMessage.textContent = resultado.message;
       modalMessage.style.color = resultado.sucesso ? "green" : "red";
       btnClose.style.display = "inline-block";
+
       if (resultado.sucesso) {
         const img = document.querySelector(`.item-img[data-id="${selectedItemId}"][data-tipo="${selectedTipo}"]`);
         if (img) {
@@ -174,6 +194,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const price = parent.querySelector("p");
             if (price) price.remove();
           }
+        }
+
+        const respostaDadosUsuario = await fetch("/sessao");
+        const dadosUsuario = await respostaDadosUsuario.json();
+
+        const spanMoedas = document.getElementById("paeeja-moeda-valor");
+        if (spanMoedas) {
+          const saldoAtual = parseInt(spanMoedas.textContent) || 0;
+          const novoSaldo = dadosUsuario.usuario.moedas;
+          animarContadorMoedas(spanMoedas, saldoAtual, novoSaldo, 1000);
         }
       }
 

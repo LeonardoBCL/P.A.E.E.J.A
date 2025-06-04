@@ -27,8 +27,8 @@ async function navegacaoCursosNav() {
   const resposta = await fetch("/sessao");
   const dados = await resposta.json();
 
-  if (dados.logado && path !== "/cursos" && logado) {
-    window.location = '/cursos';
+  if (dados.logado && path !== "/trilhas" && logado) {
+    window.location = '/trilhas';
   } else if (path === "/" && !logado) {
     window.location = '#sectionCursos';
   } else {

@@ -1,19 +1,17 @@
-* {
-  font-family: 'Montserrat', sans-serif;
-}
-
 /* RESET BÁSICO */
 * {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f9f9f9;
+  background-color: white;
   color: #333;
 }
+
+/* Fundo da página */
 
 /* === BANNER DO USUÁRIO === */
 #banner-usuario {
@@ -149,7 +147,6 @@ body {
   box-sizing: border-box;
 }
 
-/* === CURSOS === */
 /* Painel "Seus Cursos" com tamanho fixo */
 #painel-cursos {
   width: 608px;
@@ -168,7 +165,7 @@ body {
   font-weight: bold;
   margin-bottom: 24px;
   padding-bottom: 8px;
-  border-bottom: 2px solid #cddc39;
+  border-bottom: 2px solid #fdd835;
   font-size: 20.63px;
   color: white;
 }
@@ -217,7 +214,6 @@ body {
   gap: 1rem;
 }
 
-
 #box-conquista > img {
   position: absolute;
   top: 60%;
@@ -228,19 +224,13 @@ body {
   height: auto;
 }
 
-
-
-
-
-
-
 #box-conquista,
 #conquista-em-breve {
   border-radius: 10px;
 }
 
 #box-conquista {
-  background-color: #ADABAB !important;
+  background-color: #ADABAB;
   padding: 24px;
   border-radius: 8px;
   height: 200.5px; /* metade exata de 601px */
@@ -252,12 +242,12 @@ body {
   font-weight: bold;
   margin-bottom: 24px;
   padding-bottom: 8px;
-  border-bottom: 2px solid #cddc39;
+  border-bottom: 2px solid #fdd835;
   font-size: 20.63px;
   color: white;
 }
+
 #box-conquista img {
-  
   max-width: 70px;
   display: block;
   margin: 0;
@@ -299,7 +289,6 @@ body {
   color: white; /* Para contraste */
   padding: 20px;
 }
-/*-----------------------------------------------------------*/
 
 /* === MINHAS INFORMAÇÕES === */
 
@@ -375,7 +364,7 @@ body {
 }
 
 .btn-salvar {
-  background-color: #168E2A;
+  background-color: #5186CD;
   color: white;
   border: none;
   padding: 10px 16px;
@@ -401,35 +390,16 @@ body {
   font-weight: bold;
   margin-bottom: 24px;
   padding-bottom: 8px;
-  border-bottom: 2px solid #cddc39;
+  border-bottom: 2px solid #fdd835;
   font-size: 20.63px;
   color: white;
 }
-
-
 
 .coluna-informacao label {
   font-weight: bold;
   color: white;
   font-size: 20.63px;
 }
-
-/* Fundo da página */
-body {
-  background-color: white;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Container de conquistas (pai dos dois blocos) */
 #painel-conquistas {
@@ -439,19 +409,9 @@ body {
   flex: 1;
 }
 
-/* Box das conquistas */
-#box-conquista {
-  background-color: #2a963d;
-  padding: 10px;
-  border-radius: 8px;
-  color: white;
-}
-
-
-
 /* Box dos itens comprados */
 #box-itens-comprados {
-  background-color: #2a963d;
+  background-color: #388e3c;
   padding:10px;
  height: auto;              /* deixa o conteúdo controlar a altura */
   min-height: 200.5px;         /* mantém uma base mínima */

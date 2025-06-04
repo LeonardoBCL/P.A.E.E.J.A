@@ -24,8 +24,8 @@ async function navegacaoVerCursos() {
   const resposta = await fetch("/sessao");
   const dados = await resposta.json();
 
-  if (dados.logado && path !== "/cursos" && logado) {
-    window.location = '/cursos';
+  if (dados.logado && path !== "/trilhas" && logado) {
+    window.location = '/trilhas';
   } else if (path === "/" && !logado) {
     window.location = '/login';
   } else {
@@ -39,8 +39,8 @@ async function navegacaoPortugues() {
   const resposta = await fetch("/sessao");
   const dados = await resposta.json();
 
-  if (dados.logado && path !== "/cursos" && logado) {
-    window.location = '/cursoPortugues';
+  if (dados.logado && path !== "/trilhas" && logado) {
+    window.location = '/curso-Portugues';
   } else if (path === "/" && !logado) {
     window.location = '/login';
   } else {
