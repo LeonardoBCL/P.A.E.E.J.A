@@ -28,102 +28,74 @@ header {
   position: relative;
 }
 
-/* --------------------------- Styles Section 1 --------------------------- */
-/* Mudança das cores do Home */
-.cor-sec-1 {
-  background: #97BFE4; /* #FFFDE9 */
-  padding-top: 100px;
-  margin-bottom: 50px; /* Espaço entre section 1 e section 2 */
-}
-
-.container-slider {
-  width: 85%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.slider-content {
-  width: 500%;
-  height: 90vh;
+.hero-section {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 10%;
+  min-height: 100vh;
+  background-color: #7fb1e0;
 }
 
-.slider-content input {
-  display: none;
-}
-
-.slide-box {
-  width: 20%;
-  height: 100%;
-  position: relative;
-  text-align: center;
-  transition: margin-left 0.7s ease;
-}
-
-.slide-box .img-desktop {
+#conteudo-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
+  gap: 40px;
 }
 
-/* Controles manuais e automáticos */
-.nav-manual {
-  margin-bottom: 70px; /* ajuste conforme necessário */
+#bloco-texto {
+  flex: 1;
 }
 
-.nav-auto,
-.nav-manual {
+#texto-titulo h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+.destaque {
+  color: white;
+  font-weight: 700;
+}
+
+.destaque-vermelho {
+  color: #FF2653;
+  font-weight: 700;
+}
+
+#texto-subtitulo p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+#bloco-imagem {
+  flex: 1;
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 0px;
+  align-items: center;
 }
 
-.nav-manual .manual-btn,
-.nav-auto div {
-  border: 1px solid #638bc3;
-  padding: 6px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  
+#bloco-imagem img {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  animation: float 1s ease-in-out infinite;
 }
 
-/* Efeito hover para mudar a cor dos botões */
-.nav-manual .manual-btn:hover,
-.nav-auto div:hover {
-  background-color: #1f62c6;
-}
-
-/* Mudança de cor para os inputs checados */
-#radio1:checked ~ .nav-manual .manual-btn:nth-child(1),
-#radio2:checked ~ .nav-manual .manual-btn:nth-child(2),
-#radio3:checked ~ .nav-manual .manual-btn:nth-child(3),
-#radio4:checked ~ .nav-manual .manual-btn:nth-child(4),
-#radio5:checked ~ .nav-manual .manual-btn:nth-child(5) {
-  background-color: #1f62c6;
-}
-
-/* Navegação dos slides */
-#radio1:checked ~ .primeiro {
-  margin-left: 0%;
-}
-#radio2:checked ~ .primeiro {
-  margin-left: -20%;
-}
-#radio3:checked ~ .primeiro {
-  margin-left: -40%;
-}
-#radio4:checked ~ .primeiro {
-  margin-left: -60%;
-}
-#radio5:checked ~ .primeiro {
-  margin-left: -80%;
-}
-
-.nav-auto {
-  display: none !important;
+/* Animação flutuante estilo suave */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* --------------------------------ESTILIZAÇÃO DA SECTION - 2 ( INÍCIO ) -------------------------- */
