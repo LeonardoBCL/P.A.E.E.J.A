@@ -19,16 +19,20 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 body {
-  padding-top: 75px; /* altura do header + espaço */
+  padding-top: 75px;
+  /* altura do header + espaço */
   /* overflow: hidden;  tira scroll da página  */
 }
+
 /* Lateral */
 .menu-lateral {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  transform: translateX(-170px); /* move tudo da lateral 40px para a esquerda */
+  transform: translateX(-170px);
+  /* move tudo da lateral 40px para a esquerda */
 }
 
 .btn-voltar {
@@ -47,12 +51,13 @@ body {
   width: 27px;
   height: auto;
 }
+
 /* Seção módulos */
 .secao-modulos h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 24px;
-  color: #219653;
+  color: #2ea043;
   margin-bottom: 1rem;
 }
 
@@ -75,11 +80,14 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius:50%;
-  background-color: white;        /* fundo branco */
-  border: 2px solid #219653;      /* borda verde */
-  color: #219653;                 /* cor do "?" verde */
- 
+  border-radius: 50%;
+  background-color: white;
+  /* fundo branco */
+  border: 2px solid #219653;
+  /* borda verde */
+  color: #219653;
+  /* cor do "?" verde */
+
   cursor: help;
   cursor: pointer;
 }
@@ -140,17 +148,18 @@ body {
   border-radius: 7px;
   padding: 0.75rem;
   color: white;
-  width: 450px;  /* largura definida conforme layout */
-  min-height: 52px; 
+  width: 450px;
+  /* largura definida conforme layout */
+  min-height: 52px;
 
-  
+
 }
 
 .modulo-titulo {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
-  
+
 }
 
 .lista-submodulos {
@@ -166,15 +175,19 @@ body {
   color: white;
   padding: 1rem;
   font-size: 1rem;
-  border-radius: 7px; /* alterado de 6px para 5px, conforme seu layout */
+  border-radius: 7px;
+  /* alterado de 6px para 5px, conforme seu layout */
   border-bottom: 3px solid #ffc107;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 
-  width: 412px;  /* largura definida conforme layout */
-  min-height: 52px; /* respeita o layout, mas cresce se o conteúdo exigir */
-height: auto;      /* permite ajuste automático conforme o conteúdo */
+  width: 412px;
+  /* largura definida conforme layout */
+  min-height: 52px;
+  /* respeita o layout, mas cresce se o conteúdo exigir */
+  height: auto;
+  /* permite ajuste automático conforme o conteúdo */
 
 }
 
@@ -185,13 +198,15 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
 
 .submodulo .tempo {
   font-size: 0.9rem;
-  color: white; /* cor padrão (branco) */
+  color: white;
+  /* cor padrão (branco) */
   transition: color 0.3s ease;
 }
 
 /* Destacar o tempo em amarelo */
 .tempo-amarelo {
-  color: #fff066; /* amarelo */
+  color: #fff066;
+  /* amarelo */
 }
 
 /* Tempo normal branco */
@@ -223,8 +238,10 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   background-color: #2ea043;
   font-weight: bold;
 }
+
 .submodulo.ativo .tempo {
-  color: #fff066 !important; /* amarelo somente se .submodulo tiver classe ativo */
+  color: #fff066 !important;
+  /* amarelo somente se .submodulo tiver classe ativo */
 }
 
 /* Container do curso */
@@ -250,14 +267,14 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   font-size: 1.25rem;
   margin-top: 0.25rem;
   font-weight: 600;
-  margin-top:4px;
+  margin-top: 4px;
 }
+
 .cabecalho-conteudo .direitos-autorais {
-   color: #2ea043;
-  font-size: 15px;
+  color: #FF2653;
+  font-size: 12px;
   font-weight: 600;
-  margin-left: 38rem;
-  
+  margin-left: 26.5rem;
 }
 
 .video-container {
@@ -294,6 +311,7 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   justify-content: flex-end;
   gap: 1rem;
 }
+
 .navegacao button {
   padding: 1rem 2.5rem;
   border: none;
@@ -319,9 +337,6 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   font-size: 0.875rem;
   color: #555;
 }
-
-
-
 
 /* PARTE REFERENTE AOS EXERCICIOS / ESTILIZAÇÃO */
 #exercicio1 {
@@ -430,29 +445,38 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
 
 /* Chrome, Edge e Safari */
 #exercicio1::-webkit-scrollbar {
-  width: 8px;               /* largura da barra de rolagem */
+  width: 8px;
+  /* largura da barra de rolagem */
 }
 
 #exercicio1::-webkit-scrollbar-track {
-  background: #f1f1f1;      /* cor do trilho (fundo da scrollbar) */
+  background: #f1f1f1;
+  /* cor do trilho (fundo da scrollbar) */
   border-radius: 8px;
 }
 
 #exercicio1::-webkit-scrollbar-thumb {
-  background-color: #319F43; /* cor da "bolinha" da scrollbar */
+  background-color: #319F43;
+  /* cor da "bolinha" da scrollbar */
   border-radius: 8px;
-  border: 2px solid #f1f1f1; /* margem entre a thumb e o track */
+  border: 2px solid #f1f1f1;
+  /* margem entre a thumb e o track */
 }
 
 /* Firefox */
 #exercicio1 {
-  scrollbar-width: thin;             /* largura fina */
-  scrollbar-color: #319F43 #f1f1f1; /* cor da thumb e do track */
+  scrollbar-width: thin;
+  /* largura fina */
+  scrollbar-color: #319F43 #f1f1f1;
+  /* cor da thumb e do track */
 }
 
 .correta {
-  background-color: #a5d6a7 !important; /* verde claro */
+  background-color: #a5d6a7 !important;
+  /* verde claro */
 }
+
 .incorreta {
-  background-color: #ef9a9a !important; /* vermelho claro */
+  background-color: #ef9a9a !important;
+  /* vermelho claro */
 }

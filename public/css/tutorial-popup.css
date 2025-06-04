@@ -59,7 +59,6 @@ body {
   border-radius: 10px;
 }
 
-
 #popupImage {
   width: 250px;
   /* Ajuste conforme necessário */
@@ -68,8 +67,6 @@ body {
   margin-bottom: 30px;
   /* Espaço até o texto */
 }
-
-
 
 #popupText {
   text-align: center;
@@ -102,9 +99,6 @@ body {
   /* Ou 100% para largura total */
   margin: 0 auto;
 }
-
-
-
 
 .popup-nav {
   margin-top: 10px;
@@ -203,7 +197,6 @@ body {
 .popup-nav button:active img {
   transform: scale(0.9);
 }
-
 
 #closeButton {
   outline: none;
