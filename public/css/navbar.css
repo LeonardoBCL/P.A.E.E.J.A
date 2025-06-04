@@ -26,10 +26,6 @@
   /* Espaçamento controlado entre imagem e número */
 }
 
-.paeeja-moeda-imagem:hover{
-    
-}
-
 /* Ajustes específicos para a moeda */
 .navbar img[alt="Moeda Paeeja"] {
   margin-right: -3px;
@@ -163,7 +159,7 @@ O elemento first-child pega primeira tag referenciada dentro de uma div. */
 
 /* Style - username */
 .nome-usuario-logado {
-  display:none;
+  display: none;
 }
 
 /* Style - userprofile */
