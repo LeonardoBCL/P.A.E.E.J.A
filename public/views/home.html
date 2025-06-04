@@ -276,6 +276,48 @@
 
   </section>
 
+  <!-- animação section números-->
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const alvo = document.querySelector('.numeros-e-paragrafos');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animada');
+          observer.unobserve(entry.target); // só anima uma vez
+        }
+      });
+    }, {
+      threshold: 0.2 // quando 20% da section aparecer
+    });
+
+    if (alvo) observer.observe(alvo);
+  });
+
+  // animação section faq
+  window.addEventListener('DOMContentLoaded', () => {
+  const alvo = document.querySelector('.faq-content'); // mudou aqui!
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animada');
+        observer.unobserve(entry.target); // só anima uma vez
+      }
+    });
+  }, {
+    threshold: 0.2 // ativa quando 20% do bloco estiver visível
+  });
+
+  if (alvo) observer.observe(alvo);
+});
+
+</script>
+
+  <!-- animação section faq -->
+
+
   <script src="/js/scroll.js"></script>
   <script src="/js/swiper-bundle.min.js" defer></script>
   <script src="/js/script.js" defer></script>

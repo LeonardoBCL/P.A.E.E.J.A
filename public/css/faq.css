@@ -10,15 +10,19 @@
     }
 
     .seta-img {
-    width: 20px;
-    height: auto;
+      width: 20px;
+      height: auto;
     }
 
     .voltar-fixo span {
-    font-size: 22px;   /* tamanho da fonte que quiser */
-    font-weight: 700;  /* negrito */
-    color: #48A14D;    /* mesma cor que você está usando */
-    line-height: 1;    /* evita espaçamento estranho */
+      font-size: 22px;
+      /* tamanho da fonte que quiser */
+      font-weight: 700;
+      /* negrito */
+      color: #48A14D;
+      /* mesma cor que você está usando */
+      line-height: 1;
+      /* evita espaçamento estranho */
     }
 
     .faq {
@@ -26,6 +30,17 @@
       margin: 50px 150px;
       padding-top: 140px;
       color: #48A14D;
+    }
+
+    .faq {
+      opacity: 0;
+      transform: translateX(80px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .faq.animada {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     .faq h2 {

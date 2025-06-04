@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
-/* Styles global.*/
+
 * {
   margin: 0;
   padding: 0;
@@ -98,7 +98,23 @@ header {
   }
 }
 
-/* --------------------------------ESTILIZAÇÃO DA SECTION - 2 ( INÍCIO ) -------------------------- */
+/* Animação -> bloco texto vindo da esquerda pra direita */
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#bloco-texto {
+  animation: slideLeft 1s ease-out forwards;
+}
+
+/* Section 2 (123 - o que aprender) */
 
 .o-que-aprender-sec-2 {
   text-align: center; /* Alinha o conteúdo ao centro */
@@ -141,10 +157,6 @@ header {
   width: 75%; /* Largura da linha depois do texto */
 }
 
-
-
-/* Parte dos ( NÚMEROS - PASSO A PASSO ) da SECTION2*/
-
 /* Mudança das cores do Home */
 .cor-sec-2{
   background: #ffffff
@@ -153,8 +165,6 @@ header {
 .cor-sec-2{
   padding-bottom: 100px; /* ou ajuste conforme o espaço desejado */
 }
-
-
 
 /* Estilo para o contêiner redondo que envolve cada número */
 .numero-redondo {
@@ -171,15 +181,27 @@ header {
   box-shadow: 0 0 40px rgba(76, 76, 76, 0.3);
 }
 
-/* Estilo para os números */
 /* Estilo para o contêiner que agrupa números e descrições */
 .numeros-e-paragrafos {
   display: flex;
-  justify-content: center; /* Centraliza os itens horizontalmente */
-  align-items: flex-start; /* Alinha os itens ao topo */
-  gap: 100px; /* Espaçamento entre os grupos de números e parágrafos */
-  padding: 20px 0; /* Espaço acima e abaixo da div */
-  
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+  padding: 20px 0;
+  opacity: 0;
+  animation: fadeZoom 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.numeros-e-paragrafos {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.numeros-e-paragrafos.animada {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Estilo para cada grupo de número e descrição */
@@ -237,20 +259,6 @@ header {
   max-width: 320px; /* Limita a largura máxima do parágrafo */
 }
 
-.section2-botao-aluno {
-  display: inline-block;
-  padding: 20px 60px; /* Espaçamento interno do botão */
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700; /* Negrito */
-  color: #ffffff; /* Cor do texto */
-  background-color: #7c72a7; /* Cor de fundo do botão */
-  text-decoration: none; /* Remove o sublinhado */
-  border-radius: 16px; /* Bordas arredondadas */
-  box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4); /* Aumenta a sombra para torná-la mais aparente */
-
-  margin: 40px 0; /* Margem superior para separar do conteúdo acima */
-}
-
 .link-aluno-section {
   display: flex;
   justify-content: center; /* Centraliza o botão horizontalmente */
@@ -258,14 +266,18 @@ header {
   padding: 20px 0; /* Espaço acima e abaixo do botão */
 }
 
-/* Efeito de hover para o botão de ser aluno */
-.section2-botao-aluno:hover {
-  background-color: #61529C; /* Cor de fundo ao passar o mouse */
-  transition: background-color 0.4s ease;
-}
-/*Section 3 Estilização */
+/* @keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+} */
 
-/* Mudança Cor do Home */
+/*Section 3 (cursos) */
 .cor-sec-3{
   background:  #BFAFFF;
 
@@ -318,9 +330,6 @@ header {
   right: -130%; /* Linha à direita do texto */
   width: 130%; /* Largura da linha depois do texto ajustada para manter proporção */
 }
-/* Parte dos CARDS SESSÃO 3 --------------------------- */
-
-/* Parte dos CARDS SESSÃO 3 --------------------------- */
 
 .container {
   display: flex;
@@ -398,9 +407,26 @@ header {
   border-radius: 30px; /* Cantos arredondados do botão */
   text-align: center; /* Centraliza o texto do botão */
   line-height: 25.43px; /* Centraliza verticalmente o texto */
-
   margin: 15px auto 0; /* Margens verticais: 15px em cima, auto nas laterais para centralizar */
   font-size: 13.78px; /* Ajustado: unidade 'px' adicionada */
+}
+
+.section2-botao-aluno {
+  display: inline-block;
+  padding: 20px 60px; /* Espaçamento interno do botão */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* Negrito */
+  color: #ffffff; /* Cor do texto */
+  background-color: #7c72a7; /* Cor de fundo do botão */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 16px; /* Bordas arredondadas */
+  box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4); /* Aumenta a sombra para torná-la mais aparente */
+  margin: 40px 0; /* Margem superior para separar do conteúdo acima */
+}
+
+.section2-botao-aluno:hover {
+  background-color: #61529C; /* Cor de fundo ao passar o mouse */
+  transition: background-color 0.4s ease;
 }
 
 /* Cor de fundo do botão */
@@ -421,19 +447,9 @@ header {
   background-color: #1b57a7; /* Cor de fundo ao passar o mouse */
   transition: background-color 0.4s ease;
 }
-/* DESATIVADO POIS ESSES BOTÕES PRECISAM ESTAR INDISPONÍVEIS*/
-/* .cor-botao-port:hover {
-  background-color: #b9b9b9; 
-}
 
-.cor-botao-cie:hover {
-  background-color: #b9b9b9; 
-}
-*/
+/* Section 4 - (nosso time) */
 
-/*Section 4 Estilização */
-/* Estilo para a seção "Nosso Time" */
-/* Mudança das cores do Home */
 .cor-sec-4{
   background: #BFAFFF;
   
@@ -591,7 +607,7 @@ header {
   cursor: pointer; /* Mostra que o card é clicável */
 }
 
-/* SECTION FAQ */
+/* Section 5 (faq) */
 
   .faq-section {
   display: flex;
@@ -606,6 +622,17 @@ header {
   text-align: right;
   margin-right: 40px;
   max-width: 400px;
+}
+
+.faq-content {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.faq-content.animada {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .faq-subtitle {
@@ -644,7 +671,7 @@ header {
   transition: background-color 0.4s ease;
 }
 
-/* FOOTER DO SITE COM FORMULÁRIO */
+/* Footer (form) */
 
 footer {
   display: flex;
