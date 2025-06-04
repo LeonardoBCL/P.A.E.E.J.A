@@ -20,7 +20,7 @@ a {
   color: inherit;
 }
 body {
-  padding-top: 75px; /* altura do header + espaço */
+  padding-top: 30px; /* altura do header + espaço */
   /* overflow: hidden;  tira scroll da página  */
 }
 /* Lateral */
@@ -35,7 +35,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 700;
   color: #48A14D;
   cursor: pointer;
@@ -44,9 +44,10 @@ body {
 }
 
 .btn-voltar .seta-img {
-  width: 27px;
+  width: 22px;
   height: auto;
 }
+
 /* Seção módulos */
 .secao-modulos h2 {
   font-family: 'Poppins', sans-serif;
@@ -111,7 +112,7 @@ body {
 /* Barra de progresso customizada */
 .barra {
   background-color: #eee;
-  width: 259px;
+  width: 220px;
   height: 22px;
   border-radius: 43.6px;
   overflow: hidden;
@@ -140,10 +141,8 @@ body {
   border-radius: 7px;
   padding: 0.75rem;
   color: white;
-  width: 450px;  /* largura definida conforme layout */
-  min-height: 52px; 
-
-  
+  width: 350px;  
+  min-height: 52px;   
 }
 
 .modulo-titulo {
@@ -172,9 +171,9 @@ body {
   flex-direction: column;
   gap: 0.35rem;
 
-  width: 412px;  /* largura definida conforme layout */
+  width: 320px;  /* largura definida conforme layout */
   min-height: 52px; /* respeita o layout, mas cresce se o conteúdo exigir */
-height: auto;      /* permite ajuste automático conforme o conteúdo */
+  height: auto;      /* permite ajuste automático conforme o conteúdo */
 
 }
 
@@ -230,13 +229,13 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
 /* Container do curso */
 .curso-container {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 7rem;
-  max-width: 1400px;
-  padding: 2rem;
-  margin: 130px auto 0;
-  margin-top: 130px;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+  max-width: 800px;  /* reduzido para caber bem em 1366px */
+  padding: 1.5rem;
+  margin: 100px auto 0; /* menos espaço no topo */
 }
+
 
 /* Títulos do conteúdo */
 .cabecalho-conteudo .disciplina {
@@ -250,11 +249,10 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   font-size: 1.25rem;
   margin-top: 0.25rem;
   font-weight: 600;
-  margin-top:4px;
 }
 .cabecalho-conteudo .direitos-autorais {
    color: #2ea043;
-  font-size: 15px;
+  font-size: 3px;
   font-weight: 600;
   margin-left: 38rem;
   
@@ -294,6 +292,7 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
   justify-content: flex-end;
   gap: 1rem;
 }
+
 .navegacao button {
   padding: 1rem 2.5rem;
   border: none;
@@ -327,7 +326,7 @@ height: auto;      /* permite ajuste automático conforme o conteúdo */
 #exercicio1 {
   background-color: white;
   overflow-y: auto;
-  height: 600px;
+  height: 500px;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
