@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnProximo.addEventListener('click', async () => {
       videoWrapper.style.display = 'none';
       navegacao.style.display = 'none';
+      direitosAutorais.style.display='none';
       exercicio1.style.display = 'block';
       marcarExercicioAtivo();
 
@@ -190,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnVoltar.addEventListener('click', () => {
       videoWrapper.style.display = 'block';
+      direitosAutorais.style.display='flex';
       navegacao.style.display = 'flex';
       exercicio1.style.display = 'none';
       resetarSubmodulos();
