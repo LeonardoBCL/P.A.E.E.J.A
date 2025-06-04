@@ -61,7 +61,7 @@ function navegacaoFale() {
 
 // Redireciona para a página de perfil
 function navegacaoPerfil() {
-  window.location = '/PaginaPerfil';
+  window.location = '/perfil';
 }
 
 // Verifica se o usuário está logado e ajusta a navbar

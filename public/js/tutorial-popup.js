@@ -3,23 +3,23 @@ const showTutorial = true;  // ou false
 const tutorialSteps = [
   {
     text: "Introdução ao Sistema de Gamificação: Bem-vindo(a)! Aqui você ganha pontos e desbloqueia conquistas.",
-    image: "imgs/tutorial-popup/image-popup.png"
+    image: "/imgs/tutorial-popup/image-popup.png"
   },
   {
     text: "Conquistas e Pontos: Você ganha moedas ao completar vídeo-aulas e exercícios e pode desbloquear itens especiais e conquistas ao longo do percurso.",
-    image: "imgs/tutorial-popup/image-popup2.png"
+    image: "/imgs/tutorial-popup/image-popup2.png"
   },
   {
     text: "Barra de Progresso: Acompanhe seu progresso! Ela atualiza automaticamente à medida que você avança nos cursos.",
-    image: "imgs/tutorial-popup/image-popup3.png"
+    image: "/imgs/tutorial-popup/image-popup3.png"
   },
   {
     text: "Cada conquista é um marco! Ao desbloquear conquistas, elas serão exibidas no seu perfil.",
-    image: "imgs/tutorial-popup/image-popup4.png"
+    image: "/imgs/tutorial-popup/image-popup4.png"
   },
   {
     text: "É a sua vez! Comece seu primeiro curso e veja a gameficação em ação!!",
-    image: "imgs/tutorial-popup/image-popup5.png"
+    image: "/imgs/tutorial-popup/image-popup5.png"
   } 
 ];
 

@@ -15,7 +15,7 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'login.html'));
   });
 
-  app.get('/PaginaPerfil', (req, res) => {
+  app.get('/perfil', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'PaginaPerfil.html'));
   });
   
@@ -27,14 +27,13 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'register.html'));
   });
 
-   app.get('/cursoPortugues', (req, res) => {
+   app.get('/trilhas/portugues', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'materiaModulo.html'));
   });
 
-   app.get('/conteudocurso', (req, res) => {
+   app.get('/trilhas/portugues/realizar-trilha', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'conteudo-curso.html'));
   });
-
 
      app.get('/faq', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'views', 'faq.html'));

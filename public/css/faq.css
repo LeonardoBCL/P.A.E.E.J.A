@@ -30,17 +30,7 @@
       margin: 50px 150px;
       padding-top: 140px;
       color: #48A14D;
-    }
-
-    .faq {
-      opacity: 0;
-      transform: translateX(80px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .faq.animada {
-      opacity: 1;
-      transform: translateX(0);
+      z-index: 999999;  
     }
 
     .faq h2 {
