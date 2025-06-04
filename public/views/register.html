@@ -22,48 +22,6 @@
     <!-- DECODIFICAÇÃO TOKEN JWT -->
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.js"></script>
 
-    <!-- <script>
-      // fuction que lida com a resposta da credencial retornada pelo Google
-      function handleCredentialResponse(response) {
-        console.log(response); // Exibe o conteúdo do objeto "response" no console
-        const data = jwt_decode(response.credential); // Decodifica o token JWT da credencial
-        console.log(data); // Exibe os dados decodificados no console
-
-        // Atualiza os elementos de acordo com as informações do usuário
-        fullName.textContent = data.name;
-        sub.textContent = data.sub;
-      }
-
-      // Função que executada a biblioteca de autentificação da Google
-      window.onload = function () {
-        // Inicializa a biblioteca de autenticação do Google com o client_id e a função de callback
-        google.accounts.id.initialize({
-          client_id:
-            "780024008024-a284jt467h8vfuc3n01shj2f17ms5ev3.apps.googleusercontent.com", // ID Google da PAEEJA
-          callback: handleCredentialResponse, // Define a função que será chamada após a autenticação
-        });
-
-        // Atributos de personalização
-        google.accounts.id.renderButton(
-          document.getElementById("buttonDiv"), // O elemento onde o botão será renderizado
-          {
-            theme: "outline",
-            size: "large",
-            type: "standard",
-            shape: "pill",
-            text: "continue_with",
-            logo_alignment: "left",
-            width: "40",
-            locale: "pt-BR",
-          } //
-        );
-
-        google.accounts.id.prompt(); // Exibe o diálogo "One Tap" para login
-      };
-    </script> -->
-
-    <!-- Adiciona o link para a CDN do Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
 
   <body>
