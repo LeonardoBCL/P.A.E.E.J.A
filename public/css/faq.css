@@ -9,8 +9,13 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    .seta-img {
+    width: 20px;
+    height: auto;
+    }
+
     .voltar-fixo span {
-    font-size: 30px;   /* tamanho da fonte que quiser */
+    font-size: 22px;   /* tamanho da fonte que quiser */
     font-weight: 700;  /* negrito */
     color: #48A14D;    /* mesma cor que você está usando */
     line-height: 1;    /* evita espaçamento estranho */
@@ -18,12 +23,11 @@
 
     .faq {
       max-width: 800px;
-      margin: 50px auto;
-      padding-top: 120px;
+      margin: 50px 150px;
+      padding-top: 140px;
     }
 
     .faq h2 {
-      text-align: center;
       margin-bottom: 30px;
       font-weight: 700;
     }
