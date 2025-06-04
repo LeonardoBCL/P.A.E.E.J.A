@@ -34,7 +34,7 @@ header {
   justify-content: center;
   padding: 60px 10%;
   min-height: 100vh;
-  background-color: #7fb1e0;
+  background-color: #fff;
 }
 
 #conteudo-hero {
@@ -55,7 +55,7 @@ header {
 }
 
 .destaque {
-  color: white;
+  color: #6AA3D8;
   font-weight: 700;
 }
 
@@ -68,7 +68,7 @@ header {
   margin-top: 20px;
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #fff;
+  color: #6AA3D8;
 }
 
 #bloco-imagem {
@@ -159,7 +159,7 @@ header {
 
 /* Mudança das cores do Home */
 .cor-sec-2{
-  background: #ffffff
+  background: #FFFDE9
   
 }
 .cor-sec-2{
@@ -172,13 +172,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%; /* Faz o contêiner ser redondo */
-  background-color: #e0dede; /* Cor de fundo da esfera */
   width: 260px; /* Tamanho fixo do contêiner redondo */
   height: 270px; /* Tamanho fixo do contêiner redondo */
   position: relative; /* Para posicionamento dos números dentro */
   margin: 0; /* Remove margens */
-  box-shadow: 0 0 40px rgba(76, 76, 76, 0.3);
 }
 
 /* Estilo para o contêiner que agrupa números e descrições */
@@ -210,21 +207,6 @@ header {
   flex-direction: column; /* Alinha número e descrição verticalmente */
   align-items: center; /* Centraliza o número e descrição horizontalmente */
   text-align: center; /* Centraliza o texto do parágrafo */
-}
-
-/* Estilo para o contêiner redondo que envolve cada número */
-.numero-redondo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%; /* Faz o contêiner ser redondo */
-  background-color: #D9D9D90D; /* Cor de fundo da esfera */
-  width: 270px; /* Tamanho fixo do contêiner redondo */
-  height: 272px; /* Tamanho fixo do contêiner redondo */
-  position: relative; /* Para posicionamento dos números dentro */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra expansiva e suave */
-  padding: 20px; /* Espaçamento interno */
 }
 
 /* Estilo para os números dentro do contêiner redondo */
