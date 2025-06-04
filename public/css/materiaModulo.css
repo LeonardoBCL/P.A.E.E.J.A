@@ -16,9 +16,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-
-
-
 /* Espaço reservado para navbar externa */
 #navbar-placeholder {
   height: 70px;
@@ -237,7 +234,7 @@ body {
   font-size: 24.76px;
   line-height: 1; /* 100% */
   letter-spacing: 0;
-  width: 241px;  /* conforme layout */
+  width: 242px;  /* conforme layout */
   height: 37px;  /* conforme layout */
   margin-top: 40px; /* ajuste para aproximar do topo (opcional) */
   margin-left: 0;  /* deixa alinhado à esquerda no grid */
