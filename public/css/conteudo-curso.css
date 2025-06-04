@@ -263,15 +263,17 @@ body {
   font-weight: 600;
 }
 
-.cabecalho-conteudo .direitos-autorais {
-   color: #2ea043;
-  font-size: 3px;
+.direitos-autorais {
+  color: red;
+  font-size: 0.60rem;
   font-weight: 600;
-  margin-left: 26.5rem;
+  margin-left: 6rem;
+  padding-top: 65px;
 }
 
 .video-container {
   gap: 1.5rem;
+  margin-top: 38px;
   margin-left: 10px;
 }
 
