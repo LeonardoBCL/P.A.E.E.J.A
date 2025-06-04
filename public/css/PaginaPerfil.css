@@ -475,7 +475,8 @@ body {
 #box-itens-comprados img {
   width: 100px;
   height: auto;
- 
+  margin-left: 7px;
+  margin-right: 7px;
 }
 
 
