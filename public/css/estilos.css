@@ -118,10 +118,12 @@ header {
 
 .o-que-aprender-sec-2 {
   text-align: center; /* Alinha o conteúdo ao centro */
-  margin: 0 !important; /* Remove todas as margens */
-  padding: 0 !important;
-  height: auto !important; /* Altura mínima necessária */
+  margin: 0 ; /* Remove todas as margens */
+  padding: 60px ;
+  height: auto ; /* Altura mínima necessária */
   overflow: hidden; /* Evita vazamentos */
+ 
+  
 }
 
 .o-que-aprender-sec-2 h3 {
@@ -188,6 +190,8 @@ header {
   opacity: 0;
   animation: fadeZoom 1s ease-out forwards;
   animation-delay: 0.5s;
+  padding-top: 50px;
+  padding-bottom:50px;
 }
 
 .numeros-e-paragrafos {
