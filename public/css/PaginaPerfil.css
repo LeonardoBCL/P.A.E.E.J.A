@@ -41,13 +41,19 @@ body {
   margin-top: 9rem;
 }
 
-
 #nome-usuario {
   color: white;
-  font-size: 1.6rem;
+  font-size: 2.0rem;
   font-weight: bold;
   margin-top: 60px;
   margin-left: 25px;
+}
+
+#usuario-handle {
+  color: #dddddd;
+  margin-top: 8px;
+  font-size: 1.4rem;
+  display: block;
 }
 
 .top-menu {
@@ -99,11 +105,6 @@ body {
   font-size: 22px; 
   font-weight: 700;  
   color: #48A14D;  
-}
-
-#usuario-handle {
-  color: #dddddd;
-  font-size: 0.95rem;
 }
 
 /* === ABAS === */

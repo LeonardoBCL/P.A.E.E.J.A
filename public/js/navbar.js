@@ -73,7 +73,8 @@ async function verificarLogin() {
 
     if (dados.logado && logado) {
       document.getElementById("nomeUsuario").textContent = dados.usuario.nome;
-      const nomeFormatado = `${dados.usuario.nome} <span id="usuario-handle">(@${dados.usuario.nome.toLowerCase()})</span>`;
+      const tirandoespaco = dados.usuario.nome.toLowerCase().replace(/\s+/g, '');
+      const nomeFormatado = `${dados.usuario.nome} <span id="usuario-handle">(@${tirandoespaco})</span>`;
       const nomeUsuarioDiv = document.getElementById("nome-usuario");
       if (nomeUsuarioDiv) nomeUsuarioDiv.innerHTML = nomeFormatado;
 
