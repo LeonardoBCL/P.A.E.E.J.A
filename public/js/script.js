@@ -26,10 +26,8 @@ async function navegacaoVerCursos() {
 
   if (dados.logado && path !== "/trilhas" && logado) {
     window.location = '/trilhas';
-  } else if (path === "/" && !logado) {
-    window.location = '/login';
   } else {
-    window.location = '/#sectionCursos';
+    window.location = '/login';
   }
 }
 
@@ -41,9 +39,7 @@ async function navegacaoPortugues() {
 
   if (dados.logado && path !== "/trilhas" && logado) {
     window.location = '/trilhas/portugues';
-  } else if (path === "/" && !logado) {
-    window.location = '/login';
   } else {
-    window.location = '/#sectionCursos';
+    window.location = '/login';
   }
 }
