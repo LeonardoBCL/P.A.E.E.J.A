@@ -91,11 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
           btnClose.style.display = "none";
 
           btnEquipar = document.createElement("button");
-          btnEquipar.id = "confirm-yes";
+          btnEquipar.id = "confirm-equip";
           btnEquipar.textContent = "Equipar";
-          modalMessage.after(btnEquipar);
+          document.querySelector(".button-group").appendChild(btnEquipar);
           modal.style.display = "flex";
-          btnClose.style.display = "inline-block";
+          btnClose.style.display = "flex";
 
           btnEquipar.addEventListener("click", async () => {
             try {
