@@ -248,7 +248,6 @@ body {
   margin: 100px auto 0; /* menos espaço no topo */
 }
 
-
 /* Títulos do conteúdo */
 .cabecalho-conteudo .disciplina {
   color: #2ea043;
@@ -267,7 +266,7 @@ body {
   color: red;
   font-size: 0.60rem;
   font-weight: 600;
-  margin-left: 6rem;
+  margin-left: 18rem;
   padding-top: 65px;
 }
 
@@ -275,6 +274,7 @@ body {
   gap: 1.5rem;
   margin-top: 38px;
   margin-left: 10px;
+  width: 650px;
 }
 
 /* Vídeo */
@@ -282,7 +282,7 @@ body {
   margin-bottom: 1.5rem;
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 4000px;
   aspect-ratio: 16 / 9;
   background: #000;
   border-radius: 12px;
@@ -295,8 +295,6 @@ body {
   border: none;
   border-radius: 12px;
 }
-
-
 /* Navegação */
 
 /* Aqui o truque para alinhar e subir os botões */
@@ -306,7 +304,6 @@ body {
   justify-content: flex-end;
   gap: 1rem;
 }
-
 
 .navegacao button {
   padding: 1rem 2.5rem;
@@ -339,6 +336,7 @@ body {
   background-color: white;
   overflow-y: auto;
   height: 500px;
+  width: 620px;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
